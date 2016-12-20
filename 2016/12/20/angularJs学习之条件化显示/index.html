@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2016/12 | 林林博客</title>
+  <title>angularJs学习之条件化显示 | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="林林博客">
-<meta property="og:url" content="http://yoursite.com/archives/2016/12/index.html">
+  <meta name="description" content="今天看到了angularJS介绍的条件化显示,在angularJs中拥有四套不同的指令集:ng-show/ng-hide,ng-swatch-*,ng-if,ng-include.
+ng-show/ng-hideng-show与ng-hide用于隐藏DOM树的一部分,它利用的是CSS规则,类似于CSS中的none;&quot;12345678910```### 它并没有将元素从DOM树中移除。## ng-s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angularJs学习之条件化显示">
+<meta property="og:url" content="http://yoursite.com/2016/12/20/angularJs学习之条件化显示/index.html">
 <meta property="og:site_name" content="林林博客">
+<meta property="og:description" content="今天看到了angularJS介绍的条件化显示,在angularJs中拥有四套不同的指令集:ng-show/ng-hide,ng-swatch-*,ng-if,ng-include.
+ng-show/ng-hideng-show与ng-hide用于隐藏DOM树的一部分,它利用的是CSS规则,类似于CSS中的none;&quot;12345678910```### 它并没有将元素从DOM树中移除。## ng-s">
+<meta property="og:updated_time" content="2016-12-20T11:07:25.578Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="林林博客">
+<meta name="twitter:title" content="angularJs学习之条件化显示">
+<meta name="twitter:description" content="今天看到了angularJS介绍的条件化显示,在angularJs中拥有四套不同的指令集:ng-show/ng-hide,ng-swatch-*,ng-if,ng-include.
+ng-show/ng-hideng-show与ng-hide用于隐藏DOM树的一部分,它利用的是CSS规则,类似于CSS中的none;&quot;12345678910```### 它并没有将元素从DOM树中移除。## ng-s">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
   
@@ -143,103 +150,134 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-angularJs学习之条件化显示" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      angularJs学习之条件化显示
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/20/angularJs学习之条件化显示/" class="archive-article-date">
+
+        <a href="/2016/12/20/angularJs学习之条件化显示/" class="archive-article-date">
   	<time datetime="2016-12-20T11:05:16.495Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-20</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/20/angularJs学习之条件化显示/">angularJs学习之条件化显示</a>
-    </h1>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天看到了angularJS介绍的条件化显示,在angularJs中拥有四套不同的指令集:ng-show/ng-hide,ng-swatch-*,ng-if,ng-include.</p>
+<h2 id="ng-show-ng-hide"><a href="#ng-show-ng-hide" class="headerlink" title="ng-show/ng-hide"></a>ng-show/ng-hide</h2><h3 id="ng-show与ng-hide用于隐藏DOM树的一部分-它利用的是CSS规则-类似于CSS中的"><a href="#ng-show与ng-hide用于隐藏DOM树的一部分-它利用的是CSS规则-类似于CSS中的" class="headerlink" title="ng-show与ng-hide用于隐藏DOM树的一部分,它利用的是CSS规则,类似于CSS中的"></a>ng-show与ng-hide用于隐藏DOM树的一部分,它利用的是CSS规则,类似于CSS中的</h3><figure class="highlight plain"><figcaption><span>none;"</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">### 它并没有将元素从DOM树中移除。</div><div class="line"></div><div class="line">## ng-switch</div><div class="line"></div><div class="line">### ng-switch会根据条件来移除DOM节点,请注意,这里指的是“移除”,而不是“隐藏”</div><div class="line">``` &lt;div ng-switch on=&quot;showSecret&quot;&gt;</div><div class="line">&lt;div ng-switch-when=&quot;true&quot;&gt;Secret&lt;/div&gt;</div><div class="line">&lt;div ng-switch-default&gt;Won&apos;t show you my secrets!&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h3 id="在这个例子中-ng-switch将会监听on里面的值-只要匹配了ng-switch-when就可以将其加入进来-否则将其移除-在一个ng-switch中可以有多个ng-switch-when-ng-switch有一个问题-如果是简单用例-语法也会变得冗长-此时就需要一套新的指令集了-ng-if"><a href="#在这个例子中-ng-switch将会监听on里面的值-只要匹配了ng-switch-when就可以将其加入进来-否则将其移除-在一个ng-switch中可以有多个ng-switch-when-ng-switch有一个问题-如果是简单用例-语法也会变得冗长-此时就需要一套新的指令集了-ng-if" class="headerlink" title="在这个例子中,ng-switch将会监听on里面的值,只要匹配了ng-switch-when就可以将其加入进来,否则将其移除,在一个ng-switch中可以有多个ng-switch-when,ng-switch有一个问题:如果是简单用例,语法也会变得冗长,此时就需要一套新的指令集了:ng-if"></a>在这个例子中,ng-switch将会监听on里面的值,只要匹配了ng-switch-when就可以将其加入进来,否则将其移除,在一个ng-switch中可以有多个ng-switch-when,ng-switch有一个问题:如果是简单用例,语法也会变得冗长,此时就需要一套新的指令集了:ng-if</h3><h2 id="ng-if"><a href="#ng-if" class="headerlink" title="ng-if"></a>ng-if</h2><h3 id="ng-if语法十分简单-例如"><a href="#ng-if语法十分简单-例如" class="headerlink" title="ng-if语法十分简单,例如:"></a>ng-if语法十分简单,例如:</h3><p><code>&lt;div ng-if=&quot;showSecret&quot;&gt;&lt;/div&gt;</code></p>
+<h2 id="条件化显示可以有条件地加载和显示子模板-容易创建高度动态化的页面-所以学会以上几个指令对自己的帮助还是挺大的"><a href="#条件化显示可以有条件地加载和显示子模板-容易创建高度动态化的页面-所以学会以上几个指令对自己的帮助还是挺大的" class="headerlink" title="条件化显示可以有条件地加载和显示子模板,容易创建高度动态化的页面,所以学会以上几个指令对自己的帮助还是挺大的"></a>条件化显示可以有条件地加载和显示子模板,容易创建高度动态化的页面,所以学会以上几个指令对自己的帮助还是挺大的</h2>
+      
 
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2016/12/20/angularJs学习之条件化显示/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/19/我的第一个博客-开篇/" class="archive-article-date">
-  	<time datetime="2016-12-19T13:31:27.385Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/19/我的第一个博客-开篇/">博客开张啦</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/19/我的第一个博客-开篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">博客开张啦</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/19/hello-world/" class="archive-article-date">
-  	<time datetime="2016-12-19T06:23:05.893Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/19/hello-world/">林之博客</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
 
 
           </div>
@@ -262,8 +300,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
