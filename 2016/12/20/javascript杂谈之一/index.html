@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>杂谈javascript之一 | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="那些遗漏了的javascript重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看12var n = 0377;alert(n);
-看到这段代码，你认为它将输出什么？0377吗？如果是0377，那么恭喜你，回答错误！你可以在浏览器上的控制台敲一下试试，你会发现它的输出并不是0377，而是255，为什么是255呢？因为当数字以0开头时代表这个数是八进制数，如果以">
+  <meta name="description" content="javascript中的基本数据类型及部分操作重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看12var n = 0377;alert(n);
+看到这段代码，你认为它将输出什么？0377吗？如果是0377，那么恭喜你，回答错误！你可以在浏览器上的控制台敲一下试试，你会发现它的输出并不是0377，而是255，为什么是255呢？因为当数字以0开头时代表这个数是八">
 <meta property="og:type" content="article">
 <meta property="og:title" content="杂谈javascript之一">
-<meta property="og:url" content="http://yoursite.com/2016/12/20/javascript杂谈之一/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/12/20/JavaScript杂谈之一/index.html">
 <meta property="og:site_name" content="林林博客">
-<meta property="og:description" content="那些遗漏了的javascript重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看12var n = 0377;alert(n);
-看到这段代码，你认为它将输出什么？0377吗？如果是0377，那么恭喜你，回答错误！你可以在浏览器上的控制台敲一下试试，你会发现它的输出并不是0377，而是255，为什么是255呢？因为当数字以0开头时代表这个数是八进制数，如果以">
-<meta property="og:updated_time" content="2016-12-20T14:21:30.961Z">
+<meta property="og:description" content="javascript中的基本数据类型及部分操作重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看12var n = 0377;alert(n);
+看到这段代码，你认为它将输出什么？0377吗？如果是0377，那么恭喜你，回答错误！你可以在浏览器上的控制台敲一下试试，你会发现它的输出并不是0377，而是255，为什么是255呢？因为当数字以0开头时代表这个数是八">
+<meta property="og:updated_time" content="2016-12-21T13:07:12.272Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="杂谈javascript之一">
-<meta name="twitter:description" content="那些遗漏了的javascript重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看12var n = 0377;alert(n);
-看到这段代码，你认为它将输出什么？0377吗？如果是0377，那么恭喜你，回答错误！你可以在浏览器上的控制台敲一下试试，你会发现它的输出并不是0377，而是255，为什么是255呢？因为当数字以0开头时代表这个数是八进制数，如果以">
+<meta name="twitter:description" content="javascript中的基本数据类型及部分操作重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看12var n = 0377;alert(n);
+看到这段代码，你认为它将输出什么？0377吗？如果是0377，那么恭喜你，回答错误！你可以在浏览器上的控制台敲一下试试，你会发现它的输出并不是0377，而是255，为什么是255呢？因为当数字以0开头时代表这个数是八">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
   
@@ -150,7 +150,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-javascript杂谈之一" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JavaScript杂谈之一" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -161,14 +161,14 @@
     </h1>
   
 
-        <a href="/2016/12/20/javascript杂谈之一/" class="archive-article-date">
+        <a href="/2016/12/20/JavaScript杂谈之一/" class="archive-article-date">
   	<time datetime="2016-12-20T13:35:27.055Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-20</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="那些遗漏了的javascript"><a href="#那些遗漏了的javascript" class="headerlink" title="那些遗漏了的javascript"></a>那些遗漏了的javascript</h2><h3 id="重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看"><a href="#重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看" class="headerlink" title="重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看"></a>重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var n = 0377;</div><div class="line">alert(n);</div></pre></td></tr></table></figure>
+        <h2 id="javascript中的基本数据类型及部分操作"><a href="#javascript中的基本数据类型及部分操作" class="headerlink" title="javascript中的基本数据类型及部分操作"></a>javascript中的基本数据类型及部分操作</h2><h3 id="重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看"><a href="#重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看" class="headerlink" title="重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看"></a>重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var n = 0377;</div><div class="line">alert(n);</div></pre></td></tr></table></figure>
 <p>看到这段代码，你认为它将输出什么？0377吗？如果是0377，那么恭喜你，回答错误！你可以在浏览器上的控制台敲一下试试，你会发现它的输出并不是0377，而是255，为什么是255呢？因为当数字以0开头时代表这个数是八进制数，如果以0x开头，则这个数代表十六进制，例如：0xff；<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a = 1e1;</div><div class="line">var b = 1e+1;</div><div class="line">var c = 2e+3;</div></pre></td></tr></table></figure></p>
 <p>请读者自己运行试试会输出怎样的结果，好吧，我也不卖关子了，这几个表达式代表的是javascript中的指数表达式，意思是在某个数后加几个0，比如2e+3指的就是在2后面加3个0，或者也可以理解为将数字2的小数点向右移动3位<br><br>在javascript中有一个叫做Infinity的特殊值，它代表的是超过了JavaScript处理范围的值，当输入1e308时，正常，但是只要你输入了1e309就出界了，另外任何数除以0结果仍是Infinity，可以在console中运行一下语句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Infinity;</div><div class="line">typeof Infinity;</div><div class="line">1e308;</div><div class="line">1e309;</div><div class="line">var a = 6/0;</div><div class="line">alert(a);</div></pre></td></tr></table></figure></p>
 <p>Infinity与其它任何操作数执行算术运算的结果都等于Infinity；<br><br>在javascript中，数字字符串转换为数字有一种偷懒的方法：将该字符串与1相乘即可,当然，更好的方法是调用parseInt()函数；<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var n = &apos;1&apos;;</div><div class="line">typeof n;</div><div class="line">n = n*1;</div><div class="line">typeof n;</div></pre></td></tr></table></figure></p>
@@ -257,7 +257,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2016/12/20/javascript杂谈之一/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2016/12/20/JavaScript杂谈之一/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -270,6 +270,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2016/12/21/JavaScript杂谈之二/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          杂谈javascript之二
+        
+      </div>
+    </a>
   
   
     <a href="/2016/12/20/angularJs学习之条件化显示/" id="article-nav-older" class="article-nav-link-wrap">
