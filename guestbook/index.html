@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>杂谈javascript之二 | 林林博客</title>
+  <title>guestbook | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="javascript中的函数今天看到了JavaScript中的函数篇，很熟悉的名称：函数，重读一遍后又收获了一些新知识12345678parseInt(&amp;apos;123&amp;apos;);parseInt(&amp;apos;abc123&amp;apos;);parseInt(&amp;apos;1abc23&amp;apos;);parseInt(&amp;apos;123abc&amp;apos;);parseInt(&amp;apos;FF&amp;ap">
-<meta property="og:type" content="article">
-<meta property="og:title" content="杂谈javascript之二">
-<meta property="og:url" content="http://yoursite.com/2016/12/21/JavaScript杂谈之二/index.html">
+  <meta name="description" content="最近访客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="guestbook">
+<meta property="og:url" content="http://yoursite.com/guestbook/index.html">
 <meta property="og:site_name" content="林林博客">
-<meta property="og:description" content="javascript中的函数今天看到了JavaScript中的函数篇，很熟悉的名称：函数，重读一遍后又收获了一些新知识12345678parseInt(&amp;apos;123&amp;apos;);parseInt(&amp;apos;abc123&amp;apos;);parseInt(&amp;apos;1abc23&amp;apos;);parseInt(&amp;apos;123abc&amp;apos;);parseInt(&amp;apos;FF&amp;ap">
-<meta property="og:updated_time" content="2016-12-21T14:20:38.286Z">
+<meta property="og:description" content="最近访客">
+<meta property="og:updated_time" content="2016-12-22T01:33:51.092Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杂谈javascript之二">
-<meta name="twitter:description" content="javascript中的函数今天看到了JavaScript中的函数篇，很熟悉的名称：函数，重读一遍后又收获了一些新知识12345678parseInt(&amp;apos;123&amp;apos;);parseInt(&amp;apos;abc123&amp;apos;);parseInt(&amp;apos;1abc23&amp;apos;);parseInt(&amp;apos;123abc&amp;apos;);parseInt(&amp;apos;FF&amp;ap">
+<meta name="twitter:title" content="guestbook">
+<meta name="twitter:description" content="最近访客">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
   
@@ -147,33 +147,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JavaScript杂谈之二" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      杂谈javascript之二
+      guestbook
     </h1>
   
 
-        <a href="/2016/12/21/JavaScript杂谈之二/" class="archive-article-date">
-  	<time datetime="2016-12-21T13:08:05.030Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-21</time>
+        <a href="/guestbook/index.html" class="archive-article-date">
+  	<time datetime="2016-10-08T00:48:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-08</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="javascript中的函数"><a href="#javascript中的函数" class="headerlink" title="javascript中的函数"></a>javascript中的函数</h2><h3 id="今天看到了JavaScript中的函数篇，很熟悉的名称：函数，重读一遍后又收获了一些新知识"><a href="#今天看到了JavaScript中的函数篇，很熟悉的名称：函数，重读一遍后又收获了一些新知识" class="headerlink" title="今天看到了JavaScript中的函数篇，很熟悉的名称：函数，重读一遍后又收获了一些新知识"></a>今天看到了JavaScript中的函数篇，很熟悉的名称：函数，重读一遍后又收获了一些新知识</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">parseInt(&apos;123&apos;);</div><div class="line">parseInt(&apos;abc123&apos;);</div><div class="line">parseInt(&apos;1abc23&apos;);</div><div class="line">parseInt(&apos;123abc&apos;);</div><div class="line">parseInt(&apos;FF&apos;,10);</div><div class="line">parseInt(&apos;FF&apos;,16);</div><div class="line">parseInt(&apos;0377&apos;);</div><div class="line">parseInt(&apos;0x377&apos;);</div></pre></td></tr></table></figure>
-<p>以上函数分别输出123，NaN，1,123,NaN,255,255,887；是不是发现自己猜想的结果与实际输出悬殊比较大？如果自己的结果错了，那请记住这些，避免下次再犯这种错误。<br></p>
-<p>在地址栏传参数时，可能会有中文乱码的情况，这时请参考使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">encodeURIComponent(url);</div><div class="line">decodeURIComponent(url);</div></pre></td></tr></table></figure></p>
-<p>回调函数的应用：先来看一段代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">function multi(a,b,c) &#123;</div><div class="line">	var i,ar = [];</div><div class="line">	for(i = 0; i &lt; 3; i++) &#123;</div><div class="line">		ar[i] = arguments[i] * 2;</div><div class="line">	&#125;</div><div class="line">	return ar;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function addOne(a) &#123;</div><div class="line">	return a + 1;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var myarr = [];</div><div class="line">myarr = multi(10, 20, 30);</div><div class="line"></div><div class="line">for (var i = 0; i &lt; 3 ; i++) &#123;</div><div class="line">	myarr[i] = addOne(myarr[i]);</div><div class="line">&#125;</div><div class="line">alert(myarr);</div></pre></td></tr></table></figure></p>
-<p>你会发现这段代码的数据量比较大，同时循环操作复杂，所以我们换一下，改用回调函数，请看下面的代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function multi(a,b,c,callback) &#123;</div><div class="line">	var i,ar = [];</div><div class="line">	for(i = 0; i &lt; 3; i++) &#123;</div><div class="line">		ar[i] = callback(arguments[i] * 2);</div><div class="line">	&#125;</div><div class="line">	return ar;</div><div class="line">&#125;</div><div class="line">var myarr = [];</div><div class="line">myarr = multi(1, 2, 3, addOne);</div></pre></td></tr></table></figure>
-<p>再次优化一下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">multi(a,b,c,function (a) &#123;</div><div class="line">	return a + 1;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>即时函数，就是一打开html它就会自动的调用，这种函数有以下几个</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">window.onload = function()&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">$(function()&#123;</div><div class="line"></div><div class="line">&#125;)</div><div class="line"></div><div class="line">(function()&#123;</div><div class="line"></div><div class="line">&#125;)()</div></pre></td></tr></table></figure>
+        <blockquote>
+<p>最近访客</p>
+</blockquote>
+<p><div class="ds-recent-visitors" data-num-items="28" data-avatar-size="42" id="ds-recent-visitors"></div><br></p>
+
       
 
       
@@ -252,7 +248,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2016/12/21/JavaScript杂谈之二/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/guestbook/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -264,16 +260,6 @@
 </article>
 
   
-<nav id="article-nav">
-  
-  
-    <a href="/2016/12/20/JavaScript杂谈之一/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">杂谈javascript之一</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 
 
@@ -281,7 +267,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="JavaScript杂谈之二" data-title="杂谈javascript之二" data-url="http://yoursite.com/2016/12/21/JavaScript杂谈之二/"></div>
+	<div class="ds-thread" data-thread-key="undefined" data-title="guestbook" data-url="http://yoursite.com/guestbook/index.html"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -322,7 +308,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
