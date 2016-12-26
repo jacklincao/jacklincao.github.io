@@ -145,6 +145,59 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JavaScript杂谈之三" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/23/JavaScript杂谈之三/">杂谈javascript之三</a>
+    </h1>
+  
+
+        <a href="/2016/12/23/JavaScript杂谈之三/" class="archive-article-date">
+  	<time datetime="2016-12-23T13:10:34.204Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-23</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript合集/">JavaScript合集</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/12/23/JavaScript杂谈之三/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-JavaScript杂谈之二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -174,6 +227,13 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">window.onload = function()&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">$(function()&#123;</div><div class="line"></div><div class="line">&#125;)</div><div class="line"></div><div class="line">(function()&#123;</div><div class="line"></div><div class="line">&#125;)()</div></pre></td></tr></table></figure>
 <p>关于变量提升的问题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var a = 123;</div><div class="line">function f() &#123;</div><div class="line">	alert(a);</div><div class="line">	var a = 1;</div><div class="line">	alert(a);</div><div class="line">&#125;</div><div class="line">f();</div></pre></td></tr></table></figure></p>
 <p>以上的代码将会依次弹出”undefined”和”1”;在这段代码里展示了两个概念:函数域始终优先于全局域;JavaScript进入新函数时，该函数内部被声明的所有变量都会被移动(提升)到函数最开始的地方，所以上面代码等效于下面的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var a = 123;</div><div class="line">function f() &#123;</div><div class="line">	var a;</div><div class="line">	alert(a);</div><div class="line">	a = 1;</div><div class="line">	alert(a);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>重写自己的函数：这项技术对于某些浏览器的相关操作会有特别的作用，在不同浏览器中，实现相同任务的方法可能不同，所以我们可以让函数根据当前所在浏览器重定义自己，这就是“浏览器兼容性探测”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var a = (function () &#123;</div><div class="line">	function sonmeSetup() &#123;</div><div class="line">		var setup = &apos;done&apos;;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	function actualWork() &#123;</div><div class="line">		alert(&apos;Worky-worky&apos;);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	someSetup();</div><div class="line">	return actualWork;</div><div class="line">&#125;());</div></pre></td></tr></table></figure></p>
+<p>接下来到了比较有趣的了：闭包；先来看一段代码，在outer()中定义了inner(),在inner()中可以访问的变量来自自身作用域或父级作用域，这形成了一条作用域链<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var global = 1;</div><div class="line">function outer() &#123;</div><div class="line">	var outer_local = 2;</div><div class="line">	function inner() &#123;</div><div class="line">		var inner_local = 3;</div><div class="line">		return innner_local+outer_local+global;</div><div class="line">	&#125;</div><div class="line">	return inner();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>闭包#1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var a = &quot;glo&quot;;</div><div class="line">var F = function() &#123;</div><div class="line">	var b = &quot;local&quot;;</div><div class="line">	var N = function() &#123;</div><div class="line">		var c = &quot;inner local&quot;;</div><div class="line">		return b;</div><div class="line">	&#125;;</div><div class="line">	return N;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">alert(b);</div><div class="line"></div><div class="line">var inner = F();</div><div class="line">inner();</div></pre></td></tr></table></figure></p>
+<p>闭包#2:声明一个全局函数的占位符，调用F()看结果是什么<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var innner;</div><div class="line">var F = function() &#123;</div><div class="line">	var b = &quot;local&quot;;</div><div class="line">	var N = function() &#123;</div><div class="line">		return b;</div><div class="line">	&#125;;</div><div class="line">	inner = N;</div><div class="line">&#125;</div><div class="line"></div><div class="line">F();</div><div class="line">inner();</div></pre></td></tr></table></figure></p>
+<p>闭包#3：每个函数本身就是一个闭包，因为每个函数至少都有访问全局作用域的权限，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function F(param) &#123;</div><div class="line">	var N = function() &#123;</div><div class="line">		return param;</div><div class="line">	&#125;;</div><div class="line">	param++;</div><div class="line">	return N;</div><div class="line">&#125;</div><div class="line"></div><div class="line">这样调用：var inner = F(123);</div><div class="line">		inner();</div></pre></td></tr></table></figure></p>
+<p>闭包#4之循环中的闭包:我们看一个三次的循环操作，在每次迭代中都会创建一个返回当前循环序号的新函数，该新函数将被添加到一个数组中，并返回;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function F() &#123;</div><div class="line">	var arr = [],i;</div><div class="line">	for(i = 0; i &lt; 3; i++) &#123;</div><div class="line">		arr[i] = function() &#123;</div><div class="line">			return i;</div><div class="line">		&#125;;</div><div class="line">	&#125;</div><div class="line">	return arr;</div><div class="line">&#125;</div><div class="line"></div><div class="line">运行：var arr = F();</div><div class="line">arr[0]();</div><div class="line">arr[1]();</div><div class="line">arr[2]();</div></pre></td></tr></table></figure></p>
+<p>如果想要输出0,1,2的话，那就需要换一种闭包形式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">function F() &#123;</div><div class="line">	var arr = [],i;</div><div class="line">	for(i = 0; i &lt; 3; i++) &#123;</div><div class="line">		arr[i] = (function(x) &#123;</div><div class="line">			return function() &#123;</div><div class="line">				return x;</div><div class="line">			&#125;</div><div class="line">		&#125;(i));</div><div class="line">	&#125;</div><div class="line">	return arr;</div><div class="line">&#125;</div><div class="line"></div><div class="line">或</div><div class="line"></div><div class="line">function F() &#123;</div><div class="line">	function binder(x) &#123;</div><div class="line">	return function() &#123;</div><div class="line">		return x;</div><div class="line">	&#125;;</div><div class="line">&#125;</div><div class="line">var arr = [],i;</div><div class="line">for(i = 0; i &lt; 3; i++) &#123;</div><div class="line">	arr[i] = binder(i);</div><div class="line">&#125;</div><div class="line">return arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
 
