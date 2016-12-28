@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>杂谈javascript之三 | 林林博客</title>
+  <title>angularJs学习之ui-router | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="杂谈javascript之三">
-<meta property="og:url" content="http://yoursite.com/2016/12/23/JavaScript杂谈之三/index.html">
+  <meta name="description" content="今天学了一点ui-router，从慕课以及自己手动敲代码，感受到了它的魅力，记得假期做过一个图书管理系统的练习，那个时候用的是iframe来实现刷新，现在看来，觉得当时还是太嫩了，进入主题吧
+首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angularJs学习之ui-router">
+<meta property="og:url" content="http://yoursite.com/2016/12/27/angularJs学习之ui-router配置路由/index.html">
 <meta property="og:site_name" content="林林博客">
-<meta property="og:updated_time" content="2016-12-23T13:10:34.206Z">
+<meta property="og:description" content="今天学了一点ui-router，从慕课以及自己手动敲代码，感受到了它的魅力，记得假期做过一个图书管理系统的练习，那个时候用的是iframe来实现刷新，现在看来，觉得当时还是太嫩了，进入主题吧
+首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个">
+<meta property="og:updated_time" content="2016-12-28T06:15:48.390Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杂谈javascript之三">
+<meta name="twitter:title" content="angularJs学习之ui-router">
+<meta name="twitter:description" content="今天学了一点ui-router，从慕课以及自己手动敲代码，感受到了它的魅力，记得假期做过一个图书管理系统的练习，那个时候用的是iframe来实现刷新，现在看来，觉得当时还是太嫩了，进入主题吧
+首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
   
@@ -144,25 +150,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JavaScript杂谈之三" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-angularJs学习之ui-router配置路由" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      杂谈javascript之三
+      angularJs学习之ui-router
     </h1>
   
 
-        <a href="/2016/12/23/JavaScript杂谈之三/" class="archive-article-date">
-  	<time datetime="2016-12-23T13:10:34.204Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-23</time>
+        <a href="/2016/12/27/angularJs学习之ui-router配置路由/" class="archive-article-date">
+  	<time datetime="2016-12-27T11:52:07.002Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-27</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>今天学了一点ui-router，从慕课以及自己手动敲代码，感受到了它的魅力，记得假期做过一个图书管理系统的练习，那个时候用的是iframe来实现刷新，现在看来，觉得当时还是太嫩了，进入主题吧</p>
+<h3 id="首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1-多样化视图-2-嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范"><a href="#首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1-多样化视图-2-嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范" class="headerlink" title="首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范"></a>首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范</h3><p>app.js的部分代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var routerApp = angular.module(&apos;routerApp&apos;, [ &apos;ui.router&apos;, &apos;ngGrid&apos;,</div><div class="line">                                              &apos;BookListModule&apos;, &apos;BookDetailModule&apos; ]);</div><div class="line"></div><div class="line">routerApp.run(function($rootScope, $state, $stateParams) &#123;</div><div class="line">	$rootScope.$state = $state;</div><div class="line">	$rootScope.$stateParams = $stateParams;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>app.js的配置路由代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">routerApp.config(function($stateProvider, $urlRouterProvider) &#123;</div><div class="line">	//运行时找不到想要的状态就会自动的进入index</div><div class="line">	$urlRouterProvider.otherwise(&apos;/index&apos;);</div><div class="line">	$stateProvider</div><div class="line">	//state后紧跟的那个是一个状态，可以通过ui-sref指令转变状态，例如&lt;a ui-sref=&quot;second&quot;&gt;二&lt;/a&gt;</div><div class="line">	.state(&apos;index&apos;,&#123;</div><div class="line">		//url即地址栏的内容，当用户浏览到/index时会找到他需要的视图</div><div class="line">		url: &apos;/index&apos;,</div><div class="line"></div><div class="line">		//存在多个view时使用这种写法</div><div class="line">		views:&#123;</div><div class="line">			&apos;&apos;:&#123;</div><div class="line">				templateUrl: &apos;tpls/loginForm.html&apos;</div><div class="line">			&#125;,</div><div class="line">		//@符号用在此处代表在index下存在的模块，例如我写的，在index下存在：&lt;a ui-sref=&quot;x1&quot;&gt;1&lt;/a&gt;&lt;a ui-sref=&quot;x2&quot;&gt;2&lt;/a&gt; &lt;a ui-sref=&quot;x3&quot;&gt;3&lt;/a&gt;</div><div class="line">			&apos;x1@index&apos;:&#123;</div><div class="line">				templateUrl: &apos;tpls/first.html&apos;</div><div class="line">			&#125;,</div><div class="line">			&apos;x2@index&apos;:&#123;</div><div class="line">				templateUrl: &apos;tpls/second.html&apos;</div><div class="line">			&#125;,</div><div class="line">			&apos;x3@index&apos;:&#123;</div><div class="line">				templateUrl:&apos;tpls/three.html&apos;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;)</div><div class="line"></div><div class="line">	.state(&apos;second&apos;,&#123;</div><div class="line">		url: &apos;/second&apos;,</div><div class="line">		templateUrl: &apos;tpls/three.html&apos;</div><div class="line">	&#125;)</div><div class="line"></div><div class="line">	.state(&apos;three&apos;,&#123;</div><div class="line">		url: &apos;/three&apos;,</div><div class="line">		templateUrl: &apos;tpls/first.html&apos;</div><div class="line">	&#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>通过ui-router我们可以实现菜单与内容的分离，这样更好操控不同区域</p>
+
       
 
       
@@ -193,7 +203,7 @@
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript合集/">JavaScript合集</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJ学习笔记/">AngularJ学习笔记</a></li></ul>
 	</div>
 
       
@@ -246,7 +256,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2016/12/23/JavaScript杂谈之三/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2016/12/27/angularJs学习之ui-router配置路由/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -260,18 +270,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/12/27/angularJs学习之ui-router配置路由/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/12/28/angularJs学习之指令/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          angularJs学习之ui-router
+          angularJs学习之指令编写
         
       </div>
     </a>
   
   
-    <a href="/2016/12/21/JavaScript杂谈之二/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">杂谈javascript之二</div>
+    <a href="/2016/12/23/JavaScript杂谈之三/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">杂谈javascript之三</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -284,7 +294,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="JavaScript杂谈之三" data-title="杂谈javascript之三" data-url="http://yoursite.com/2016/12/23/JavaScript杂谈之三/"></div>
+	<div class="ds-thread" data-thread-key="angularJs学习之ui-router配置路由" data-title="angularJs学习之ui-router" data-url="http://yoursite.com/2016/12/27/angularJs学习之ui-router配置路由/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
