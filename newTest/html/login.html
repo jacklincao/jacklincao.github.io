@@ -1,0 +1,25 @@
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5"></div>
+			<div class="col-md-3 toTop"  ng-controller="login">
+				<div>
+					<div class="input-group">
+						<span class="input-group-addon radius"> <span
+							class="glyphicon glyphicon-user"></span></span><input type="text"
+							class="form-control radius" ng-model='name' name="name"
+							placeholder="手机号" required>
+					</div>
+					<div class="input-group toTopOfB">
+						<span class="input-group-addon radius"><span
+							class="glyphicon glyphicon-lock"></span></span> <input
+							placeholder="输入密码" ng-model='password' name="password"
+							type="password" class="form-control radius" required>
+					</div>
+				</div>
+				<div class="toTopOfB">
+					<button type="button"
+						class="btn btn-primary btn-lg btn-block radius" ng-click="login()">登录</button>
+				</div>
+			</div>
+		</div>
+	</div>
