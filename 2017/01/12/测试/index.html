@@ -6,18 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>angularJs学习之指令编写 | 林林博客</title>
+  <title>测试 | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="说在前面的话（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api（2）在link中主要操作DOM开始1.指令的定义：123456.directive(&amp;apos;hello&amp;apos;,function()&amp;#123;	return &amp;#123;		restrict:&amp;apos;A">
-<meta property="og:type" content="article">
-<meta property="og:title" content="angularJs学习之指令编写">
-<meta property="og:url" content="http://yoursite.com/2016/12/28/angularJs学习之指令/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="测试">
+<meta property="og:url" content="http://yoursite.com/2017/01/12/测试/index.html">
 <meta property="og:site_name" content="林林博客">
-<meta property="og:description" content="说在前面的话（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api（2）在link中主要操作DOM开始1.指令的定义：123456.directive(&amp;apos;hello&amp;apos;,function()&amp;#123;	return &amp;#123;		restrict:&amp;apos;A">
-<meta property="og:updated_time" content="2017-01-02T10:41:36.922Z">
+<meta property="og:updated_time" content="2017-01-12T12:03:17.652Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="angularJs学习之指令编写">
-<meta name="twitter:description" content="说在前面的话（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api（2）在link中主要操作DOM开始1.指令的定义：123456.directive(&amp;apos;hello&amp;apos;,function()&amp;#123;	return &amp;#123;		restrict:&amp;apos;A">
+<meta name="twitter:title" content="测试">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
   
@@ -147,31 +144,25 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-angularJs学习之指令" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-测试" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      angularJs学习之指令编写
+      测试
     </h1>
   
 
-        <a href="/2016/12/28/angularJs学习之指令/" class="archive-article-date">
-  	<time datetime="2016-12-28T08:28:47.473Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-28</time>
+        <a href="/2017/01/12/测试/" class="archive-article-date">
+  	<time datetime="2017-01-12T12:03:17.651Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-12</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="说在前面的话"><a href="#说在前面的话" class="headerlink" title="说在前面的话"></a>说在前面的话</h2><h3 id="（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api"><a href="#（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api" class="headerlink" title="（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api"></a>（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api</h3><h3 id="（2）在link中主要操作DOM"><a href="#（2）在link中主要操作DOM" class="headerlink" title="（2）在link中主要操作DOM"></a>（2）在link中主要操作DOM</h3><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="1-指令的定义："><a href="#1-指令的定义：" class="headerlink" title="1.指令的定义："></a>1.指令的定义：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.directive(&apos;hello&apos;,function()&#123;</div><div class="line">	return &#123;</div><div class="line">		restrict:&apos;AECM&apos;,</div><div class="line">		template:&apos;&lt;label&gt;hello world&lt;/label&gt;&apos;</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>这是一个最简单的指令，在这个指令中，restrice用来规定指令的使用方式，A（attribute）代表指令以属性方式调用，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div hello&gt;&lt;/div&gt;;</div></pre></td></tr></table></figure></p>
-<p>E(element)代表指令以元素名的方式调用，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;hello&gt;&lt;/hello&gt;;</div></pre></td></tr></table></figure></p>
-<p>C(class)代表指令以类名方式调用，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;hello&quot;&gt;&lt;/div&gt;;</div></pre></td></tr></table></figure></p>
-<p>M代表指令以注释的方式调用，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!-- hello --&gt;;</div></pre></td></tr></table></figure></p>
-<p>template后跟的为html片段，同理的作用还有templateUrl,templateUrl后跟一个html链接，其内也是一段html片段；<br>replace后跟true或false，意思为是否替换掉调用指令处的html元素；<br>scope属性代表指令的作用域；有三种取值：false，true，{}；默认为false，代表与父作用域共享；true代表创建一个继承于父scope的scope；{}创建一个独立的作用域，如果需要使用父作用域的属性或方法可以使用“@”，“=”，“&amp;”，“@”实现的是单向绑定，“=”实现的是双向绑定，而使用“&amp;”，代表的是调用父作用域的方法；<br>transclude属性代表是否允许指令中插入任意内容，例如transclude为true时可以这样<hello>cdio</hello>；<br>compile有两个参数，一个element，一个attrs；element指指令所在的元素，compile返回一个方法或者对象，也可以在这里操作dom元素<br>link包含三个参数：scope，attrs，element；正如开篇提到的，link函数用于操作dom元素；<br>controller同时也可以与其它指令交互，当别的指令与本指令交互时，对应的指令需要声明本指令的实例（require:’^本指令名称’)</p>
-
+        
       
 
       
@@ -200,11 +191,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJs学习笔记/">AngularJs学习笔记</a></li></ul>
-	</div>
-
       
 
       
@@ -255,7 +241,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2016/12/28/angularJs学习之指令/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/01/12/测试/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -269,18 +255,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/01/12/测试/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          测试
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/12/27/angularJs学习之ui-router配置路由/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">angularJs学习之ui-router</div>
+    <a href="/2016/12/28/angularJs学习之指令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">angularJs学习之指令编写</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -293,7 +270,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="angularJs学习之指令" data-title="angularJs学习之指令编写" data-url="http://yoursite.com/2016/12/28/angularJs学习之指令/"></div>
+	<div class="ds-thread" data-thread-key="测试" data-title="测试" data-url="http://yoursite.com/2017/01/12/测试/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
