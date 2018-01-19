@@ -75,7 +75,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/jacklincao" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
@@ -84,6 +84,8 @@
 					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/lin-lin-43-43-64/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 					<a class="qq" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1287075856&site=qq&menu=yes" title="qq"><i class="icon-qq"></i></a>
+		        
+					<a class="mail" target="_blank" href="/jacklincao@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -121,7 +123,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/jacklincao" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
@@ -130,6 +132,8 @@
 						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/lin-lin-43-43-64/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 						<a class="qq" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1287075856&site=qq&menu=yes" title="qq"><i class="icon-qq"></i></a>
+			        
+						<a class="mail" target="_blank" href="/jacklincao@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -145,18 +149,18 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-tags- git使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-git使用日记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/19/tags- git使用/">git使用日记</a>
+      <a class="article-title" href="/2018/01/19/git使用日记/">git使用日记</a>
     </h1>
   
 
-        <a href="/2018/01/19/tags- git使用/" class="archive-article-date">
+        <a href="/2018/01/19/git使用日记/" class="archive-article-date">
   	<time datetime="2018-01-19T13:53:46.635Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-19</time>
 </a>
       </header>
@@ -217,84 +221,6 @@
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git使用/">git使用</a></li></ul>
 	</div>
 
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/19/tags- git使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-git使用日记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="git使用日记"><a href="#git使用日记" class="headerlink" title="git使用日记"></a>git使用日记</h1><p>git常用命令</p>
-<hr>
-<p>为了方便自己以后使用git命令，避免网上查阅，所以用这个记录了一些常用的命令：</p>
-<ol>
-<li><code>git status</code> 查看仓库当前状态</li>
-<li><code>git add xx</code> 提交文件xx到暂存区</li>
-<li><code>git diff xx</code> 查看xx文件做了什么修改</li>
-<li><code>git commit -m “描述”</code> 提交修改时带上描述，将暂存区提交到当前分支</li>
-<li><code>git log</code> 查看commit（提交）历史记录 可加上 <code>–pretty=oneline</code> 过滤其它信息，加上<code>--graph</code></li>
-<li><code>git reset --hard HEAD^</code> 回退到上一版本，如果有多个版本，可以使用<code>HEAD^^</code>（回退上上个版本），<code>HEAD~100</code>（回退到100个版本）</li>
-<li><code>git reset --hard xxxxxxx</code> 指定回到某个版本号</li>
-<li><code>git reflog</code> 记录每一次命令操作</li>
-<li><code>git checkout -- xx</code> 撤销对xx文件的全部修改操作；一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。</li>
-<li><code>git rm xx</code> 从版本库删除xx文件</li>
-<li><code>git clone git@www.xx.com:/home/xx.git</code> 克隆到本地</li>
-<li><code>git branch zz</code> 创建zz分支</li>
-<li><code>git checkout zz</code> 切换到zz分支</li>
-<li><code>git checkout -b zz</code> 创建并切换到zz分支，是上面两条的简写，如果要将远程的zz分支同步下来,则需要:<code>git checkout -b zz origin/zz</code></li>
-<li><code>git branch</code> 列出所有分支，当前分支前会有*</li>
-<li><code>git merge zz</code> 将zz分支合并到当前分支</li>
-<li><code>git branch -d zz</code> 删除zz分支</li>
-<li><code>git merge --no-ff -m “信息” zz</code>  将zz分支合并到当前分支，并保留zz分支信息</li>
-<li><code>git stash</code> 将工作现场存储起来，以后可以恢复</li>
-<li><code>git stash list</code> 列举保存的工作现场</li>
-<li><code>git stash apply stash@{0}</code> -&gt; git stash drop stash@{0} 先将工作现场0恢复，然后删除工作现场0</li>
-<li><code>git stash pop</code> 恢复的同时删除现场</li>
-<li><code>git remote</code> 查看远程仓库信息，加上-v显示更详细信息</li>
-<li><code>git push origin zz</code> 向远程分支推送zz分支</li>
-<li><code>git pull</code> 将最新的提交从远程抓下来，在本地进行合并后再提交</li>
-<li><code>git branch –-set-upstream zz origin/zz</code> 设置zz分支对应远程仓库的zz分支</li>
-<li><code>git tag v1.0</code> 在当前分支上创建v1.0标签，加上 5134234参数代表在这个commit上打标签</li>
-<li><code>git tag</code> 查看所有标签</li>
-<li><code>git show v1.0</code> 查看v1.0标签信息</li>
-<li><code>git tag -a v1.0 -m “这是v1.0版本” 21312</code>在当前分支的21312commit上添加标签名为v1.0，内容为”这是v1.0版本”的标签，-a指定标签明，-m指定说明文字</li>
-</ol>
-<hr>
-<center><img src="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/01/19/images/branchManage.png" alt="">图1 关于分支管理的策略:图片来自<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758410364457b9e3d821f4244beb0fd69c61a185ae0000" target="_blank" rel="external">廖雪峰博客</a></center>
-
-
-<hr>
-<center><img src="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/01/19/images/peoples.png" alt="">图2 关于多人协作时的工作模式：图片来自<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758410364457b9e3d821f4244beb0fd69c61a185ae0000" target="_blank" rel="external">廖雪峰博客</a></center>
-
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
       
 
       
@@ -791,6 +717,56 @@
 
 
   
+    <article id="post-我的第一个博客-开篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/19/我的第一个博客-开篇/">博客开张啦</a>
+    </h1>
+  
+
+        <a href="/2016/12/19/我的第一个博客-开篇/" class="archive-article-date">
+  	<time datetime="2016-12-19T13:31:27.386Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-19</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>欢迎来到我的博客,从今天起我将开始更新,希望在这里能找到你想要的,同时分享我的各种Idea</p>
+<h2 id="第一篇-简介"><a href="#第一篇-简介" class="headerlink" title="第一篇 简介"></a>第一篇 简介</h2><p>我是一个程序猿,还是一个刚进入这个专业没多久的菜鸟,但是我喜欢技术,喜欢看到代码在我手下产生各种美妙的画面,我还在学习,我也会一直学习,这个博客我会分享出一些我的见解以及一些解决困难的方法,未来还长,请多多指教!</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/12/19/我的第一个博客-开篇/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -807,9 +783,9 @@
     	<div class="footer-left">
     		&copy; 2018 林
     	</div>
-      	<div class="footer-right">
+      	<!-- <div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
+      	</div> -->
     </div>
   </div>
 </footer>
