@@ -6,18 +6,45 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>angular2子路由跳转 | 林林博客</title>
+  <title>林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由在angular的官方文档找到了原因：导入模块的时候需要注意顺序，我在根模块导入模块时先把主路由模块导入了，导致路由会率先匹配到通配符路由，所以跳转到404，在定义子路由时，要将子路由所在模块提前于通配符路由所在的模块！1234567891011121314151617181920212223242526272829303132/">
+  <meta name="description" content="git使用日记标签（空格分隔）： git常用命令
+
+为了方便自己以后使用git命令，避免网上查阅，所以用这个记录了一些常用的命令：
+
+git status 查看仓库当前状态
+git add xx 提交文件xx到暂存区
+git diff xx 查看xx文件做了什么修改
+git commit -m “描述” 提交修改时带上描述，将暂存区提交到当前分支
+git log 查看commit（提交）历史记录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="angular2子路由跳转">
-<meta property="og:url" content="http://yoursite.com/2017/10/22/angular2常见bug二/index.html">
+<meta property="og:title" content="林林博客">
+<meta property="og:url" content="http://yoursite.com/2018/01/19/git使用日记/index.html">
 <meta property="og:site_name" content="林林博客">
-<meta property="og:description" content="配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由在angular的官方文档找到了原因：导入模块的时候需要注意顺序，我在根模块导入模块时先把主路由模块导入了，导致路由会率先匹配到通配符路由，所以跳转到404，在定义子路由时，要将子路由所在模块提前于通配符路由所在的模块！1234567891011121314151617181920212223242526272829303132/">
-<meta property="og:updated_time" content="2017-10-22T11:11:21.513Z">
+<meta property="og:description" content="git使用日记标签（空格分隔）： git常用命令
+
+为了方便自己以后使用git命令，避免网上查阅，所以用这个记录了一些常用的命令：
+
+git status 查看仓库当前状态
+git add xx 提交文件xx到暂存区
+git diff xx 查看xx文件做了什么修改
+git commit -m “描述” 提交修改时带上描述，将暂存区提交到当前分支
+git log 查看commit（提交）历史记录">
+<meta property="og:image" content="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/01/19/images/branchManage.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/01/19/images/peoples.png">
+<meta property="og:updated_time" content="2018-01-19T13:18:30.404Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="angular2子路由跳转">
-<meta name="twitter:description" content="配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由在angular的官方文档找到了原因：导入模块的时候需要注意顺序，我在根模块导入模块时先把主路由模块导入了，导致路由会率先匹配到通配符路由，所以跳转到404，在定义子路由时，要将子路由所在模块提前于通配符路由所在的模块！1234567891011121314151617181920212223242526272829303132/">
+<meta name="twitter:title" content="林林博客">
+<meta name="twitter:description" content="git使用日记标签（空格分隔）： git常用命令
+
+为了方便自己以后使用git命令，避免网上查阅，所以用这个记录了一些常用的命令：
+
+git status 查看仓库当前状态
+git add xx 提交文件xx到暂存区
+git diff xx 查看xx文件做了什么修改
+git commit -m “描述” 提交修改时带上描述，将暂存区提交到当前分支
+git log 查看commit（提交）历史记录">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/01/19/images/branchManage.png">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
   
@@ -147,25 +174,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-angular2常见bug二" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-git使用日记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      angular2子路由跳转
-    </h1>
-  
-
-        <a href="/2017/10/22/angular2常见bug二/" class="archive-article-date">
-  	<time datetime="2017-10-22T11:12:03.248Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-22</time>
-</a>
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由"><a href="#配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由" class="headerlink" title="配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由"></a>配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由</h2><p>在angular的官方文档找到了原因：导入模块的时候需要注意<strong>顺序</strong>，我在根模块导入模块时先把主路由模块导入了，导致路由会率先匹配到通配符路由，所以跳转到404，在定义子路由时，要将子路由所在模块提前于通配符路由所在的模块！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">//根模块路由定义在AppRoutingModule，子路由定义在FrontModule中</div><div class="line">imports: [</div><div class="line">    BrowserModule,</div><div class="line">    FormsModule,</div><div class="line">    HttpModule,</div><div class="line">    JsonpModule,</div><div class="line">    FrontModule，</div><div class="line">    AppRoutingModule/*导入路由模块,顺序很重要*/</div><div class="line">  ],</div><div class="line">  ......</div><div class="line"></div><div class="line">//AppRoutingModule中的路由表如下</div><div class="line">appRoutes: Routes = [</div><div class="line">  &#123;path: &apos;&apos;, redirectTo: &apos;/login&apos;, pathMatch: &apos;full&apos;&#125;,</div><div class="line">  &#123;path: &apos;login&apos;, component: LoginComponent&#125;,</div><div class="line">  &#123;path: &apos;**&apos;, component: PageNotFoundComponent&#125;</div><div class="line">];</div><div class="line"></div><div class="line">//FrontModule中定义的路由表如下</div><div class="line">frontRoutes: Routes = [</div><div class="line">    &#123;</div><div class="line">      path: &apos;begin&apos;,</div><div class="line">      component: FrontComponent,</div><div class="line">      children: [</div><div class="line">        /*子路由*/</div><div class="line">        &#123;path: &apos;&apos;, component: DebateInfoComponent&#125;,</div><div class="line">        &#123;path: &apos;end&apos;, component: EndComponent&#125;,</div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  ];</div><div class="line">  </div><div class="line">//如果AppRoutingModule先于FrontModule导入就会导致所有子路由匹配到&apos;**&apos;</div></pre></td></tr></table></figure></p>
+        <h1 id="git使用日记"><a href="#git使用日记" class="headerlink" title="git使用日记"></a>git使用日记</h1><p>标签（空格分隔）： git常用命令</p>
+<hr>
+<p>为了方便自己以后使用git命令，避免网上查阅，所以用这个记录了一些常用的命令：</p>
+<ol>
+<li><code>git status</code> 查看仓库当前状态</li>
+<li><code>git add xx</code> 提交文件xx到暂存区</li>
+<li><code>git diff xx</code> 查看xx文件做了什么修改</li>
+<li><code>git commit -m “描述”</code> 提交修改时带上描述，将暂存区提交到当前分支</li>
+<li><code>git log</code> 查看commit（提交）历史记录 可加上 <code>–pretty=oneline</code> 过滤其它信息，加上<code>--graph</code></li>
+<li><code>git reset --hard HEAD^</code> 回退到上一版本，如果有多个版本，可以使用<code>HEAD^^</code>（回退上上个版本），<code>HEAD~100</code>（回退到100个版本）</li>
+<li><code>git reset --hard xxxxxxx</code> 指定回到某个版本号</li>
+<li><code>git reflog</code> 记录每一次命令操作</li>
+<li><code>git checkout -- xx</code> 撤销对xx文件的全部修改操作；一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。</li>
+<li><code>git rm xx</code> 从版本库删除xx文件</li>
+<li><code>git clone git@www.xx.com:/home/xx.git</code> 克隆到本地</li>
+<li><code>git branch zz</code> 创建zz分支</li>
+<li><code>git checkout zz</code> 切换到zz分支</li>
+<li><code>git checkout -b zz</code> 创建并切换到zz分支，是上面两条的简写，如果要将远程的zz分支同步下来,则需要:<code>git checkout -b zz origin/zz</code></li>
+<li><code>git branch</code> 列出所有分支，当前分支前会有*</li>
+<li><code>git merge zz</code> 将zz分支合并到当前分支</li>
+<li><code>git branch -d zz</code> 删除zz分支</li>
+<li><code>git merge --no-ff -m “信息” zz</code>  将zz分支合并到当前分支，并保留zz分支信息</li>
+<li><code>git stash</code> 将工作现场存储起来，以后可以恢复</li>
+<li><code>git stash list</code> 列举保存的工作现场</li>
+<li><code>git stash apply stash@{0}</code> -&gt; git stash drop stash@{0} 先将工作现场0恢复，然后删除工作现场0</li>
+<li><code>git stash pop</code> 恢复的同时删除现场</li>
+<li><code>git remote</code> 查看远程仓库信息，加上-v显示更详细信息</li>
+<li><code>git push origin zz</code> 向远程分支推送zz分支</li>
+<li><code>git pull</code> 将最新的提交从远程抓下来，在本地进行合并后再提交</li>
+<li><code>git branch –-set-upstream zz origin/zz</code> 设置zz分支对应远程仓库的zz分支</li>
+<li><code>git tag v1.0</code> 在当前分支上创建v1.0标签，加上 5134234参数代表在这个commit上打标签</li>
+<li><code>git tag</code> 查看所有标签</li>
+<li><code>git show v1.0</code> 查看v1.0标签信息</li>
+<li><code>git tag -a v1.0 -m “这是v1.0版本” 21312</code>在当前分支的21312commit上添加标签名为v1.0，内容为”这是v1.0版本”的标签，-a指定标签明，-m指定说明文字</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/01/19/images/branchManage.png" alt="关于分支管理的策略:图片来自廖雪峰博客"></p>
+<p><img src="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/01/19/images/peoples.png" alt="关于多人协作时的工作模式：图片来自廖雪峰博客"></p>
 
       
 
@@ -195,11 +245,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular2常见bug/">angular2常见bug</a></li></ul>
-	</div>
-
       
 
       
@@ -250,7 +295,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/22/angular2常见bug二/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/01/19/git使用日记/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -264,18 +309,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/19/git使用日记/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/10/15/angular2常见bug一/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">angular2生成组件出错</div>
+    <a href="/2017/10/22/angular2常见bug二/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">angular2子路由跳转</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -288,7 +324,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="angular2常见bug二" data-title="angular2子路由跳转" data-url="http://yoursite.com/2017/10/22/angular2常见bug二/"></div>
+	<div class="ds-thread" data-thread-key="git使用日记" data-title="" data-url="http://yoursite.com/2018/01/19/git使用日记/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
