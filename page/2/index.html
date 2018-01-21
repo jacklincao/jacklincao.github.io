@@ -155,28 +155,28 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-AngularJs学习笔记之指令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-AngularJs学习笔记之ui-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/AngularJs学习笔记之指令/">angularJs学习之指令编写</a>
+      <a class="article-title" href="/AngularJs学习笔记之ui-router/">angularJs学习之ui-router</a>
     </h1>
   
 
-        <a href="/AngularJs学习笔记之指令/" class="archive-article-date">
-  	<time datetime="2018-01-20T11:38:41.439Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-20</time>
+        <a href="/AngularJs学习笔记之ui-router/" class="archive-article-date">
+  	<time datetime="2017-01-12T11:29:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-12</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api"><a href="#（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api" class="headerlink" title="（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api"></a>（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api</h3><h3 id="（2）在link中主要操作DOM"><a href="#（2）在link中主要操作DOM" class="headerlink" title="（2）在link中主要操作DOM"></a>（2）在link中主要操作DOM</h3><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="1-指令的定义："><a href="#1-指令的定义：" class="headerlink" title="1.指令的定义："></a>1.指令的定义：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.directive(&apos;hello&apos;,function()&#123;</div><div class="line">	return &#123;</div><div class="line">		restrict:&apos;AECM&apos;,</div><div class="line">		template:&apos;&lt;label&gt;hello world&lt;/label&gt;&apos;</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>这是一个最简单的指令，在这个指令中，restrice用来规定指令的使用方式，A（attribute）代表指令以属性方式调用，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div hello&gt;&lt;/div&gt;;</div></pre></td></tr></table></figure></p>
+        <p>今天学了ui-router，从慕课以及自己手动敲代码，感受到了它的魅力，记得假期做过一个图书管理系统的练习，那个时候用的是iframe来实现刷新，现在看来，觉得当时还是太嫩了，进入主题吧</p>
+<h3 id="首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1-多样化视图-2-嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范"><a href="#首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1-多样化视图-2-嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范" class="headerlink" title="首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范"></a>首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已
         
-          <a class="article-more-a" href="/AngularJs学习笔记之指令/#more">more >></a>
+          <a class="article-more-a" href="/AngularJs学习笔记之ui-router/#more">more >></a>
         
       
 
@@ -194,7 +194,65 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/AngularJs学习笔记之指令/">展开全文 >></a>
+          <a class="article-more-a" href="/AngularJs学习笔记之ui-router/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-AngularJs学习笔记之条件化显示" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/AngularJs学习笔记之条件化显示/">angularJs学习之条件化显示</a>
+    </h1>
+  
+
+        <a href="/AngularJs学习笔记之条件化显示/" class="archive-article-date">
+  	<time datetime="2017-01-11T12:08:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-11</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天看到了angularJS介绍的条件化显示,在angularJs中拥有四套不同的指令集:ng-show/ng-hide,ng-swatch-*,ng-if,ng-include.</p>
+<h2 id="ng-show-ng-hide"><a href="#ng-show-ng-hide" class="headerlink" title="ng-show/ng-hide"></a>ng-show/ng-hide</h2><p>ng-show与ng-hide用于隐藏DOM树的一部分,它利用的是CSS规则,类似于CSS中的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">style:&quot;display: none;&quot;</div></pre></td></tr></table></figure></p>
+<p>它并没有将元素从DOM树中移除。<br>
+        
+          <a class="article-more-a" href="/AngularJs学习笔记之条件化显示/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJs学习笔记/">AngularJs学习笔记</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/AngularJs学习笔记之条件化显示/">展开全文 >></a>
         </p>
       
 
@@ -219,12 +277,12 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/JavaScript合集-二/">杂谈javascript之二</a>
+      <a class="article-title" href="/JavaScript合集-二/">javascript学习&lt;二&gt;</a>
     </h1>
   
 
         <a href="/JavaScript合集-二/" class="archive-article-date">
-  	<time datetime="2018-01-20T11:36:43.223Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-20</time>
+  	<time datetime="2016-12-25T12:52:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-25</time>
 </a>
       </header>
     
@@ -282,7 +340,7 @@ var _hmt = _hmt || [];
   
 
         <a href="/JavaScript合集-一/" class="archive-article-date">
-  	<time datetime="2018-01-20T11:35:32.293Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-20</time>
+  	<time datetime="2016-12-22T14:07:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-22</time>
 </a>
       </header>
     
@@ -340,7 +398,7 @@ var _hmt = _hmt || [];
   
 
         <a href="/博客开张啦/" class="archive-article-date">
-  	<time datetime="2018-01-20T11:29:42.261Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-20</time>
+  	<time datetime="2016-12-20T07:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-20</time>
 </a>
       </header>
     
@@ -361,72 +419,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/博客开张啦/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-git使用日记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/git使用日记/">git使用日记</a>
-    </h1>
-  
-
-        <a href="/git使用日记/" class="archive-article-date">
-  	<time datetime="2018-01-20T11:27:03.797Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-20</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h1><p>为了方便自己以后使用git命令，避免网上查阅，所以用这个记录了一些常用的命令：</p>
-<ol>
-<li><code>git status</code> 查看仓库当前状态</li>
-<li><code>git add xx</code> 提交文件xx到暂存区</li>
-<li><code>git diff xx</code> 查看xx文件做了什么修改</li>
-<li><code>git commit -m “描述”</code> 提交修改时带上描述，将暂存区提交到当前分支</li>
-<li><code>git log</code> 查看commit（提交）历史记录 可加上 <code>–pretty=oneline</code> 过滤其它信息，加上<code>--graph</code></li>
-<li><code>git reset --hard HEAD^</code> 回退到上一版本，如果有多个版本，可以使用<code>HEAD^^</code>（回退上上个版本），<code>HEAD~100</code>（回退到100个版本）</li>
-<li><code>git reset --hard xxxxxxx</code> 指定回到某个版本号</li>
-<li><code>git reflog</code> 记录每一次命令操作</li>
-<li><code>git checkout -- xx</code> 撤销对xx文件的全部修改操作；一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
-        
-          <a class="article-more-a" href="/git使用日记/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git使用/">git使用</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/git使用日记/">展开全文 >></a>
         </p>
       
 
@@ -518,11 +510,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">angular2常见bug</a>
+                <a href="javascript:void(0)">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">MySQL</a>
+                <a href="javascript:void(0)">angular2常见bug</a>
               </li>
              
               <li class="article-tag-list-item">
