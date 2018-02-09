@@ -155,6 +155,226 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-javascript_encodeURI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/javascript_encodeURI/">encodeURI()、encodeURIComponent(）</a>
+    </h1>
+  
+
+        <a href="/javascript_encodeURI/" class="archive-article-date">
+  	<time datetime="2017-02-04T06:16:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-04</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="URI编码方法"><a href="#URI编码方法" class="headerlink" title="URI编码方法"></a>URI编码方法</h1><p>在JavaScript中有两个为URI进行编码的方法，一个是encodeURI()，另一个是encodeURIComponent()，两者用于不同的地方</p>
+<h2 id="encodeURI"><a href="#encodeURI" class="headerlink" title="encodeURI()"></a>encodeURI()</h2><p>用途：对整个URI进行编码，多用于整个URI<br>编码结果：将URI中的空格替换成%20</p>
+<pre><code>encodeURI(&quot;http://www.baidu.com&quot;);//&quot;http://www.baidu.com&quot;
+encodeURI(&quot;http://www.baidu.com?hello world!&quot;);//&quot;http://www.baidu.com?hello%20world!&quot;
+</code></pre><h2 id="encodeURIComponent"><a href="#encodeURIComponent" class="headerlink" title="encodeURIComponent()"></a>encodeURIComponent()</h2><p>用途：对URI中的一段进行编码，多用于URI中的参数部分<br>编码结果：替换所有的非字母字符</p>
+<pre><code>encodeURIComponent(&quot;http://www.baidu.com&quot;);//&quot;http%3A%2F%2Fwww.baidu.com&quot;
+encodeURIComponent(&quot;http://www.baidu.com?hello world!&quot;)//&quot;http%3A%2F%2Fwww.baidu.com%3Fhello%20world!&quot;
+&quot;http://www.baidu.com?name=&quot; + encodeURIComponent(&apos;张三&apos;);//&quot;http://www.baidu.com?name=%E5%BC%A0%E4%B8%89&quot;
+</code></pre><h1 id="URI解码方法"><a href="#URI解码方法" class="headerlink" title="URI解码方法"></a>URI解码方法</h1><p>与2个URI编码方法对应的方法有decodeURI()、decodeURIComponent()</p>
+<h2 id="decodeURI"><a href="#decodeURI" class="headerlink" title="decodeURI()"></a>decodeURI()</h2><p>用途：将经过encodeUIR()方法编码后的URI还原<br>解码解果：将%20还原成空格</p>
+<pre><code>decodeURI(&quot;http://www.baidu.com?hello%20world!&quot;);//&quot;http://www.baidu.com?hello world!&quot;
+</code></pre><h2 id="decodeURIComponent"><a href="#decodeURIComponent" class="headerlink" title="decodeURIComponent()"></a>decodeURIComponent()</h2><p>用途：将经过encodeURIComponent的URI还原<br>解码结果：将非字母的字符还原</p>
+<pre><code>decodeURIComponent(&quot;%E5%BC%A0%E4%B8%89&quot;);//&quot;张三&quot;
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/javascript_encodeURI/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-javascript_apply-call-bind" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/javascript_apply-call-bind/">apply()、call()、bind()</a>
+    </h1>
+  
+
+        <a href="/javascript_apply-call-bind/" class="archive-article-date">
+  	<time datetime="2017-01-23T02:29:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-23</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="扩充函数作用域"><a href="#扩充函数作用域" class="headerlink" title="扩充函数作用域"></a>扩充函数作用域</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>apply()和call()是每个函数所包含的方法，用于指定函数运行的作用域（修改this对象的值）；bind()用于绑定函数运行作用域并返回函数</p>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><h3 id="apply"><a href="#apply" class="headerlink" title="apply()"></a>apply()</h3><p>apply()接收两个参数，第一个参数指定函数运行时的作用域，第二个参数指定函数的参数（需是<strong>数组</strong>或者<strong>arguments对象</strong>）<br>example1：参数传递</p>
+<pre><code>function sum(num1, num2) {
+    return num1 + num2;
+}
+
+function callSum1(num1, num2) {
+    return sum.apply(this, arguments);//传入arguments对象
+}
+
+function callSum2(num1, num2) {
+    return sum.apply(this, [num1, num2]);//传入数组
+}
+</code></pre><p>example2：修改作用域</p>
+<pre><code>var name = &quot;first&quot;;
+var obj = {name: &quot;second&quot;};
+
+function getName() {
+    console.log(this.name);
+}
+
+getName();//当前作用域window：&quot;first&quot;
+getName.apply(this);//指定作用域为window：&quot;first&quot;
+getName.apply(obj);//指定作用域为obj：&quot;second&quot;
+</code></pre><h3 id="call"><a href="#call" class="headerlink" title="call()"></a>call()</h3><p>call(）接收多个参数，第一个参数与apply一致，其余参数为函数需要的参数（需<strong>一一列举</strong>）<br>example：参数传递</p>
+<pre><code>function sum(num1, num2) {
+    return num1 + num2;
+}
+
+function callSum(num1, num2) {
+    return sum.call(this, num1, num2);//指定每一个参数
+}
+</code></pre><h3 id="bind"><a href="#bind" class="headerlink" title="bind()"></a>bind()</h3><p>bind()方法接收一个参数，参数指定函数运行时的作用域<br>example：</p>
+<pre><code>var name = &quot;first&quot;;
+var obj = {name: &quot;second&quot;};
+
+function getName() {
+    console.log(this.name);
+}
+
+var newGetName = getName.bind(obj);
+
+getName();//&quot;first&quot;
+newGetName();//绑定作用域为obj：&quot;second&quot;
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/javascript_apply-call-bind/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-AngularJs学习笔记之指令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/AngularJs学习笔记之指令/">angularJs学习之指令编写</a>
+    </h1>
+  
+
+        <a href="/AngularJs学习笔记之指令/" class="archive-article-date">
+  	<time datetime="2017-01-20T11:38:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-20</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api"><a href="#（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api" class="headerlink" title="（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api"></a>（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api</h3><h3 id="（2）在link中主要操作DOM"><a href="#（2）在link中主要操作DOM" class="headerlink" title="（2）在link中主要操作DOM"></a>（2）在link中主要操作DOM</h3><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="1-指令的定义："><a href="#1-指令的定义：" class="headerlink" title="1.指令的定义："></a>1.指令的定义：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.directive(&apos;hello&apos;,function()&#123;</div><div class="line">	return &#123;</div><div class="line">		restrict:&apos;AECM&apos;,</div><div class="line">		template:&apos;&lt;label&gt;hello world&lt;/label&gt;&apos;</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>这是一个最简单的指令，在这个指令中，restrice用来规定指令的使用方式，A（attribute）代表指令以属性方式调用，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div hello&gt;&lt;/div&gt;;</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/AngularJs学习笔记之指令/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJs学习笔记/">AngularJs学习笔记</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/AngularJs学习笔记之指令/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-AngularJs学习笔记之ui-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -212,88 +432,43 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-AngularJs学习笔记之条件化显示" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-javascript_数组常用方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/AngularJs学习笔记之条件化显示/">angularJs学习之条件化显示</a>
+      <a class="article-title" href="/javascript_数组常用方法/">数组常用方法</a>
     </h1>
   
 
-        <a href="/AngularJs学习笔记之条件化显示/" class="archive-article-date">
-  	<time datetime="2017-01-11T12:08:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-11</time>
+        <a href="/javascript_数组常用方法/" class="archive-article-date">
+  	<time datetime="2017-01-12T07:26:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-12</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天看到了angularJS介绍的条件化显示,在angularJs中拥有四套不同的指令集:ng-show/ng-hide,ng-swatch-*,ng-if,ng-include.</p>
-<h2 id="ng-show-ng-hide"><a href="#ng-show-ng-hide" class="headerlink" title="ng-show/ng-hide"></a>ng-show/ng-hide</h2><p>ng-show与ng-hide用于隐藏DOM树的一部分,它利用的是CSS规则,类似于CSS中的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">style:&quot;display: none;&quot;</div></pre></td></tr></table></figure></p>
-<p>它并没有将元素从DOM树中移除。<br>
-        
-          <a class="article-more-a" href="/AngularJs学习笔记之条件化显示/#more">more >></a>
-        
-      
+        <h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><ol>
+<li>检测是否是数组：<code>Array.isArray(array);   //array是数组变量，返回true/false</code></li>
+<li>使用不同分隔符构建字符串：<code>array.join(&quot;||&quot;);   //将输出以||为分隔的字符串</code></li>
+<li><p>栈方法： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">array.push(···);  //向array中推如任意项</div><div class="line">var temp = array.pop();  //取出array中的最后一项并删除</div></pre></td></tr></table></figure></p>
+</li>
+<li><p>队列方法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">array.push(···);  //与shift()构成队列</div><div class="line">array.shift();    //取出array中的第一项并删除</div><div class="line">array.unshift(···);  //向array的前端推进任意项并返回新数组长度</div><div class="line">array.pop();  //与unshift()构成队列</div></pre></td></tr></table></figure></p>
+</li>
+<li><p>重排序：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">array.reverse()  //反转array，第一项变成最后一项，以此类推;</div><div class="line">array.sort(function(value1, value2) &#123;//对array进行排序，可选择传入比较函数</div><div class="line">    if(value1 &gt; value2) &#123;</div><div class="line">        reutrn 1;   </div><div class="line">    &#125;</div><div class="line">    else if(value1 &lt; value2) &#123;</div><div class="line">        return 1;</div><div class="line">    &#125;</div><div class="line">    else &#123;</div><div class="line">        return 0;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+</li>
+<li><p>操作方法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var newArray = array.concat(···);  //基于array中的元素向newArray中写入任意多元素，可选择是否传参</div><div class="line">var newArray = array.slice(arg0, arg1);  //无参数时复制array到newArray；一个参数时从array复制指定位置到最后一项；两个参数时从array复制指定开始位置到指定结束位置</div><div class="line">var newArray = array.splice(arg0, arg1);  //从array中删除arg0开始的arg1项</div><div class="line">var newArray = array.splice(arg0, arg1, ···);  //从array中arg0开始删除arg1项，并插入任意多项,newArray是空数组</div></pre></td></tr></table></figure></p>
+</li>
+<li><p>位置方法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var index = array.indexOf(arg0, arg1);  //从arg0（可选参数）开始查找arg1，返回索引</div><div class="line">var index = array.lastIndex(arg0, arg1);  //从array最后arg0（可选参数）位置开始查找arg1</div></pre></td></tr></table></figure></p>
+</li>
+<li><p>迭代方法：共五个，都接受2个参数，第一个参数是每一项都要运行的函数，第二个参数（可选）是运行该函数的作用域对象，运行的函数接收三个参数当前项，当前项下标，数组对象，都不会修改数组中的值<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var bool = array.every(function(item, index, arr) &#123;//对array中每项运行该函数，若都返回true，则最终结果为true</div><div class="line">    return (item &gt; 2);</div><div class="line">&#125;)</div><div class="line">var bool = array.some(function(item, index, arr) &#123;//对array中每项运行该函数，若有一项返回true，则结果为true</div><div class="line">    return (item &gt; 2);</div><div class="line">&#125;)</div><div class="line">var newArray = array.filter(function(item, index, arr)&#123;//对array中每项运行该函数，返回结果为true的项组成的新数组</div><div class="line">        return (item &gt; 2);</div><div class="line">    &#125;)</div><div class="line">var newArray = array.map(function(item, index, arr)&#123;//对array中每项运行该函数，返回每次经过该函数的元素组成的新数组</div><div class="line">        return item * 2;</div><div class="line">    &#125;)</div><div class="line">array.forEach(functrion(item, index, arr)&#123;//对array中每项运行该函数,无返回值</div><div class="line">        newArray[index] = item;//某些操作</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+</li>
+<li><p>归并方法：共2个，这两个方法接收两个参数，第一个参数是每一项都要运行的函数，第二个参数（可选）为归并的初始值，函数接收4个参数：前一个值，当前值，数组下标，原数组；第一次迭代发生在数组第二项，故第一个参数是数组第一项，第二个参数是数组第二项<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var sum = array.reduce(function(prev, cur, index, arr) &#123;//执行求和</div><div class="line">                          return prev + cur;</div><div class="line">                    &#125;)</div><div class="line">var sum = array.reduceRight(function(prev, cur, index, arr) &#123;//从最右方开始执行求和</div><div class="line">                      return prev + cur;</div><div class="line">                &#125;)</div></pre></td></tr></table></figure></p>
+</li>
+</ol>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJs学习笔记/">AngularJs学习笔记</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/AngularJs学习笔记之条件化显示/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-JavaScript合集-二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/JavaScript合集-二/">javascript学习&lt;二&gt;</a>
-    </h1>
-  
-
-        <a href="/JavaScript合集-二/" class="archive-article-date">
-  	<time datetime="2016-12-25T12:52:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-25</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="javascript中的函数"><a href="#javascript中的函数" class="headerlink" title="javascript中的函数"></a>javascript中的函数</h2><h3 id="今天看到了JavaScript中的函数篇，很熟悉的名称：函数，重读一遍后又收获了一些新知识"><a href="#今天看到了JavaScript中的函数篇，很熟悉的名称：函数，重读一遍后又收获了一些新知识" class="headerlink" title="今天看到了JavaScript中的函数篇，很熟悉的名称：函数，重读一遍后又收获了一些新知识"></a>今天看到了JavaScript中的函数篇，很熟悉的名称：函数，重读一遍后又收获了一些新知识</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">parseInt(&apos;123&apos;);</div><div class="line">parseInt(&apos;abc123&apos;);</div><div class="line">parseInt(&apos;1abc23&apos;);</div><div class="line">parseInt(&apos;123abc&apos;);</div><div class="line">parseInt(&apos;FF&apos;,10);</div><div class="line">parseInt(&apos;FF&apos;,16);</div><div class="line">parseInt(&apos;0377&apos;);</div><div class="line">parseInt(&apos;0x377&apos;);</div></pre></td></tr></table></figure>
-<p>以上函数分别输出123，NaN，1,123,NaN,255,255,887；是不是发现自己猜想的结果与实际输出悬殊比较大？如果自己的结果错了，那请记住这些，避免下次再犯这种错误。<br /></p>
-<p>在地址栏传参数时，可能会有中文乱码的情况，这时请参考使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">encodeURIComponent(url);</div><div class="line">decodeURIComponent(url);</div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/JavaScript合集-二/#more">more >></a>
-        
       
 
       
@@ -310,115 +485,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/JavaScript合集-二/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-JavaScript合集-一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/JavaScript合集-一/">JavaScript学习&lt;一&gt;</a>
-    </h1>
-  
-
-        <a href="/JavaScript合集-一/" class="archive-article-date">
-  	<time datetime="2016-12-22T14:07:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-22</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="javascript中的基本数据类型及部分操作"><a href="#javascript中的基本数据类型及部分操作" class="headerlink" title="javascript中的基本数据类型及部分操作"></a>javascript中的基本数据类型及部分操作</h2><h3 id="重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看"><a href="#重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看" class="headerlink" title="重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看"></a>重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var n = 0377;</div><div class="line">alert(n);</div></pre></td></tr></table></figure>
-<p>看到这段代码，你认为它将输出什么？0377吗？如果是0377，那么恭喜你，回答错误！你可以在浏览器上的控制台敲一下试试，你会发现它的输出并不是0377，而是255，为什么是255呢？因为当数字以0开头时代表这个数是八进制数，如果以0x开头，则这个数代表十六进制，例如：0xff；<br /><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a = 1e1;</div><div class="line">var b = 1e+1;</div><div class="line">var c = 2e+3;</div></pre></td></tr></table></figure></p>
-<p>请自己运行试试会输出怎样的结果，好吧，我也不卖关子了，这几个表达式代表的是javascript中的指数表达式，意思是在某个数后加几个0，比如2e+3指的就是在2后面加3个0，或者也可以理解为将数字2的小数点向右移动3位<br /><br>
-        
-          <a class="article-more-a" href="/JavaScript合集-一/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/JavaScript合集-一/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-博客开张啦" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/博客开张啦/">博客开张啦</a>
-    </h1>
-  
-
-        <a href="/博客开张啦/" class="archive-article-date">
-  	<time datetime="2016-12-20T07:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-20</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>欢迎来到我的博客,从今天起我将开始更新,希望在这里能找到你想要的,同时分享我的各种Idea</p>
-<h2 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h2><p>我是一个程序猿,还是一个刚进入这个专业没多久的菜鸟,但是我喜欢技术,喜欢看到代码在我手下产生各种美妙的画面,我还在学习,我也会一直学习,这个博客我会分享出一些我的见解以及一些解决困难的方法,未来还长,请多多指教!</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/博客开张啦/">展开全文 >></a>
+          <a class="article-more-a" href="/javascript_数组常用方法/">展开全文 >></a>
         </p>
       
 
@@ -438,7 +505,7 @@ var _hmt = _hmt || [];
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -506,19 +573,19 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)">angular2常见bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)">git使用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">angular2常见bug</a>
               </li>
             
             <div class="clearfix"></div>

@@ -6,14 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/jacklincao">
-  <title>Archives | 林林博客</title>
+  <title>encodeURI()、encodeURIComponent(） | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="林林博客">
-<meta property="og:url" content="https://github.com/jacklincao/archives/index.html">
+  <meta name="description" content="URI编码方法在JavaScript中有两个为URI进行编码的方法，一个是encodeURI()，另一个是encodeURIComponent()，两者用于不同的地方
+encodeURI()用途：对整个URI进行编码，多用于整个URI编码结果：将URI中的空格替换成%20
+encodeURI(&amp;quot;http://www.baidu.com&amp;quot;);//&amp;quot;http://www.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="encodeURI()、encodeURIComponent(）">
+<meta property="og:url" content="https://github.com/jacklincao/javascript_encodeURI/index.html">
 <meta property="og:site_name" content="林林博客">
+<meta property="og:description" content="URI编码方法在JavaScript中有两个为URI进行编码的方法，一个是encodeURI()，另一个是encodeURIComponent()，两者用于不同的地方
+encodeURI()用途：对整个URI进行编码，多用于整个URI编码结果：将URI中的空格替换成%20
+encodeURI(&amp;quot;http://www.baidu.com&amp;quot;);//&amp;quot;http://www.">
+<meta property="og:updated_time" content="2018-02-09T16:01:34.959Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="林林博客">
+<meta name="twitter:title" content="encodeURI()、encodeURIComponent(）">
+<meta name="twitter:description" content="URI编码方法在JavaScript中有两个为URI进行编码的方法，一个是encodeURI()，另一个是encodeURIComponent()，两者用于不同的地方
+encodeURI()用途：对整个URI进行编码，多用于整个URI编码结果：将URI中的空格替换成%20
+encodeURI(&amp;quot;http://www.baidu.com&amp;quot;);//&amp;quot;http://www.">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
   
@@ -153,196 +163,163 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-javascript_encodeURI" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/MySQL备份还原/" class="archive-article-date">
-  	<time datetime="2018-01-21T13:03:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-21</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/MySQL备份还原/">Windows下MySQL数据备份与还原</a>
+    <h1 class="article-title" itemprop="name">
+      encodeURI()、encodeURIComponent(）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/git使用日记/" class="archive-article-date">
-  	<time datetime="2018-01-19T13:03:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-19</time>
+        <a href="/javascript_encodeURI/" class="archive-article-date">
+  	<time datetime="2017-02-04T06:16:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-04</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/git使用日记/">git使用日记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git使用/">git使用</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
+    <div class="article-entry" itemprop="articleBody">
       
-        </div></section>
+        <h1 id="URI编码方法"><a href="#URI编码方法" class="headerlink" title="URI编码方法"></a>URI编码方法</h1><p>在JavaScript中有两个为URI进行编码的方法，一个是encodeURI()，另一个是encodeURIComponent()，两者用于不同的地方</p>
+<h2 id="encodeURI"><a href="#encodeURI" class="headerlink" title="encodeURI()"></a>encodeURI()</h2><p>用途：对整个URI进行编码，多用于整个URI<br>编码结果：将URI中的空格替换成%20</p>
+<pre><code>encodeURI(&quot;http://www.baidu.com&quot;);//&quot;http://www.baidu.com&quot;
+encodeURI(&quot;http://www.baidu.com?hello world!&quot;);//&quot;http://www.baidu.com?hello%20world!&quot;
+</code></pre><h2 id="encodeURIComponent"><a href="#encodeURIComponent" class="headerlink" title="encodeURIComponent()"></a>encodeURIComponent()</h2><p>用途：对URI中的一段进行编码，多用于URI中的参数部分<br>编码结果：替换所有的非字母字符</p>
+<pre><code>encodeURIComponent(&quot;http://www.baidu.com&quot;);//&quot;http%3A%2F%2Fwww.baidu.com&quot;
+encodeURIComponent(&quot;http://www.baidu.com?hello world!&quot;)//&quot;http%3A%2F%2Fwww.baidu.com%3Fhello%20world!&quot;
+&quot;http://www.baidu.com?name=&quot; + encodeURIComponent(&apos;张三&apos;);//&quot;http://www.baidu.com?name=%E5%BC%A0%E4%B8%89&quot;
+</code></pre><h1 id="URI解码方法"><a href="#URI解码方法" class="headerlink" title="URI解码方法"></a>URI解码方法</h1><p>与2个URI编码方法对应的方法有decodeURI()、decodeURIComponent()</p>
+<h2 id="decodeURI"><a href="#decodeURI" class="headerlink" title="decodeURI()"></a>decodeURI()</h2><p>用途：将经过encodeUIR()方法编码后的URI还原<br>解码解果：将%20还原成空格</p>
+<pre><code>decodeURI(&quot;http://www.baidu.com?hello%20world!&quot;);//&quot;http://www.baidu.com?hello world!&quot;
+</code></pre><h2 id="decodeURIComponent"><a href="#decodeURIComponent" class="headerlink" title="decodeURIComponent()"></a>decodeURIComponent()</h2><p>用途：将经过encodeURIComponent的URI还原<br>解码结果：将非字母的字符还原</p>
+<pre><code>decodeURIComponent(&quot;%E5%BC%A0%E4%B8%89&quot;);//&quot;张三&quot;
+</code></pre>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/angular2常见bug二/" class="archive-article-date">
-  	<time datetime="2017-10-12T11:43:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/angular2常见bug二/">angular2子路由跳转</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular2常见bug/">angular2常见bug</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/angular2常见bug一/" class="archive-article-date">
-  	<time datetime="2017-10-08T12:02:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/angular2常见bug一/">angular2生成组件出错</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular2常见bug/">angular2常见bug</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/javascript_eval/" class="archive-article-date">
-  	<time datetime="2017-02-08T12:21:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/javascript_eval/">强大的eval()</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://github.com/jacklincao/javascript_encodeURI/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
+<nav id="article-nav">
+  
+    <a href="/javascript_eval/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          强大的eval()
+        
+      </div>
+    </a>
+  
+  
+    <a href="/javascript_apply-call-bind/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">apply()、call()、bind()</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+
 
 
           </div>
@@ -373,8 +350,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
