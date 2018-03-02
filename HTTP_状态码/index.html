@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="https://github.com/jacklincao">
+  <title>HTTP状态码 | 林林博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="HTTP状态码">
+<meta property="og:url" content="https://github.com/jacklincao/HTTP_状态码/index.html">
+<meta property="og:site_name" content="林林博客">
+<meta property="og:image" content="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/03/02/404.jpg">
+<meta property="og:updated_time" content="2018-03-02T13:03:43.503Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTTP状态码">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/03/02/404.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css?v=4.0.0.css">
+  
+
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?44a97cf3c99f2c06d04109e5456f5702";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+
+<body>
+  <div id="container" q-class="show:isCtnShow">
+    <canvas id="anm-canvas" class="anm-canvas"></canvas>
+    <div class="left-col" q-class="show:isShow">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/assets/headImg.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">林</a></h1>
+		</hgroup>
+
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/photos/">相册</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a data-idx="0" q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a data-idx="1" q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">相关链接</a>
+    			
+    			
+            
+    			
+    			<a data-idx="2" q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/jacklincao" title="github"><i class="icon-github"></i></a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+		        
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/lin-lin-43-43-64/activities" title="zhihu"><i class="icon-zhihu"></i></a>
+		        
+					<a class="qq" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1287075856&site=qq&menu=yes" title="qq"><i class="icon-qq"></i></a>
+		        
+					<a class="mail" target="_blank" href="/jacklincao@qq.com" title="mail"><i class="icon-mail"></i></a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-sort"></i></div>
+  		<h1 class="header-author js-mobile-header hide">林</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/assets/headImg.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">林</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/photos/">相册</a></li>
+		        
+		        
+		        	<li><a href="/archives/">所有文章</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/jacklincao" title="github"><i class="icon-github"></i></a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/lin-lin-43-43-64/activities" title="zhihu"><i class="icon-zhihu"></i></a>
+			        
+						<a class="qq" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1287075856&site=qq&menu=yes" title="qq"><i class="icon-qq"></i></a>
+			        
+						<a class="mail" target="_blank" href="/jacklincao@qq.com" title="mail"><i class="icon-mail"></i></a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div id="wrapper" class="body-wrap">
+        <div class="menu-l">
+          <div class="canvas-wrap">
+            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+          </div>
+          <div id="js-content" class="content-ll">
+            <article id="post-HTTP_状态码" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTTP状态码
+    </h1>
+  
+
+        <a href="/HTTP_状态码/" class="archive-article-date">
+  	<time datetime="2017-04-28T11:12:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-28</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/03/02/404.jpg" alt="此处输入图片的描述"><br><a id="more"></a></p>
+<h1 id="1-五类状态码"><a href="#1-五类状态码" class="headerlink" title="1.五类状态码"></a>1.五类状态码</h1><p> 1XX    信息性状态码        接收的请求正在处理<br> 2XX    成功状态码          请求正常处理完毕<br> 3XX    重定向状态码        需进行附加操作已完成请求<br> 4XX    客户端错误状态码    服务器无法处理请求<br> 5XX    服务器错误状态码    服务器处理请求出错</p>
+<h1 id="2-各类状态码详细信息"><a href="#2-各类状态码详细信息" class="headerlink" title="2.各类状态码详细信息"></a>2.各类状态码详细信息</h1><h2 id="2-1-2XX"><a href="#2-1-2XX" class="headerlink" title="2.1 2XX"></a>2.1 2XX</h2><p>200 OK 请求正常<br>204 No Content 请求处理成功，但无资源可返回：客户端向服务器发送信息，而服务器对客户端无需发送新信息<br>206 Partial Content 返回指定范围的实体内容：客户端进行范围请求，服务器成功执行该请求，响应报文中包含Content-Range</p>
+<h2 id="2-2-3XX"><a href="#2-2-3XX" class="headerlink" title="2.2 3XX"></a>2.2 3XX</h2><p>301 Moved Permanently 永久性重定向：表示请求的资源已被分配新URI，以后应使用资源现在所指定的URI<br>302 Found 临时性重定向：表示请求的资源已被分配新的URI，希望用户（本次）使用新的URI访问<br>303 See Other 表示请求对应的资源存在另一个URI，应使用GET方法定向获取请求的资源，与302有相同功能，但303明确要求客户端使用GET方法<br>304 Not Modified 表示客户端发送附带条件的请求时，服务器允许请求访问资源，但未满足条件的情况，附带条件的请求是指采用GET方法的请求报文中包含If-Match、If-Modified-Since、If-None-Match、If-Range、If-Unmodified-Since中的任意首部</p>
+<h2 id="2-3-4XX"><a href="#2-3-4XX" class="headerlink" title="2.3 4XX"></a>2.3 4XX</h2><p>400 Bad Request 表示请求报文中存在语法错误<br>401 Unauthorized 表示请求需有通过HTTP认证的证书信息<br>403 Forbidden 表明服务器拒绝了对请求资源的访问<br>404 Not Found 表明服务器无法找到请求的资源</p>
+<h2 id="2-4-5XX"><a href="#2-4-5XX" class="headerlink" title="2.4 5XX"></a>2.4 5XX</h2><p>500 Internal Server Error 表明服务器在执行请求时发生错误<br>503 Service Unavailable 表明服务器暂处于超负载或正进行停机维护，现在无法处理请求</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
+	</div>
+
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://github.com/jacklincao/HTTP_状态码/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/HTTP_协议/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          http协议
+        
+      </div>
+    </a>
+  
+  
+    <a href="/JavaScript_eval/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">强大的eval()</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 林
+    	</div>
+		<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_pv">
+  本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+总访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>	
+      	<!-- <div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div> -->
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		mathjax: false,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js?v=4.0.0.js"></script>
+
+
+    
+<div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all" q-show="innerArchive">
+        <div class="search-wrap">
+          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+          <i class="icon-search icon" q-show="search|isEmptyStr"></i>
+          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
+        </div>
+        <div class="widget tagcloud search-tag">
+          <p class="search-tag-wording">tag:</p>
+          <label class="search-switch">
+            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
+          </label>
+          <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">AngularJs学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Angular常见bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Git使用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">MySQL</a>
+              </li>
+            
+            <div class="clearfix"></div>
+          </ul>
+        </div>
+        <ul class="search-ul">
+          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
+            缺失模块。<br/>1、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            2、在根目录_config.yml里添加配置：
+<pre style="font-size: 12px;" q-show="jsonFail">
+  jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: true
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
+</pre>
+          </p>
+          <li class="search-li" q-repeat="items" q-show="isShow">
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <p class="search-time">
+              <i class="icon-calendar icon"></i>
+              <span q-text="date|dateformat"></span>
+            </p>
+            <p class="search-tag">
+              <i class="icon-price-tags icon"></i>
+              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
+            </p>
+          </li>
+        </ul>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="http://www.ruanyifeng.com/home.html" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>阮一峰博客</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://taobaofed.org/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>阿里UED</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.aliued.com/?cat=14" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>阿里国际UED</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://www.liaoxuefeng.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>廖雪峰网站</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://75team.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>360前端团队</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.alloyteam.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>腾讯Alloy Team前端</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://fex.baidu.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>百度前端</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://ued.sina.com.cn/?cat=4" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>新浪UED</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.zhangxinxu.com/wordpress/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>张鑫旭</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me" q-show="aboutme">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">爱编程，不爱bug&lt;br&gt; 前端学习~ing&lt;br&gt; 偶尔写写博客的程序猿一只</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

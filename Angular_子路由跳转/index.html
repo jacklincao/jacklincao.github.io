@@ -6,21 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/jacklincao">
-  <title>JavaScript学习&lt;一&gt; | 林林博客</title>
+  <title>Angular子路由跳转 | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="javascript中的基本数据类型及部分操作重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看12var n = 0377;alert(n);
-看到这段代码，你认为它将输出什么？0377吗？如果是0377，那么恭喜你，回答错误！你可以在浏览器上的控制台敲一下试试，你会发现它的输出并不是0377，而是255，为什么是255呢？因为当数字以0开头时代表这个数是八">
+  <meta name="description" content="配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由在Angular的官方文档找到了原因：导入模块的时候需要注意顺序，我在根模块导入模块时先把主路由模块导入了，导致路由会率先匹配到通配符路由，所以跳转到404，在定义子路由时">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript学习<一>">
-<meta property="og:url" content="https://github.com/jacklincao/JavaScript合集-一/index.html">
+<meta property="og:title" content="Angular子路由跳转">
+<meta property="og:url" content="https://github.com/jacklincao/Angular_子路由跳转/index.html">
 <meta property="og:site_name" content="林林博客">
-<meta property="og:description" content="javascript中的基本数据类型及部分操作重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看12var n = 0377;alert(n);
-看到这段代码，你认为它将输出什么？0377吗？如果是0377，那么恭喜你，回答错误！你可以在浏览器上的控制台敲一下试试，你会发现它的输出并不是0377，而是255，为什么是255呢？因为当数字以0开头时代表这个数是八">
-<meta property="og:updated_time" content="2018-01-21T14:03:56.399Z">
+<meta property="og:description" content="配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由在Angular的官方文档找到了原因：导入模块的时候需要注意顺序，我在根模块导入模块时先把主路由模块导入了，导致路由会率先匹配到通配符路由，所以跳转到404，在定义子路由时">
+<meta property="og:updated_time" content="2018-03-02T13:01:12.085Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript学习<一>">
-<meta name="twitter:description" content="javascript中的基本数据类型及部分操作重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看12var n = 0377;alert(n);
-看到这段代码，你认为它将输出什么？0377吗？如果是0377，那么恭喜你，回答错误！你可以在浏览器上的控制台敲一下试试，你会发现它的输出并不是0377，而是255，为什么是255呢？因为当数字以0开头时代表这个数是八">
+<meta name="twitter:title" content="Angular子路由跳转">
+<meta name="twitter:description" content="配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由在Angular的官方文档找到了原因：导入模块的时候需要注意顺序，我在根模块导入模块时先把主路由模块导入了，导致路由会率先匹配到通配符路由，所以跳转到404，在定义子路由时">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
   
@@ -160,34 +157,25 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JavaScript合集-一" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Angular_子路由跳转" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript学习&lt;一&gt;
+      Angular子路由跳转
     </h1>
   
 
-        <a href="/JavaScript合集-一/" class="archive-article-date">
-  	<time datetime="2016-12-22T14:07:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-22</time>
+        <a href="/Angular_子路由跳转/" class="archive-article-date">
+  	<time datetime="2017-10-12T11:43:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-12</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="javascript中的基本数据类型及部分操作"><a href="#javascript中的基本数据类型及部分操作" class="headerlink" title="javascript中的基本数据类型及部分操作"></a>javascript中的基本数据类型及部分操作</h2><h3 id="重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看"><a href="#重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看" class="headerlink" title="重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看"></a>重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var n = 0377;</div><div class="line">alert(n);</div></pre></td></tr></table></figure>
-<p>看到这段代码，你认为它将输出什么？0377吗？如果是0377，那么恭喜你，回答错误！你可以在浏览器上的控制台敲一下试试，你会发现它的输出并不是0377，而是255，为什么是255呢？因为当数字以0开头时代表这个数是八进制数，如果以0x开头，则这个数代表十六进制，例如：0xff；<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a = 1e1;</div><div class="line">var b = 1e+1;</div><div class="line">var c = 2e+3;</div></pre></td></tr></table></figure></p>
-<p>请自己运行试试会输出怎样的结果，好吧，我也不卖关子了，这几个表达式代表的是javascript中的指数表达式，意思是在某个数后加几个0，比如2e+3指的就是在2后面加3个0，或者也可以理解为将数字2的小数点向右移动3位<br><br><a id="more"></a><br>在javascript中有一个叫做Infinity的特殊值，它代表的是超过了JavaScript处理范围的值，当输入1e308时，正常，但是只要你输入了1e309就出界了，另外任何数除以0结果仍是Infinity，可以在console中运行一下语句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Infinity;</div><div class="line">typeof Infinity;</div><div class="line">1e308;</div><div class="line">1e309;</div><div class="line">var a = 6/0;</div><div class="line">alert(a);</div></pre></td></tr></table></figure></p>
-<p>Infinity与其它任何操作数执行算术运算的结果都等于Infinity；<br><br>在javascript中，数字字符串转换为数字有一种偷懒的方法：将该字符串与1相乘即可,当然，更好的方法是调用parseInt()函数；<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var n = &apos;1&apos;;</div><div class="line">typeof n;</div><div class="line">n = n*1;</div><div class="line">typeof n;</div></pre></td></tr></table></figure></p>
-<p>接下来看看JavaScript的数组：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a = [1,2,3];</div><div class="line">a[6] = &apos;new&apos;;</div></pre></td></tr></table></figure></p>
-<p>以上代码将会在下标2到5之间产生3个undefined如果执行以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a = [1,2,3];</div><div class="line">delete a[1];</div></pre></td></tr></table></figure></p>
-<p>删除特定的元素数组长度不会受到影响，只是被删除的位置被留空了<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var a = 1;</div><div class="line">var result = &apos;&apos;;</div><div class="line">if (a==1) &#123;</div><div class="line">	result = &quot;a is one&quot;;</div><div class="line">&#125; else &#123;</div><div class="line">	result = &quot;a is not one&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>看完以上代码再来看看下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a = 1;</div><div class="line">var result = (a == 1) ? &quot;a is one&quot; : &quot;a is not one&quot;;</div></pre></td></tr></table></figure></p>
-<p>是不是感觉第二种方式好简洁，所以在写一些简单的条件表达式可以使用其它形式代替if表达式，但是只限于一些非常简单的条件逻辑，如果在if表达式中使用了太多的else if 字句，请考虑使用switch语句来替代if<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;x&apos;,&apos;y&apos;,&apos;z&apos;];</div><div class="line">var result = &apos;\n&apos;;</div><div class="line">for (var i in a) &#123;</div><div class="line">	result += &apos;index: &apos; + i + &apos;, value: &apos; + a[i] + &apos;\n&apos;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="JavaScript回忆一"><a href="#JavaScript回忆一" class="headerlink" title="JavaScript回忆一"></a>JavaScript回忆一</h3><p>JavaScript中有五大基本数据类型：number;string;boolean;undefined;null;任何不属于基本数据类型的东西都属于对象；数组是一种数据存储形式，数组能存储任何类型的数组，包括另一个数组</p>
+        <h2 id="配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由"><a href="#配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由" class="headerlink" title="配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由"></a>配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由</h2><p>在Angular的官方文档找到了原因：导入模块的时候需要注意<strong>顺序</strong>，我在根模块导入模块时先把主路由模块导入了，导致路由会率先匹配到通配符路由，所以跳转到404，在定义子路由时<a id="more"></a>，要将子路由所在模块提前于通配符路由所在的模块！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">//根模块路由定义在AppRoutingModule，子路由定义在FrontModule中</div><div class="line">imports: [</div><div class="line">    BrowserModule,</div><div class="line">    FormsModule,</div><div class="line">    HttpModule,</div><div class="line">    JsonpModule,</div><div class="line">    FrontModule，</div><div class="line">    AppRoutingModule/*导入路由模块,顺序很重要*/</div><div class="line">  ],</div><div class="line">  ......</div><div class="line"></div><div class="line">//AppRoutingModule中的路由表如下</div><div class="line">appRoutes: Routes = [</div><div class="line">  &#123;path: &apos;&apos;, redirectTo: &apos;/login&apos;, pathMatch: &apos;full&apos;&#125;,</div><div class="line">  &#123;path: &apos;login&apos;, component: LoginComponent&#125;,</div><div class="line">  &#123;path: &apos;**&apos;, component: PageNotFoundComponent&#125;</div><div class="line">];</div><div class="line"></div><div class="line">//FrontModule中定义的路由表如下</div><div class="line">frontRoutes: Routes = [</div><div class="line">    &#123;</div><div class="line">      path: &apos;begin&apos;,</div><div class="line">      component: FrontComponent,</div><div class="line">      children: [</div><div class="line">        /*子路由*/</div><div class="line">        &#123;path: &apos;&apos;, component: DebateInfoComponent&#125;,</div><div class="line">        &#123;path: &apos;end&apos;, component: EndComponent&#125;,</div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  ];</div><div class="line">  </div><div class="line">//如果AppRoutingModule先于FrontModule导入就会导致所有子路由匹配到&apos;**&apos;</div></pre></td></tr></table></figure></p>
 
       
 
@@ -224,7 +212,7 @@ var _hmt = _hmt || [];
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular常见bug/">Angular常见bug</a></li></ul>
 	</div>
 
       
@@ -277,7 +265,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://github.com/jacklincao/JavaScript合集-一/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://github.com/jacklincao/Angular_子路由跳转/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -291,18 +279,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/JavaScript合集-二/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/Git_速查命令/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          javascript学习&lt;二&gt;
+          Git速查
         
       </div>
     </a>
   
   
-    <a href="/博客开张啦/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">博客开张啦</div>
+    <a href="/Angular_生成组件出错/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Angular生成组件出错</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -379,19 +367,23 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Angular常见bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Git使用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)">MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)">angular2常见bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)">git使用</a>
               </li>
             
             <div class="clearfix"></div>

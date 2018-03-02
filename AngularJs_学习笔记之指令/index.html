@@ -6,21 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/jacklincao">
-  <title>angularJs学习之ui-router | 林林博客</title>
+  <title>AngularJs学习之指令编写 | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天学了ui-router，从慕课以及自己手动敲代码，感受到了它的魅力，记得假期做过一个图书管理系统的练习，那个时候用的是iframe来实现刷新，现在看来，觉得当时还是太嫩了，进入主题吧
-首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个ht">
+  <meta name="description" content="前言（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api（2）在link中主要操作DOM开始1.指令的定义：123456.directive(&amp;apos;hello&amp;apos;,function()&amp;#123;	return &amp;#123;		restrict:&amp;apos;AECM&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="angularJs学习之ui-router">
-<meta property="og:url" content="https://github.com/jacklincao/AngularJs学习笔记之ui-router/index.html">
+<meta property="og:title" content="AngularJs学习之指令编写">
+<meta property="og:url" content="https://github.com/jacklincao/AngularJs_学习笔记之指令/index.html">
 <meta property="og:site_name" content="林林博客">
-<meta property="og:description" content="今天学了ui-router，从慕课以及自己手动敲代码，感受到了它的魅力，记得假期做过一个图书管理系统的练习，那个时候用的是iframe来实现刷新，现在看来，觉得当时还是太嫩了，进入主题吧
-首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个ht">
-<meta property="og:updated_time" content="2018-01-21T13:56:00.363Z">
+<meta property="og:description" content="前言（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api（2）在link中主要操作DOM开始1.指令的定义：123456.directive(&amp;apos;hello&amp;apos;,function()&amp;#123;	return &amp;#123;		restrict:&amp;apos;AECM&amp;">
+<meta property="og:updated_time" content="2018-03-02T13:07:00.462Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="angularJs学习之ui-router">
-<meta name="twitter:description" content="今天学了ui-router，从慕课以及自己手动敲代码，感受到了它的魅力，记得假期做过一个图书管理系统的练习，那个时候用的是iframe来实现刷新，现在看来，觉得当时还是太嫩了，进入主题吧
-首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个ht">
+<meta name="twitter:title" content="AngularJs学习之指令编写">
+<meta name="twitter:description" content="前言（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api（2）在link中主要操作DOM开始1.指令的定义：123456.directive(&amp;apos;hello&amp;apos;,function()&amp;#123;	return &amp;#123;		restrict:&amp;apos;AECM&amp;">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
   
@@ -160,28 +157,31 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-AngularJs学习笔记之ui-router" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-AngularJs_学习笔记之指令" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      angularJs学习之ui-router
+      AngularJs学习之指令编写
     </h1>
   
 
-        <a href="/AngularJs学习笔记之ui-router/" class="archive-article-date">
-  	<time datetime="2017-01-12T11:29:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-12</time>
+        <a href="/AngularJs_学习笔记之指令/" class="archive-article-date">
+  	<time datetime="2017-01-20T11:38:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-20</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天学了ui-router，从慕课以及自己手动敲代码，感受到了它的魅力，记得假期做过一个图书管理系统的练习，那个时候用的是iframe来实现刷新，现在看来，觉得当时还是太嫩了，进入主题吧</p>
-<h3 id="首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1-多样化视图-2-嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范"><a href="#首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1-多样化视图-2-嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范" class="headerlink" title="首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范"></a>首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已<a id="more"></a>，写的并不规范</h3><p>app.js的部分代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var routerApp = angular.module(&apos;routerApp&apos;, [ &apos;ui.router&apos;, &apos;ngGrid&apos;,</div><div class="line">                                              &apos;BookListModule&apos;, &apos;BookDetailModule&apos; ]);</div><div class="line"></div><div class="line">routerApp.run(function($rootScope, $state, $stateParams) &#123;</div><div class="line">	$rootScope.$state = $state;</div><div class="line">	$rootScope.$stateParams = $stateParams;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>app.js的配置路由代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">routerApp.config(function($stateProvider, $urlRouterProvider) &#123;</div><div class="line">	//运行时找不到想要的状态就会自动的进入index</div><div class="line">	$urlRouterProvider.otherwise(&apos;/index&apos;);</div><div class="line">	$stateProvider</div><div class="line">	//state后紧跟的那个是一个状态，可以通过ui-sref指令转变状态，例如&lt;a ui-sref=&quot;second&quot;&gt;二&lt;/a&gt;</div><div class="line">	.state(&apos;index&apos;,&#123;</div><div class="line">		//url即地址栏的内容，当用户浏览到/index时会找到他需要的视图</div><div class="line">		url: &apos;/index&apos;,</div><div class="line"></div><div class="line">		//存在多个view时使用这种写法</div><div class="line">		views:&#123;</div><div class="line">			&apos;&apos;:&#123;</div><div class="line">				templateUrl: &apos;tpls/loginForm.html&apos;</div><div class="line">			&#125;,</div><div class="line">		//@符号用在此处代表在index下存在的模块，例如我写的，在index下存在：&lt;a ui-sref=&quot;x1&quot;&gt;1&lt;/a&gt;&lt;a ui-sref=&quot;x2&quot;&gt;2&lt;/a&gt; &lt;a ui-sref=&quot;x3&quot;&gt;3&lt;/a&gt;</div><div class="line">			&apos;x1@index&apos;:&#123;</div><div class="line">				templateUrl: &apos;tpls/first.html&apos;</div><div class="line">			&#125;,</div><div class="line">			&apos;x2@index&apos;:&#123;</div><div class="line">				templateUrl: &apos;tpls/second.html&apos;</div><div class="line">			&#125;,</div><div class="line">			&apos;x3@index&apos;:&#123;</div><div class="line">				templateUrl:&apos;tpls/three.html&apos;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;)</div><div class="line"></div><div class="line">	.state(&apos;second&apos;,&#123;</div><div class="line">		url: &apos;/second&apos;,</div><div class="line">		templateUrl: &apos;tpls/three.html&apos;</div><div class="line">	&#125;)</div><div class="line"></div><div class="line">	.state(&apos;three&apos;,&#123;</div><div class="line">		url: &apos;/three&apos;,</div><div class="line">		templateUrl: &apos;tpls/first.html&apos;</div><div class="line">	&#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>通过ui-router我们可以实现菜单与内容的分离，这样更好操控不同区域</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api"><a href="#（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api" class="headerlink" title="（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api"></a>（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api</h3><h3 id="（2）在link中主要操作DOM"><a href="#（2）在link中主要操作DOM" class="headerlink" title="（2）在link中主要操作DOM"></a>（2）在link中主要操作DOM</h3><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="1-指令的定义："><a href="#1-指令的定义：" class="headerlink" title="1.指令的定义："></a>1.指令的定义：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.directive(&apos;hello&apos;,function()&#123;</div><div class="line">	return &#123;</div><div class="line">		restrict:&apos;AECM&apos;,</div><div class="line">		template:&apos;&lt;label&gt;hello world&lt;/label&gt;&apos;</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>这是一个最简单的指令，在这个指令中，restrice用来规定指令的使用方式，A（attribute）代表指令以属性方式调用，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div hello&gt;&lt;/div&gt;;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>E(element)代表指令以元素名的方式调用，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;hello&gt;&lt;/hello&gt;;</div></pre></td></tr></table></figure></p>
+<p>C(class)代表指令以类名方式调用，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;hello&quot;&gt;&lt;/div&gt;;</div></pre></td></tr></table></figure></p>
+<p>M代表指令以注释的方式调用，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!-- hello --&gt;;</div></pre></td></tr></table></figure></p>
+<p>template后跟的为html片段，同理的作用还有templateUrl,templateUrl后跟一个html链接，其内也是一段html片段；<br>replace后跟true或false，意思为是否替换掉调用指令处的html元素；<br>scope属性代表指令的作用域；有三种取值：false，true，{}；默认为false，代表与父作用域共享；true代表创建一个继承于父scope的scope；{}创建一个独立的作用域，如果需要使用父作用域的属性或方法可以使用“@”，“=”，“&amp;”，“@”实现的是单向绑定，“=”实现的是双向绑定，而使用“&amp;”，代表的是调用父作用域的方法；<br>transclude属性代表是否允许指令中插入任意内容，例如transclude为true时可以这样<hello>cdio</hello>；<br>compile有两个参数，一个element，一个attrs；element指指令所在的元素，compile返回一个方法或者对象，也可以在这里操作dom元素<br>link包含三个参数：scope，attrs，element；正如开篇提到的，link函数用于操作dom元素；<br>controller同时也可以与其它指令交互，当别的指令与本指令交互时，对应的指令需要声明本指令的实例（require:’^本指令名称’)</p>
 
       
 
@@ -271,7 +271,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://github.com/jacklincao/AngularJs学习笔记之ui-router/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://github.com/jacklincao/AngularJs_学习笔记之指令/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -285,18 +285,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/AngularJs学习笔记之指令/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/JavaScript_apply-call-bind/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          angularJs学习之指令编写
+          apply()、call()、bind()
         
       </div>
     </a>
   
   
-    <a href="/javascript_数组常用方法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数组常用方法</div>
+    <a href="/AngularJs_学习笔记之ui-router/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">AngularJs学习之ui-router</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -373,19 +373,23 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Angular常见bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Git使用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)">MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)">angular2常见bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)">git使用</a>
               </li>
             
             <div class="clearfix"></div>

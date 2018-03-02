@@ -155,27 +155,28 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-博客开张啦" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-JavaScript_作用域链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/博客开张啦/">博客开张啦</a>
+      <a class="article-title" href="/JavaScript_作用域链/">作用域链</a>
     </h1>
   
 
-        <a href="/博客开张啦/" class="archive-article-date">
-  	<time datetime="2016-12-20T07:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-20</time>
+        <a href="/JavaScript_作用域链/" class="archive-article-date">
+  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>欢迎来到我的博客,从今天起我将开始更新,希望在这里能找到你想要的,同时分享我的各种Idea</p>
-<h2 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h2><p>我是一个程序猿,还是一个刚进入这个专业没多久的菜鸟,但是我喜欢技术,喜欢看到代码在我手下产生各种美妙的画面,我还在学习,我也会一直学习,这个博客我会分享出一些我的见解以及一些解决困难的方法,未来还长,请多多指教!</p>
-
+        <h1 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h1><p>调用一个方法时，方法首先在自己的作用域中查找变量和方法，若没有找到，将查找上一级作用域链，直至找到最顶层的作用域即window，example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var person = &#123;&#125;;</div><div class="line">person.name = &quot;我&quot;;</div><div class="line">    </div><div class="line">function editName() &#123;</div><div class="line">    var newName = &quot;新的名字&quot;;</div><div class="line">        </div><div class="line">    functino changeNewName() &#123;</div><div class="line">        var oldName = person.name;</div><div class="line">        person.name = newName;//方法内部可以访问到person、newName、oldName</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    changeNewName();</div><div class="line">    //此处可访问到的变量有：person、newName</div><div class="line">&#125;</div><div class="line">//此处访问到的变量有：person</div><div class="line">editName();//该作用域链图如下。。。在02/05/jsScope.png</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/JavaScript_作用域链/#more">more >></a>
+        
       
 
       
@@ -183,11 +184,16 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/博客开张啦/">展开全文 >></a>
+          <a class="article-more-a" href="/JavaScript_作用域链/">展开全文 >></a>
         </p>
       
 
@@ -205,34 +211,30 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-JavaScript_对象属性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hello-world/">林之博客</a>
+      <a class="article-title" href="/JavaScript_对象属性/">对象属性</a>
     </h1>
   
 
-        <a href="/hello-world/" class="archive-article-date">
-  	<time datetime="2016-12-19T12:47:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-19</time>
+        <a href="/JavaScript_对象属性/" class="archive-article-date">
+  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+        <h1 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h1><p>ECMAScript中有两种属性：数据属性和访问器属性</p>
+<h2 id="数据属性"><a href="#数据属性" class="headerlink" title="数据属性"></a>数据属性</h2><p>概念:数据属性包含属性的值的位置,在这个位置可进行读取、写入<br>特性:1.[[Configurable]]:能否删除属性、修改属性的特性,默认值为true<br>     2.[[Writable]]:能否修改属性的值,默认值为true<br>     3.[[Enumberable]]:能否枚举出该属性,默认值为true<br>     4.[[Value]]:属性的值,默认值为undefined</p>
+<h2 id="访问器属性"><a href="#访问器属性" class="headerlink" title="访问器属性"></a>访问器属性</h2><p>概念:访问器属性不包含数据值,有一队getter()和setter()(这两个函数<strong>不是必须</strong>的),读取访问器属性会调用getter(),同理写入时会调用setter()<br>特性:1.[[Configurable]]:能否删除、修改属性的特性<br>     2.[[Enmuberable]]:能否枚举出该属性<br>     3.[[Get]]:读取属性时调用<br>     4.[[Set]]:写入属性时调用<br>
+        
+          <a class="article-more-a" href="/JavaScript_对象属性/#more">more >></a>
+        
       
 
       
@@ -240,11 +242,191 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/JavaScript_对象属性/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-JavaScript_闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/JavaScript_闭包/">闭包</a>
+    </h1>
+  
+
+        <a href="/JavaScript_闭包/" class="archive-article-date">
+  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>闭包是指有权访问另一个函数作用域中中的变量的函数,最常见的方式就是在一个函数中创建另一个函数，例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function getFunctions() &#123;</div><div class="line">    var functions = new Array();</div><div class="line">    </div><div class="line">    for(var i = 0; i &lt; 10; i++) &#123;</div><div class="line">        functions[i] = function() &#123;</div><div class="line">            return i;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return functions;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var array = getFunctions();  //每个函数都保存了getFunctions的活动对象,所以每个函数访问的变量都是同一个</div><div class="line"></div><div class="line">console.log(array[0]());  //10</div><div class="line">console.log(array[0]());  //10</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/JavaScript_闭包/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/JavaScript_闭包/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-JavaScript_原型及原型链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/JavaScript_原型及原型链/">原型及原型链</a>
+    </h1>
+  
+
+        <a href="/JavaScript_原型及原型链/" class="archive-article-date">
+  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>每个函数都有一个prototype属性，这个属性指向<strong>原型对象</strong>,每个原型对象都会有一个属性:constructor,这个属性指向函数,例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function Person() &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Person.prototype.name = &quot;me&quot;;</div><div class="line">Person.prototype.age = 21;</div><div class="line"></div><div class="line">console.log(Person.prototype);  //&#123;name: &quot;me&quot;, age: 123, constructor: ƒ&#125;,指向Person的原型对象</div><div class="line">console.log(Person.prototype.constructor);  //ƒ Person() &#123;&#125;,指向Person函数</div></pre></td></tr></table></figure></p>
+<p>每个实例都有一个[[Prototype]]属性指向其原型对象,在Firefox、Safari、Chrome中为__proto<strong>,通过\</strong>proto__可以访问实例的原型对象<br>
+        
+          <a class="article-more-a" href="/JavaScript_原型及原型链/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/JavaScript_原型及原型链/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-JavaScript_typeof和instanceof" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/JavaScript_typeof和instanceof/">typeof和instanceof</a>
+    </h1>
+  
+
+        <a href="/JavaScript_typeof和instanceof/" class="archive-article-date">
+  	<time datetime="2017-01-02T07:07:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-02</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h1><p>基本类型有以下五种：</p>
+<ol>
+<li>Undefined</li>
+<li>Null</li>
+<li>Boolean</li>
+<li>Number</li>
+<li>String
+        
+          <a class="article-more-a" href="/JavaScript_typeof和instanceof/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/JavaScript_typeof和instanceof/">展开全文 >></a>
         </p>
       
 
@@ -264,7 +446,7 @@ var _hmt = _hmt || [];
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
     </nav>
   
 
@@ -332,19 +514,23 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Angular常见bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Git使用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)">MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)">angular2常见bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)">git使用</a>
               </li>
             
             <div class="clearfix"></div>

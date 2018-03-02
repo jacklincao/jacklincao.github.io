@@ -155,29 +155,28 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-AngularJs学习笔记之条件化显示" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-AngularJs_学习笔记之指令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/AngularJs学习笔记之条件化显示/">angularJs学习之条件化显示</a>
+      <a class="article-title" href="/AngularJs_学习笔记之指令/">AngularJs学习之指令编写</a>
     </h1>
   
 
-        <a href="/AngularJs学习笔记之条件化显示/" class="archive-article-date">
-  	<time datetime="2017-01-11T12:08:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-11</time>
+        <a href="/AngularJs_学习笔记之指令/" class="archive-article-date">
+  	<time datetime="2017-01-20T11:38:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-20</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天看到了angularJS介绍的条件化显示,在angularJs中拥有四套不同的指令集:ng-show/ng-hide,ng-swatch-*,ng-if,ng-include.</p>
-<h2 id="ng-show-ng-hide"><a href="#ng-show-ng-hide" class="headerlink" title="ng-show/ng-hide"></a>ng-show/ng-hide</h2><p>ng-show与ng-hide用于隐藏DOM树的一部分,它利用的是CSS规则,类似于CSS中的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">style:&quot;display: none;&quot;</div></pre></td></tr></table></figure></p>
-<p>它并没有将元素从DOM树中移除。<br>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api"><a href="#（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api" class="headerlink" title="（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api"></a>（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api</h3><h3 id="（2）在link中主要操作DOM"><a href="#（2）在link中主要操作DOM" class="headerlink" title="（2）在link中主要操作DOM"></a>（2）在link中主要操作DOM</h3><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="1-指令的定义："><a href="#1-指令的定义：" class="headerlink" title="1.指令的定义："></a>1.指令的定义：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.directive(&apos;hello&apos;,function()&#123;</div><div class="line">	return &#123;</div><div class="line">		restrict:&apos;AECM&apos;,</div><div class="line">		template:&apos;&lt;label&gt;hello world&lt;/label&gt;&apos;</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>这是一个最简单的指令，在这个指令中，restrice用来规定指令的使用方式，A（attribute）代表指令以属性方式调用，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div hello&gt;&lt;/div&gt;;</div></pre></td></tr></table></figure></p>
         
-          <a class="article-more-a" href="/AngularJs学习笔记之条件化显示/#more">more >></a>
+          <a class="article-more-a" href="/AngularJs_学习笔记之指令/#more">more >></a>
         
       
 
@@ -195,7 +194,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/AngularJs学习笔记之条件化显示/">展开全文 >></a>
+          <a class="article-more-a" href="/AngularJs_学习笔记之指令/">展开全文 >></a>
         </p>
       
 
@@ -213,18 +212,196 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-javascript_作用域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-AngularJs_学习笔记之ui-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/javascript_作用域/">作用域链</a>
+      <a class="article-title" href="/AngularJs_学习笔记之ui-router/">AngularJs学习之ui-router</a>
     </h1>
   
 
-        <a href="/javascript_作用域/" class="archive-article-date">
+        <a href="/AngularJs_学习笔记之ui-router/" class="archive-article-date">
+  	<time datetime="2017-01-12T11:29:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-12</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天学了ui-router，从慕课以及自己手动敲代码，感受到了它的魅力，记得假期做过一个图书管理系统的练习，那个时候用的是iframe来实现刷新，现在看来，觉得当时还是太嫩了，进入主题吧</p>
+<h3 id="首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1-多样化视图-2-嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范"><a href="#首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1-多样化视图-2-嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范" class="headerlink" title="首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范"></a>首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已
+        
+          <a class="article-more-a" href="/AngularJs_学习笔记之ui-router/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJs学习笔记/">AngularJs学习笔记</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/AngularJs_学习笔记之ui-router/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-JavaScript_数组常用方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/JavaScript_数组常用方法/">数组常用方法</a>
+    </h1>
+  
+
+        <a href="/JavaScript_数组常用方法/" class="archive-article-date">
+  	<time datetime="2017-01-12T07:26:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-12</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><ol>
+<li>检测是否是数组：<code>Array.isArray(array);   //array是数组变量，返回true/false</code></li>
+<li>使用不同分隔符构建字符串：<code>array.join(&quot;||&quot;);   //将输出以||为分隔的字符串</code></li>
+<li><p>栈方法： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">array.push(···);  //向array中推如任意项</div><div class="line">var temp = array.pop();  //取出array中的最后一项并删除</div></pre></td></tr></table></figure></p>
+</li>
+<li><p>队列方法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">array.push(···);  //与shift()构成队列</div><div class="line">array.shift();    //取出array中的第一项并删除</div><div class="line">array.unshift(···);  //向array的前端推进任意项并返回新数组长度</div><div class="line">array.pop();  //与unshift()构成队列</div></pre></td></tr></table></figure></p>
+</li>
+</ol>
+        
+          <a class="article-more-a" href="/JavaScript_数组常用方法/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/JavaScript_数组常用方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-AngularJs_学习笔记之条件化显示" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/AngularJs_学习笔记之条件化显示/">AngularJs学习之条件化显示</a>
+    </h1>
+  
+
+        <a href="/AngularJs_学习笔记之条件化显示/" class="archive-article-date">
+  	<time datetime="2017-01-11T12:08:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-11</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天看到了AngularJs介绍的条件化显示,在AngularJs中拥有四套不同的指令集:ng-show/ng-hide,ng-swatch-*,ng-if,ng-include.</p>
+<h2 id="ng-show-ng-hide"><a href="#ng-show-ng-hide" class="headerlink" title="ng-show/ng-hide"></a>ng-show/ng-hide</h2><p>ng-show与ng-hide用于隐藏DOM树的一部分,它利用的是CSS规则,类似于CSS中的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">style:&quot;display: none;&quot;</div></pre></td></tr></table></figure></p>
+<p>它并没有将元素从DOM树中移除。<br>
+        
+          <a class="article-more-a" href="/AngularJs_学习笔记之条件化显示/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJs学习笔记/">AngularJs学习笔记</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/AngularJs_学习笔记之条件化显示/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-JavaScript_作用域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/JavaScript_作用域/">作用域链</a>
+    </h1>
+  
+
+        <a href="/JavaScript_作用域/" class="archive-article-date">
   	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
 </a>
       </header>
@@ -255,195 +432,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/javascript_作用域/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-javascript_typeof和instanceof" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/javascript_typeof和instanceof/">typeof和instanceof</a>
-    </h1>
-  
-
-        <a href="/javascript_typeof和instanceof/" class="archive-article-date">
-  	<time datetime="2017-01-02T07:07:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-02</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h1><p>基本类型有以下五种：</p>
-<ol>
-<li>Undefined</li>
-<li>Null</li>
-<li>Boolean</li>
-<li>Number</li>
-<li>String</li>
-</ol>
-<h1 id="typeof操作符"><a href="#typeof操作符" class="headerlink" title="typeof操作符"></a>typeof操作符</h1><p>用于检测变量的数据类型<br>检测结果有以下6种：</p>
-<ol>
-<li>“undefined” 未定义</li>
-<li>“boolean”   布尔类型</li>
-<li>“string”    字符串</li>
-<li>“number”    数字</li>
-<li>“object”    对象或<strong>null</strong></li>
-<li>“function”  函数<br>example:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var tempString = &quot;Hello World!&quot;;</div><div class="line">var tempNumber = 123;</div><div class="line">var tempBool = true;</div><div class="line">var tempUndefined;</div><div class="line">console.log(typeof tempString);   //&quot;string&quot;</div><div class="line">console.log(typeof tempNumber);   //&quot;number&quot;</div><div class="line">console.log(typeof tempBool);     //&quot;boolean&quot;</div><div class="line">console.log(typeof tempUndefined) //&quot;undefined&quot;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h1 id="instanceof操作符"><a href="#instanceof操作符" class="headerlink" title="instanceof操作符"></a>instanceof操作符</h1><p>用于检测<strong>引用类型</strong>，判断给定变量是否是指定的引用类型，若使用其来检测<strong>基本数据类型</strong>都将返回false，因为其不是引用类型<br>example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var person = &#123;&#125;;</div><div class="line">var persons = [];</div><div class="line">console.log(person instanceof Object); //true</div><div class="line">console.log(persons instanceof Array); //true</div><div class="line">console.log(persons intanceof Object); //true，因为所有引用类型都是Object的实例</div></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/javascript_typeof和instanceof/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-JavaScript合集-二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/JavaScript合集-二/">javascript学习&lt;二&gt;</a>
-    </h1>
-  
-
-        <a href="/JavaScript合集-二/" class="archive-article-date">
-  	<time datetime="2016-12-25T12:52:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-25</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="javascript中的函数"><a href="#javascript中的函数" class="headerlink" title="javascript中的函数"></a>javascript中的函数</h2><h3 id="今天看到了JavaScript中的函数篇，很熟悉的名称：函数，重读一遍后又收获了一些新知识"><a href="#今天看到了JavaScript中的函数篇，很熟悉的名称：函数，重读一遍后又收获了一些新知识" class="headerlink" title="今天看到了JavaScript中的函数篇，很熟悉的名称：函数，重读一遍后又收获了一些新知识"></a>今天看到了JavaScript中的函数篇，很熟悉的名称：函数，重读一遍后又收获了一些新知识</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">parseInt(&apos;123&apos;);</div><div class="line">parseInt(&apos;abc123&apos;);</div><div class="line">parseInt(&apos;1abc23&apos;);</div><div class="line">parseInt(&apos;123abc&apos;);</div><div class="line">parseInt(&apos;FF&apos;,10);</div><div class="line">parseInt(&apos;FF&apos;,16);</div><div class="line">parseInt(&apos;0377&apos;);</div><div class="line">parseInt(&apos;0x377&apos;);</div></pre></td></tr></table></figure>
-<p>以上函数分别输出123，NaN，1,123,NaN,255,255,887；是不是发现自己猜想的结果与实际输出悬殊比较大？如果自己的结果错了，那请记住这些，避免下次再犯这种错误。<br /></p>
-<p>在地址栏传参数时，可能会有中文乱码的情况，这时请参考使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">encodeURIComponent(url);</div><div class="line">decodeURIComponent(url);</div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/JavaScript合集-二/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/JavaScript合集-二/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-JavaScript合集-一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/JavaScript合集-一/">JavaScript学习&lt;一&gt;</a>
-    </h1>
-  
-
-        <a href="/JavaScript合集-一/" class="archive-article-date">
-  	<time datetime="2016-12-22T14:07:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-22</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="javascript中的基本数据类型及部分操作"><a href="#javascript中的基本数据类型及部分操作" class="headerlink" title="javascript中的基本数据类型及部分操作"></a>javascript中的基本数据类型及部分操作</h2><h3 id="重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看"><a href="#重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看" class="headerlink" title="重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看"></a>重新看了javascript，发现了一些平时不被关注的小问题，现在分享出来，大家一起看看</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var n = 0377;</div><div class="line">alert(n);</div></pre></td></tr></table></figure>
-<p>看到这段代码，你认为它将输出什么？0377吗？如果是0377，那么恭喜你，回答错误！你可以在浏览器上的控制台敲一下试试，你会发现它的输出并不是0377，而是255，为什么是255呢？因为当数字以0开头时代表这个数是八进制数，如果以0x开头，则这个数代表十六进制，例如：0xff；<br /><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a = 1e1;</div><div class="line">var b = 1e+1;</div><div class="line">var c = 2e+3;</div></pre></td></tr></table></figure></p>
-<p>请自己运行试试会输出怎样的结果，好吧，我也不卖关子了，这几个表达式代表的是javascript中的指数表达式，意思是在某个数后加几个0，比如2e+3指的就是在2后面加3个0，或者也可以理解为将数字2的小数点向右移动3位<br /><br>
-        
-          <a class="article-more-a" href="/JavaScript合集-一/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/JavaScript合集-一/">展开全文 >></a>
+          <a class="article-more-a" href="/JavaScript_作用域/">展开全文 >></a>
         </p>
       
 
@@ -463,7 +452,7 @@ var _hmt = _hmt || [];
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -531,19 +520,23 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Angular常见bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Git使用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)">MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)">angular2常见bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)">git使用</a>
               </li>
             
             <div class="clearfix"></div>
