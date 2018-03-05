@@ -155,27 +155,89 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-JavaScript_闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-JavaScript_作用域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/JavaScript_闭包/">闭包</a>
+      <a class="article-title" href="/JavaScript_作用域/">作用域链</a>
     </h1>
   
 
-        <a href="/JavaScript_闭包/" class="archive-article-date">
+        <a href="/JavaScript_作用域/" class="archive-article-date">
   	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>闭包是指有权访问另一个函数作用域中中的变量的函数,最常见的方式就是在一个函数中创建另一个函数，例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function getFunctions() &#123;</div><div class="line">    var functions = new Array();</div><div class="line">    </div><div class="line">    for(var i = 0; i &lt; 10; i++) &#123;</div><div class="line">        functions[i] = function() &#123;</div><div class="line">            return i;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return functions;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var array = getFunctions();  //每个函数都保存了getFunctions的活动对象,所以每个函数访问的变量都是同一个</div><div class="line"></div><div class="line">console.log(array[0]());  //10</div><div class="line">console.log(array[0]());  //10</div></pre></td></tr></table></figure></p>
+        <h1 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h1><p>调用一个方法时，方法首先在自己的作用域中查找变量和方法，若没有找到，将查找上一级作用域链，直至找到最顶层的作用域即window，example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var person = &#123;&#125;;</div><div class="line">person.name = &quot;我&quot;;</div><div class="line">    </div><div class="line">function editName() &#123;</div><div class="line">    var newName = &quot;新的名字&quot;;</div><div class="line">        </div><div class="line">    functino changeNewName() &#123;</div><div class="line">        var oldName = person.name;</div><div class="line">        person.name = newName;//方法内部可以访问到person、newName、oldName</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    changeNewName();</div><div class="line">    //此处可访问到的变量有：person、newName</div><div class="line">&#125;</div><div class="line">//此处访问到的变量有：person</div><div class="line">editName();//该作用域链图如下。。。在02/05/jsScope.png</div></pre></td></tr></table></figure></p>
+<h1 id="延长作用域"><a href="#延长作用域" class="headerlink" title="延长作用域"></a>延长作用域</h1><p>执行环境有两种，全局和局部，可以使用以下两种方式：</p>
+<ol>
+<li>try-catch语句的catch块</li>
+<li>with语句；<br>with会将指定对象添加到作用域链中，example:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function buildUrl() &#123;</div><div class="line">    var qs = &quot;?debug=true&quot;;</div><div class="line">    with(location) &#123;//接收location对象</div><div class="line">        var url = href + qs;//url变量成为函数执行环境的一部分</div><div class="line">    &#125;</div><div class="line">    return url;//此处能访问url变量</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/JavaScript_作用域/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-JavaScript_对象属性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
         
-          <a class="article-more-a" href="/JavaScript_闭包/#more">more >></a>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/JavaScript_对象属性/">对象属性</a>
+    </h1>
+  
+
+        <a href="/JavaScript_对象属性/" class="archive-article-date">
+  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h1><p>ECMAScript中有两种属性：数据属性和访问器属性</p>
+<h2 id="数据属性"><a href="#数据属性" class="headerlink" title="数据属性"></a>数据属性</h2><p>概念:数据属性包含属性的值的位置,在这个位置可进行读取、写入<br>特性:1.[[Configurable]]:能否删除属性、修改属性的特性,默认值为true<br>     2.[[Writable]]:能否修改属性的值,默认值为true<br>     3.[[Enumberable]]:能否枚举出该属性,默认值为true<br>     4.[[Value]]:属性的值,默认值为undefined</p>
+<h2 id="访问器属性"><a href="#访问器属性" class="headerlink" title="访问器属性"></a>访问器属性</h2><p>概念:访问器属性不包含数据值,有一队getter()和setter()(这两个函数<strong>不是必须</strong>的),读取访问器属性会调用getter(),同理写入时会调用setter()<br>特性:1.[[Configurable]]:能否删除、修改属性的特性<br>     2.[[Enmuberable]]:能否枚举出该属性<br>     3.[[Get]]:读取属性时调用<br>     4.[[Set]]:写入属性时调用<br>
+        
+          <a class="article-more-a" href="/JavaScript_对象属性/#more">more >></a>
         
       
 
@@ -193,7 +255,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/JavaScript_闭包/">展开全文 >></a>
+          <a class="article-more-a" href="/JavaScript_对象属性/">展开全文 >></a>
         </p>
       
 
@@ -267,6 +329,62 @@ var _hmt = _hmt || [];
 
 
   
+    <article id="post-JavaScript_闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/JavaScript_闭包/">闭包</a>
+    </h1>
+  
+
+        <a href="/JavaScript_闭包/" class="archive-article-date">
+  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>闭包是指有权访问另一个函数作用域中中的变量的函数,最常见的方式就是在一个函数中创建另一个函数，例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function getFunctions() &#123;</div><div class="line">    var functions = new Array();</div><div class="line">    </div><div class="line">    for(var i = 0; i &lt; 10; i++) &#123;</div><div class="line">        functions[i] = function() &#123;</div><div class="line">            return i;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return functions;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var array = getFunctions();  //每个函数都保存了getFunctions的活动对象,所以每个函数访问的变量都是同一个</div><div class="line"></div><div class="line">console.log(array[0]());  //10</div><div class="line">console.log(array[0]());  //10</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/JavaScript_闭包/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/JavaScript_闭包/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-JavaScript_原型及原型链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -307,122 +425,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/JavaScript_原型及原型链/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-JavaScript_AJAX" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/JavaScript_AJAX/">AJAX</a>
-    </h1>
-  
-
-        <a href="/JavaScript_AJAX/" class="archive-article-date">
-  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h1><h2 id="什么是AJAX"><a href="#什么是AJAX" class="headerlink" title="什么是AJAX?"></a>什么是AJAX?</h2><p>AJAX全拼Asynchronous JavaScript and XML,意为异步JavaScript和XML,用于解决用户向后台发起请求后不需重新加载整个页面,只要将获取的数据插入到指定位置即可,提高了应用程序的执行能力<br>
-        
-          <a class="article-more-a" href="/JavaScript_AJAX/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/JavaScript_AJAX/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-JavaScript_作用域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/JavaScript_作用域/">作用域链</a>
-    </h1>
-  
-
-        <a href="/JavaScript_作用域/" class="archive-article-date">
-  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h1><p>调用一个方法时，方法首先在自己的作用域中查找变量和方法，若没有找到，将查找上一级作用域链，直至找到最顶层的作用域即window，example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var person = &#123;&#125;;</div><div class="line">person.name = &quot;我&quot;;</div><div class="line">    </div><div class="line">function editName() &#123;</div><div class="line">    var newName = &quot;新的名字&quot;;</div><div class="line">        </div><div class="line">    functino changeNewName() &#123;</div><div class="line">        var oldName = person.name;</div><div class="line">        person.name = newName;//方法内部可以访问到person、newName、oldName</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    changeNewName();</div><div class="line">    //此处可访问到的变量有：person、newName</div><div class="line">&#125;</div><div class="line">//此处访问到的变量有：person</div><div class="line">editName();//该作用域链图如下。。。在02/05/jsScope.png</div></pre></td></tr></table></figure></p>
-<h1 id="延长作用域"><a href="#延长作用域" class="headerlink" title="延长作用域"></a>延长作用域</h1><p>执行环境有两种，全局和局部，可以使用以下两种方式：</p>
-<ol>
-<li>try-catch语句的catch块</li>
-<li>with语句；<br>with会将指定对象添加到作用域链中，example:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function buildUrl() &#123;</div><div class="line">    var qs = &quot;?debug=true&quot;;</div><div class="line">    with(location) &#123;//接收location对象</div><div class="line">        var url = href + qs;//url变量成为函数执行环境的一部分</div><div class="line">    &#125;</div><div class="line">    return url;//此处能访问url变量</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/JavaScript_作用域/">展开全文 >></a>
         </p>
       
 
@@ -514,7 +516,7 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">JavaScript</a>
+                <a href="javascript:void(0)">Git使用</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,11 +524,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">MySQL</a>
+                <a href="javascript:void(0)">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">Git使用</a>
+                <a href="javascript:void(0)">MySQL</a>
               </li>
             
             <div class="clearfix"></div>

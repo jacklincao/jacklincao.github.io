@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="林林博客">
 <meta property="og:description" content="AJAX什么是AJAX?AJAX全拼Asynchronous JavaScript and XML,意为异步JavaScript和XML,用于解决用户向后台发起请求后不需重新加载整个页面,只要将获取的数据插入到指定位置即可,提高了应用程序的执行能力">
 <meta property="og:image" content="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/03/02/Ajax1.jpg">
-<meta property="og:updated_time" content="2018-03-05T13:17:44.306Z">
+<meta property="og:updated_time" content="2018-03-05T13:45:42.940Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AJAX">
 <meta name="twitter:description" content="AJAX什么是AJAX?AJAX全拼Asynchronous JavaScript and XML,意为异步JavaScript和XML,用于解决用户向后台发起请求后不需重新加载整个页面,只要将获取的数据插入到指定位置即可,提高了应用程序的执行能力">
@@ -211,9 +211,9 @@ var _hmt = _hmt || [];
 <li>Access-Control-Max-Age:Preflight缓存时间(秒),在缓存期内无需再发Preflight请求<h2 id="跨浏览器的CORS实现"><a href="#跨浏览器的CORS实现" class="headerlink" title="跨浏览器的CORS实现"></a>跨浏览器的CORS实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function createCORSRequest(method, url) &#123;</div><div class="line">    var xhr = new XMLHttpRequest();</div><div class="line">    if (&quot;withCredentials&quot; in xhr) &#123;</div><div class="line">        xhr.open(method, url, true);</div><div class="line">    &#125; </div><div class="line">    //针对IE浏览器</div><div class="line">    else if (typeof XDomainRequest != &quot;undefined&quot;) &#123;</div><div class="line">        xhr = new XDomainRequest();</div><div class="line">        xhr.open(method, url);</div><div class="line">    &#125; else &#123;</div><div class="line">        xhr = null;</div><div class="line">    &#125;</div><div class="line">    return xhr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h1 id="其它跨域技术"><a href="#其它跨域技术" class="headerlink" title="其它跨域技术"></a>其它跨域技术</h1><h2 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h2><p>JSONP全称JSON with padding(填充式JSON),JSONP由两部分组成:回调函数与数据,例如请求:<br><a href="http://www.xxx.com/?callback=handleResponse,当浏览器收到响应后将执行handleResponse方法" target="_blank" rel="external">http://www.xxx.com/?callback=handleResponse,当浏览器收到响应后将执行handleResponse方法</a><br>使用方式:通过动态<script>元素使用,使用时为<script>元素的src指定跨域URL,请求完成后将会立即执行回调<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function handleResponse(res) &#123;</div><div class="line">    console.log(&quot;服务器发送:&quot; + res.text);</div><div class="line">&#125;</div><div class="line"></div><div class="line">var script = document.createElement(&quot;script&quot;);</div><div class="line">script.src = &quot;http://www.xxx.com/?callback=handleResponse&quot;;</div><div class="line">document.body.insertBefore(script, document.body.firstChild);</div></pre></td></tr></table></figure></p>
+<h1 id="其它跨域技术"><a href="#其它跨域技术" class="headerlink" title="其它跨域技术"></a>其它跨域技术</h1><h2 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h2><p>JSONP全称JSON with padding(填充式JSON),JSONP由两部分组成:回调函数与数据,例如请求:<br><code>http://www.xxx.com/?callback=handleResponse</code>,当浏览器收到响应后将执行handleResponse方法<br>使用方式:通过动态<code>&lt;script&gt;</code>元素使用,使用时为<code>&lt;script&gt;</code>元素的src指定跨域URL,请求完成后将会立即执行回调<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function handleResponse(res) &#123;</div><div class="line">    console.log(&quot;服务器发送:&quot; + res.text);</div><div class="line">&#125;</div><div class="line"></div><div class="line">var script = document.createElement(&quot;script&quot;);</div><div class="line">script.src = &quot;http://www.xxx.com/?callback=handleResponse&quot;;</div><div class="line">document.body.insertBefore(script, document.body.firstChild);</div></pre></td></tr></table></figure></p>
 <p>缺点:<br>1.不安全,因为代码不确定<br>2.不容易确定JSONP请求失败</p>
-</script></p>
+
       
 
       
@@ -316,11 +316,11 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/JavaScript_原型及原型链/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/AngularJs_学习笔记之条件化显示/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          原型及原型链
+          AngularJs学习之条件化显示
         
       </div>
     </a>
@@ -408,7 +408,7 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">JavaScript</a>
+                <a href="javascript:void(0)">Git使用</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -416,11 +416,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">MySQL</a>
+                <a href="javascript:void(0)">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">Git使用</a>
+                <a href="javascript:void(0)">MySQL</a>
               </li>
             
             <div class="clearfix"></div>
