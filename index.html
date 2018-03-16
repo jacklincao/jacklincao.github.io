@@ -238,6 +238,7 @@ var _hmt = _hmt || [];
 <li><code>git log</code> 查看commit（提交）历史记录 可加上 <code>–pretty=oneline</code> 过滤其它信息，加上<code>--graph</code></li>
 <li><code>git reset --hard HEAD^</code> 回退到上一版本，如果有多个版本，可以使用<code>HEAD^^</code>（回退上上个版本），<code>HEAD~100</code>（回退到100个版本）</li>
 <li><code>git reset --hard xxxxxxx</code> 指定回到某个版本号</li>
+<li><code>git fetch --all</code>, <code>git reset --hard origin/master</code> 第一条fetch下载远程的内容,第二条将当前指针指向刚刚下载的</li>
 <li><code>git reflog</code> 记录每一次命令操作</li>
 <li><code>git checkout -- xx</code> 撤销对xx文件的全部修改操作；一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
         
@@ -519,15 +520,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">Angular常见bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Angular常见bug</a>
               </li>
              
               <li class="article-tag-list-item">

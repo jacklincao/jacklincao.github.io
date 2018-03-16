@@ -268,62 +268,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-JavaScript_作用域链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/JavaScript_作用域链/">作用域链</a>
-    </h1>
-  
-
-        <a href="/JavaScript_作用域链/" class="archive-article-date">
-  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h1><p>调用一个方法时，方法首先在自己的作用域中查找变量和方法，若没有找到，将查找上一级作用域链，直至找到最顶层的作用域即window，example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var person = &#123;&#125;;</div><div class="line">person.name = &quot;我&quot;;</div><div class="line">    </div><div class="line">function editName() &#123;</div><div class="line">    var newName = &quot;新的名字&quot;;</div><div class="line">        </div><div class="line">    functino changeNewName() &#123;</div><div class="line">        var oldName = person.name;</div><div class="line">        person.name = newName;//方法内部可以访问到person、newName、oldName</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    changeNewName();</div><div class="line">    //此处可访问到的变量有：person、newName</div><div class="line">&#125;</div><div class="line">//此处访问到的变量有：person</div><div class="line">editName();//该作用域链图如下。。。在02/05/jsScope.png</div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/JavaScript_作用域链/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/JavaScript_作用域链/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
     <article id="post-JavaScript_对象属性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -438,6 +382,62 @@ var _hmt = _hmt || [];
 
 
   
+    <article id="post-JavaScript_作用域链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/JavaScript_作用域链/">作用域链</a>
+    </h1>
+  
+
+        <a href="/JavaScript_作用域链/" class="archive-article-date">
+  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h1><p>调用一个方法时，方法首先在自己的作用域中查找变量和方法，若没有找到，将查找上一级作用域链，直至找到最顶层的作用域即window，example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var person = &#123;&#125;;</div><div class="line">person.name = &quot;我&quot;;</div><div class="line">    </div><div class="line">function editName() &#123;</div><div class="line">    var newName = &quot;新的名字&quot;;</div><div class="line">        </div><div class="line">    functino changeNewName() &#123;</div><div class="line">        var oldName = person.name;</div><div class="line">        person.name = newName;//方法内部可以访问到person、newName、oldName</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    changeNewName();</div><div class="line">    //此处可访问到的变量有：person、newName</div><div class="line">&#125;</div><div class="line">//此处访问到的变量有：person</div><div class="line">editName();//该作用域链图如下。。。在02/05/jsScope.png</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/JavaScript_作用域链/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/JavaScript_作用域链/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -512,15 +512,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">Angular常见bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Angular常见bug</a>
               </li>
              
               <li class="article-tag-list-item">
