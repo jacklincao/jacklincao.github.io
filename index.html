@@ -155,6 +155,61 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-MySQL_阿里云配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/MySQL_阿里云配置/">阿里云Ubuntu16.04下MySQL配置</a>
+    </h1>
+  
+
+        <a href="/MySQL_阿里云配置/" class="archive-article-date">
+  	<time datetime="2018-03-26T09:00:46.615Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-26</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="连接出错-Can’t-connect-to-mysql-server-on-xxx-xxx-xxx-xxx-10038"><a href="#连接出错-Can’t-connect-to-mysql-server-on-xxx-xxx-xxx-xxx-10038" class="headerlink" title="连接出错:Can’t connect to mysql server on xxx.xxx.xxx.xxx(10038)"></a>连接出错:Can’t connect to mysql server on xxx.xxx.xxx.xxx(10038)</h1><p>解决方法：<br>1.修改/etc/mysql/mysql.conf.d 文件，将bind-address从<code>127.0.0.1</code>修改为<code>0.0.0.0</code><br>2.授权<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt;grant all privileges on *.* to &apos;root&apos;@&apos;%&apos; identified by 密码 with grant option;</div><div class="line">mysql&gt;flush privileges;</div></pre></td></tr></table></figure></p>
+<p>3.进入阿里云控制台设置安全组，添加公网入方向配置：<br><code>允许    自定义 TCP    3306/3306    地址段访问    0.0.0.0/0</code></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/MySQL_阿里云配置/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-MySQL_备份还原" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -390,62 +445,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-URI、URL、URN" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/URI、URL、URN/">URI、URL、URN区别</a>
-    </h1>
-  
-
-        <a href="/URI、URL、URN/" class="archive-article-date">
-  	<time datetime="2017-05-10T11:20:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-10</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="什么是URI、URL、URN"><a href="#什么是URI、URL、URN" class="headerlink" title="什么是URI、URL、URN?"></a>什么是URI、URL、URN?</h1><p>URI：Uniform Resource Identifier 即“统一资源标识符”<br>URL：Uniform Resource Locator 即“统一资源定位符”<br>URN：Uniform Resource Name 即“统一资源名称”<br>三者的关系如图：<img src="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/03/02/URI.jpg" alt="此处输入图片的描述"><br>
-        
-          <a class="article-more-a" href="/URI、URL、URN/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/URI、URL、URN/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -516,6 +515,10 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Angular常见bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)">git使用</a>
               </li>
              
@@ -525,10 +528,6 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)">Angular常见bug</a>
               </li>
              
               <li class="article-tag-list-item">
