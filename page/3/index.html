@@ -155,6 +155,65 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JavaScript_eval" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/JavaScript_eval/">强大的eval()</a>
+    </h1>
+  
+
+        <a href="/JavaScript_eval/" class="archive-article-date">
+  	<time datetime="2017-02-08T12:21:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-08</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="解析功能"><a href="#解析功能" class="headerlink" title="解析功能"></a>解析功能</h1><p>eval()能将传入其中的字符串转换为当前执行环境的可执行代码，例如：</p>
+<pre><code>var msg = &quot;Hello World!&quot;;
+eval(&quot;console.log(msg)&quot;);
+</code></pre><p>在eval()中声明的变量和函数都<strong>不会提升</strong>，使用eval可能会引发<strong>代码注入</strong>，例如：</p>
+<pre><code>console.log(msg);//msg未提升：Uncaught ReferenceError: msg1 is not defined
+eval(&quot;var msg = &apos;Hi!&apos;&quot;);
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/JavaScript_eval/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-JavaScript_encodeURI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -385,69 +444,6 @@ encodeURI(&quot;http://www.baidu.com?hello world!&quot;);//&quot;http://www.baid
 
 
   
-    <article id="post-JavaScript_数组常用方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/JavaScript_数组常用方法/">数组常用方法</a>
-    </h1>
-  
-
-        <a href="/JavaScript_数组常用方法/" class="archive-article-date">
-  	<time datetime="2017-01-12T07:26:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-12</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><ol>
-<li>检测是否是数组：<code>Array.isArray(array);   //array是数组变量，返回true/false</code></li>
-<li>使用不同分隔符构建字符串：<code>array.join(&quot;||&quot;);   //将输出以||为分隔的字符串</code></li>
-<li><p>栈方法： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">array.push(···);  //向array中推如任意项</div><div class="line">var temp = array.pop();  //取出array中的最后一项并删除</div></pre></td></tr></table></figure></p>
-</li>
-<li><p>队列方法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">array.push(···);  //与shift()构成队列</div><div class="line">array.shift();    //取出array中的第一项并删除</div><div class="line">array.unshift(···);  //向array的前端推进任意项并返回新数组长度</div><div class="line">array.pop();  //与unshift()构成队列</div></pre></td></tr></table></figure></p>
-</li>
-</ol>
-        
-          <a class="article-more-a" href="/JavaScript_数组常用方法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/JavaScript_数组常用方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -518,11 +514,15 @@ encodeURI(&quot;http://www.baidu.com?hello world!&quot;);//&quot;http://www.baid
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">Angular常见bug</a>
+                <a href="javascript:void(0)">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)">git使用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Angular常见bug</a>
               </li>
              
               <li class="article-tag-list-item">
