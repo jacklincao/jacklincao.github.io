@@ -6,14 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/jacklincao">
-  <title>Archives: 2017 | 林林博客</title>
+  <title>图片懒加载技术 | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="林林博客">
-<meta property="og:url" content="https://github.com/jacklincao/archives/2017/page/4/index.html">
+  <meta name="description" content="浏览器相关高度、宽度网页可视区高/宽：1.clientHeight/clientWidth:height+padding-滚动轴高度2.offsetHeight/offsetWidth:height+padding+border+滚动轴高度
+网页全文高/宽1.scrollHeight/scrollWidth:1)有滚动条时:包含所有的高度(隐藏的部分也算入)2)无滚动条时:值=clientHeig">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图片懒加载技术">
+<meta property="og:url" content="https://github.com/jacklincao/前端性能优化_ 图片懒加载技术/index.html">
 <meta property="og:site_name" content="林林博客">
+<meta property="og:description" content="浏览器相关高度、宽度网页可视区高/宽：1.clientHeight/clientWidth:height+padding-滚动轴高度2.offsetHeight/offsetWidth:height+padding+border+滚动轴高度
+网页全文高/宽1.scrollHeight/scrollWidth:1)有滚动条时:包含所有的高度(隐藏的部分也算入)2)无滚动条时:值=clientHeig">
+<meta property="og:image" content="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/05/04/lazy.png">
+<meta property="og:updated_time" content="2018-05-04T13:21:51.823Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="林林博客">
+<meta name="twitter:title" content="图片懒加载技术">
+<meta name="twitter:description" content="浏览器相关高度、宽度网页可视区高/宽：1.clientHeight/clientWidth:height+padding-滚动轴高度2.offsetHeight/offsetWidth:height+padding+border+滚动轴高度
+网页全文高/宽1.scrollHeight/scrollWidth:1)有滚动条时:包含所有的高度(隐藏的部分也算入)2)无滚动条时:值=clientHeig">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/05/04/lazy.png">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
   
@@ -153,186 +162,149 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-前端性能优化_ 图片懒加载技术" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      图片懒加载技术
+    </h1>
+  
+
+        <a href="/前端性能优化_ 图片懒加载技术/" class="archive-article-date">
+  	<time datetime="2018-05-04T10:51:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-04</time>
+</a>
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="浏览器相关高度、宽度"><a href="#浏览器相关高度、宽度" class="headerlink" title="浏览器相关高度、宽度"></a>浏览器相关高度、宽度</h1><h2 id="网页可视区高-宽："><a href="#网页可视区高-宽：" class="headerlink" title="网页可视区高/宽："></a>网页可视区高/宽：</h2><p>1.clientHeight/clientWidth:height+padding-滚动轴高度<br>2.offsetHeight/offsetWidth:height+padding+border+滚动轴高度</p>
+<h2 id="网页全文高-宽"><a href="#网页全文高-宽" class="headerlink" title="网页全文高/宽"></a>网页全文高/宽</h2><p>1.scrollHeight/scrollWidth:<br>1)有滚动条时:包含所有的高度(隐藏的部分也算入)<br>2)无滚动条时:值=clientHeight/clientWidth</p>
+<h2 id="网页滚动距离"><a href="#网页滚动距离" class="headerlink" title="网页滚动距离"></a>网页滚动距离</h2><p>scrollTop/scrollLeft:<br>1)无滚动条时:值=0<br>2)有滚动条时:值=滚动的距离<br><a id="more"></a></p>
+<h2 id="相对于父容器的-左方-上方-距离"><a href="#相对于父容器的-左方-上方-距离" class="headerlink" title="相对于父容器的 左方/上方 距离"></a>相对于父容器的 左方/上方 距离</h2><p>offsetLeft/offsetTop=marginLeft+offsetParent的(paddingLeft+borderLeft+marginLeft)</p>
+<h2 id="左-上-边框宽度"><a href="#左-上-边框宽度" class="headerlink" title="左/上 边框宽度"></a>左/上 边框宽度</h2><p>clientLeft/clientTop=边框的宽度</p>
+<h2 id="判断元素位于页面底部"><a href="#判断元素位于页面底部" class="headerlink" title="判断元素位于页面底部"></a>判断元素位于页面底部</h2><p>判断元素到底部:clientHeight===scrollHeight-scrollTop</p>
+<h1 id="图片懒加载"><a href="#图片懒加载" class="headerlink" title="图片懒加载"></a>图片懒加载</h1><h2 id="懒加载机制"><a href="#懒加载机制" class="headerlink" title="懒加载机制"></a>懒加载机制</h2><p>网页需要展示很多图片，而用户可能没有接着浏览余下图片的意图，这样就浪费了很大的资源，一次请求了那么多图片，而且一张图片还有几兆，结果实际上没用到，所以为了减少服务器的压力，使用懒加载技术，不直接给图片标签加上src，给图片加上新的属性，其中保存真正的src，例如data-src，当用户浏览到图片时才进行加载。</p>
+<h2 id="判断用户当前浏览的位置"><a href="#判断用户当前浏览的位置" class="headerlink" title="判断用户当前浏览的位置"></a>判断用户当前浏览的位置</h2><p><img src="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/05/04/lazy.png" alt="判断图片位置"><br>如图所示，当图片：滚动高度+可视区高度&gt;图片距离顶部的距离时就将data-src替换到src即可</p>
+<h2 id="原生js实现的demo"><a href="#原生js实现的demo" class="headerlink" title="原生js实现的demo"></a>原生js实现的demo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var imgs = document.querySelectorAll(&apos;img&apos;);//获取所有图片</div><div class="line">var length = imgs.length;</div><div class="line">var n = 0;//保存已经加载了的图片数量</div><div class="line"></div><div class="line">window.onload = lazyLoadImg;</div><div class="line">window.onscroll = lazyLoadImg;</div><div class="line"></div><div class="line">function lazyLoadImg() &#123;</div><div class="line">	var userHeight = document.documentElement.clientHeight;</div><div class="line">	var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;</div><div class="line">	for(var i =n; i &lt; length; i++) &#123;</div><div class="line">		if(imgs[i].offsetTop &lt; userHeight + scrollTop) &#123;</div><div class="line">			if(imgs[i].getAttribute(&apos;src&apos;) === &apos;&apos;) &#123;</div><div class="line">				imgs[i].src = imgs[i].getAttribute(&apos;data-scr&apos;);</div><div class="line">			&#125;</div><div class="line">			n = i + 1;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/JavaScript_作用域链/" class="archive-article-date">
-  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/JavaScript_作用域链/">作用域链</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端性能优化/">前端性能优化</a></li></ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://github.com/jacklincao/前端性能优化_ 图片懒加载技术/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/JavaScript_闭包/" class="archive-article-date">
-  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/JavaScript_闭包/">闭包</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
+  
+<nav id="article-nav">
+  
+  
+    <a href="/CSS_单行多行文本显示省略号/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">单行、多行文本显示省略号</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/JavaScript_原型及原型链/" class="archive-article-date">
-  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/JavaScript_原型及原型链/">原型及原型链</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/JavaScript_AJAX/" class="archive-article-date">
-  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/JavaScript_AJAX/">AJAX</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/JavaScript_typeof和instanceof/" class="archive-article-date">
-  	<time datetime="2017-01-02T07:07:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/JavaScript_typeof和instanceof/">typeof和instanceof</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2017/page/3/">&laquo; Prev</a><a class="page-number" href="/archives/2017/">1</a><a class="page-number" href="/archives/2017/page/2/">2</a><a class="page-number" href="/archives/2017/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
-  
 
 
           </div>
@@ -363,8 +335,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
