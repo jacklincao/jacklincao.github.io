@@ -233,82 +233,6 @@
 
 
   
-    <article id="post-title- 单行、多行文本显示省略号" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/title- 单行、多行文本显示省略号/">单行、多行文本显示省略号</a>
-    </h1>
-  
-
-        
-        <a href="/title- 单行、多行文本显示省略号/" class="archive-article-date">
-  	<time datetime="2018-04-13T08:51:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="实现单行文本溢出省略号展示"><a href="#实现单行文本溢出省略号展示" class="headerlink" title="实现单行文本溢出省略号展示"></a>实现单行文本溢出省略号展示</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">p &#123;</div><div class="line">    text-overflow:ellipsis;//text-overflow属性规定文本溢出时的操作</div><div class="line">    white-space: nowrap;//源文档中的空白符,如空格、换行；pre保持原格式,nowrap不换行,normal将空格合并为一个并忽略换行</div><div class="line">    overflow: hidden;//</div><div class="line">    /*width: 3em;*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/title- 单行、多行文本显示省略号/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/title- 单行、多行文本显示省略号/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-CSS_单行多行文本显示省略号" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -507,6 +431,93 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/MySQL_备份还原/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git_速查命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/Git_速查命令/">git使用日记</a>
+    </h1>
+  
+
+        
+        <a href="/Git_速查命令/" class="archive-article-date">
+  	<time datetime="2018-01-19T13:03:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h1><p>为了方便自己以后使用git命令，避免网上查阅，所以用这个记录了一些常用的命令：</p>
+<ol>
+<li><code>git status</code> 查看仓库当前状态</li>
+<li><code>git add xx</code> 提交文件xx到暂存区</li>
+<li><code>git diff xx</code> 查看xx文件做了什么修改</li>
+<li><code>git commit -m “描述”</code> 提交修改时带上描述，将暂存区提交到当前分支</li>
+<li><code>git log</code> 查看commit（提交）历史记录 可加上 <code>–pretty=oneline</code> 过滤其它信息，加上<code>--graph</code></li>
+<li><code>git reset --hard HEAD^</code> 回退到上一版本，如果有多个版本，可以使用<code>HEAD^^</code>（回退上上个版本），<code>HEAD~100</code>（回退到100个版本）</li>
+<li><code>git reset --hard xxxxxxx</code> 指定回到某个版本号</li>
+<li><code>git fetch --all</code>, <code>git reset --hard origin/master</code> 第一条fetch下载远程的内容,第二条将当前指针指向刚刚下载的</li>
+<li><code>git reflog</code> 记录每一次命令操作</li>
+<li><code>git checkout -- xx</code> 撤销对xx文件的全部修改操作；一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+        
+          <a class="article-more-a" href="/Git_速查命令/#more">更多 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">git使用</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/Git_速查命令/">展开全文 >></a>
         </p>
       
 

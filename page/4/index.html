@@ -155,83 +155,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-AngularJs_学习笔记之指令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/AngularJs_学习笔记之指令/">AngularJs学习之指令编写</a>
-    </h1>
-  
-
-        
-        <a href="/AngularJs_学习笔记之指令/" class="archive-article-date">
-  	<time datetime="2017-01-20T11:38:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api"><a href="#（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api" class="headerlink" title="（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api"></a>（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api</h3><h3 id="（2）在link中主要操作DOM"><a href="#（2）在link中主要操作DOM" class="headerlink" title="（2）在link中主要操作DOM"></a>（2）在link中主要操作DOM</h3><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="1-指令的定义："><a href="#1-指令的定义：" class="headerlink" title="1.指令的定义："></a>1.指令的定义：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.directive(&apos;hello&apos;,function()&#123;</div><div class="line">	return &#123;</div><div class="line">		restrict:&apos;AECM&apos;,</div><div class="line">		template:&apos;&lt;label&gt;hello world&lt;/label&gt;&apos;</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>这是一个最简单的指令，在这个指令中，restrice用来规定指令的使用方式，A（attribute）代表指令以属性方式调用，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div hello&gt;&lt;/div&gt;;</div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/AngularJs_学习笔记之指令/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">AngularJs学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/AngularJs_学习笔记之指令/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-AngularJs_学习笔记之ui-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -441,6 +364,84 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/AngularJs_学习笔记之条件化显示/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JavaScript_对象属性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/JavaScript_对象属性/">对象属性</a>
+    </h1>
+  
+
+        
+        <a href="/JavaScript_对象属性/" class="archive-article-date">
+  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h1><p>ECMAScript中有两种属性：数据属性和访问器属性</p>
+<h2 id="数据属性"><a href="#数据属性" class="headerlink" title="数据属性"></a>数据属性</h2><p>概念:数据属性包含属性的值的位置,在这个位置可进行读取、写入<br>特性:1.[[Configurable]]:能否删除属性、修改属性的特性,默认值为true<br>     2.[[Writable]]:能否修改属性的值,默认值为true<br>     3.[[Enumberable]]:能否枚举出该属性,默认值为true<br>     4.[[Value]]:属性的值,默认值为undefined</p>
+<h2 id="访问器属性"><a href="#访问器属性" class="headerlink" title="访问器属性"></a>访问器属性</h2><p>概念:访问器属性不包含数据值,有一队getter()和setter()(这两个函数<strong>不是必须</strong>的),读取访问器属性会调用getter(),同理写入时会调用setter()<br>特性:1.[[Configurable]]:能否删除、修改属性的特性<br>     2.[[Enmuberable]]:能否枚举出该属性<br>     3.[[Get]]:读取属性时调用<br>     4.[[Set]]:写入属性时调用<br>
+        
+          <a class="article-more-a" href="/JavaScript_对象属性/#more">更多 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/JavaScript_对象属性/">展开全文 >></a>
         </p>
       
 
