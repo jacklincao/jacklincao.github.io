@@ -231,85 +231,6 @@
 
 
   
-    <article id="post-JavaScript_eval" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/JavaScript_eval/">强大的eval()</a>
-    </h1>
-  
-
-        
-        <a href="/JavaScript_eval/" class="archive-article-date">
-  	<time datetime="2017-02-08T12:21:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="解析功能"><a href="#解析功能" class="headerlink" title="解析功能"></a>解析功能</h1><p>eval()能将传入其中的字符串转换为当前执行环境的可执行代码，例如：</p>
-<pre><code>var msg = &quot;Hello World!&quot;;
-eval(&quot;console.log(msg)&quot;);
-</code></pre><p>在eval()中声明的变量和函数都<strong>不会提升</strong>，使用eval可能会引发<strong>代码注入</strong>，例如：</p>
-<pre><code>console.log(msg);//msg未提升：Uncaught ReferenceError: msg1 is not defined
-eval(&quot;var msg = &apos;Hi!&apos;&quot;);
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/JavaScript_eval/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-JavaScript_encodeURI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -543,6 +464,83 @@ encodeURI(&quot;http://www.baidu.com?hello world!&quot;);//&quot;http://www.baid
 
 
   
+    <article id="post-AngularJs_学习笔记之ui-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/AngularJs_学习笔记之ui-router/">AngularJs学习之ui-router</a>
+    </h1>
+  
+
+        
+        <a href="/AngularJs_学习笔记之ui-router/" class="archive-article-date">
+  	<time datetime="2017-01-12T11:29:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天学了ui-router，从慕课以及自己手动敲代码，感受到了它的魅力，记得假期做过一个图书管理系统的练习，那个时候用的是iframe来实现刷新，现在看来，觉得当时还是太嫩了，进入主题吧</p>
+<h3 id="首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1-多样化视图-2-嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范"><a href="#首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1-多样化视图-2-嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范" class="headerlink" title="首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范"></a>首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已
+        
+          <a class="article-more-a" href="/AngularJs_学习笔记之ui-router/#more">更多 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">AngularJs学习笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/AngularJs_学习笔记之ui-router/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -645,15 +643,11 @@ encodeURI(&quot;http://www.baidu.com?hello world!&quot;);//&quot;http://www.baid
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Angular常见bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -661,11 +655,15 @@ encodeURI(&quot;http://www.baidu.com?hello world!&quot;);//&quot;http://www.baid
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
