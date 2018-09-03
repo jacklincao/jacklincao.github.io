@@ -8,19 +8,18 @@
   <link rel="dns-prefetch" href="https://github.com/jacklincao">
   <title>垃圾回收(GC) | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="概念垃圾回收机制为了保证浏览器运行正常,需要对其内存进行管理,而JavaScript的垃圾回收机制原理就是:找出不在继续使用的变量,释放这部分变量所占用的内存,垃圾回收器会按照固定的时间间隔进行此操作
-实现方式最常用的两种方式分别是:标记清除法和引用计数法">
+  <meta name="description" content="概念垃圾回收机制为了保证浏览器运行正常,需要对其内存进行管理,而JavaScript的垃圾回收机制原理就是:找出不在继续使用的变量,释放这部分变量所占用的内存,垃圾回收器会按照固定的时间间隔进行此操作 实现方式最常用的两种方式分别是:标记清除法和引用计数法">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="垃圾回收(GC)">
 <meta property="og:url" content="https://github.com/jacklincao/JavaScript_垃圾回收/index.html">
 <meta property="og:site_name" content="林林博客">
-<meta property="og:description" content="概念垃圾回收机制为了保证浏览器运行正常,需要对其内存进行管理,而JavaScript的垃圾回收机制原理就是:找出不在继续使用的变量,释放这部分变量所占用的内存,垃圾回收器会按照固定的时间间隔进行此操作
-实现方式最常用的两种方式分别是:标记清除法和引用计数法">
+<meta property="og:description" content="概念垃圾回收机制为了保证浏览器运行正常,需要对其内存进行管理,而JavaScript的垃圾回收机制原理就是:找出不在继续使用的变量,释放这部分变量所占用的内存,垃圾回收器会按照固定的时间间隔进行此操作 实现方式最常用的两种方式分别是:标记清除法和引用计数法">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-03-03T06:15:58.047Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="垃圾回收(GC)">
-<meta name="twitter:description" content="概念垃圾回收机制为了保证浏览器运行正常,需要对其内存进行管理,而JavaScript的垃圾回收机制原理就是:找出不在继续使用的变量,释放这部分变量所占用的内存,垃圾回收器会按照固定的时间间隔进行此操作
-实现方式最常用的两种方式分别是:标记清除法和引用计数法">
+<meta name="twitter:description" content="概念垃圾回收机制为了保证浏览器运行正常,需要对其内存进行管理,而JavaScript的垃圾回收机制原理就是:找出不在继续使用的变量,释放这部分变量所占用的内存,垃圾回收器会按照固定的时间间隔进行此操作 实现方式最常用的两种方式分别是:标记清除法和引用计数法">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
   
@@ -62,6 +61,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
+	        
+				<li><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 	        
 			</ul>
 		</nav>
@@ -121,6 +122,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -140,12 +143,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 		        
 				</ul>
 			</nav>
@@ -184,10 +189,10 @@
 <h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p>最常用的两种方式分别是:标记清除法和引用计数法<br><a id="more"></a></p>
 <h1 id="标记清除"><a href="#标记清除" class="headerlink" title="标记清除"></a>标记清除</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>变量进入某一个环境后,将该变量标记为”进入环境”,当变量离开该环境时,再将该变量标记为”离开环境”,垃圾回收器将标记为”离开环境”的变量占用内存回收</p>
 <h2 id="实现方式-1"><a href="#实现方式-1" class="headerlink" title="实现方式"></a>实现方式</h2><p>用变量的某个特殊位来记录变量状态,或者使用一个变量列表跟踪”离开环境”的变量</p>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function getName() &#123;</div><div class="line">    var name = &quot;me&quot;;   //name变量&quot;进入环境&quot;</div><div class="line">    console.log(name); </div><div class="line">&#125;</div><div class="line"></div><div class="line">getName(); //运行函数后,name变量&quot;离开环境&quot;</div></pre></td></tr></table></figure>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function getName() &#123;</span><br><span class="line">    var name = &quot;me&quot;;   //name变量&quot;进入环境&quot;</span><br><span class="line">    console.log(name); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getName(); //运行函数后,name变量&quot;离开环境&quot;</span><br></pre></td></tr></table></figure>
 <h1 id="引用计数"><a href="#引用计数" class="headerlink" title="引用计数"></a>引用计数</h1><h2 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h2><p>记录每个值的被引用次数,当给一个变量赋某个引用类型值后,该值的引用次数为1,若又给另一个变量赋值,该值的引用次数相应的+1,若第一个变量被赋予了新值,那么旧值的引用次数相应的-1,当该值的引用次数变为0后,由垃圾回收器进行回收</p>
-<h2 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function getName() &#123;</div><div class="line">    var o1 = &#123;name: &apos;me&apos;&#125;;  //对象的引用次数为1</div><div class="line">    var o2 = o1;            //对象的引用次数为2</div><div class="line">    var o3 = o1;            //对象的引用次数为3</div><div class="line">    o2 = &#123;&#125;;                //对象的引用次数为2</div><div class="line">    o3 = &#123;&#125;;                //对象的引用次数为1</div><div class="line">    o1 = &#123;&#125;;                //对象的引用次数为0</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="循环引用"><a href="#循环引用" class="headerlink" title="循环引用"></a>循环引用</h2><p>使用引用技术容易引起一个问题:循环引用,在一个变量中A引用了另一个变量B,同时B引用了A<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function cyclic() &#123;</div><div class="line">    var objectA = &#123;&#125;;       //对象A的引用次数为1</div><div class="line">    var objectB = &#123;&#125;;       //对象B的引用次数为1</div><div class="line">    </div><div class="line">    objectA.toB = objectB;  //对象B的引用次数为2</div><div class="line">    objectB.toA = objectA;  //对象A的引用次数为2</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function getName() &#123;</span><br><span class="line">    var o1 = &#123;name: &apos;me&apos;&#125;;  //对象的引用次数为1</span><br><span class="line">    var o2 = o1;            //对象的引用次数为2</span><br><span class="line">    var o3 = o1;            //对象的引用次数为3</span><br><span class="line">    o2 = &#123;&#125;;                //对象的引用次数为2</span><br><span class="line">    o3 = &#123;&#125;;                //对象的引用次数为1</span><br><span class="line">    o1 = &#123;&#125;;                //对象的引用次数为0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="循环引用"><a href="#循环引用" class="headerlink" title="循环引用"></a>循环引用</h2><p>使用引用技术容易引起一个问题:循环引用,在一个变量中A引用了另一个变量B,同时B引用了A<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function cyclic() &#123;</span><br><span class="line">    var objectA = &#123;&#125;;       //对象A的引用次数为1</span><br><span class="line">    var objectB = &#123;&#125;;       //对象B的引用次数为1</span><br><span class="line">    </span><br><span class="line">    objectA.toB = objectB;  //对象B的引用次数为2</span><br><span class="line">    objectB.toA = objectA;  //对象A的引用次数为2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>IE中有一部分对象不是JavaScript原生对象,它的BOM、DOM对象是使用C++以（Component Object Model）的形式实现,而COM对象的垃圾回收机制是采用引用计数方式,为了解决IE中的两种垃圾回收算法并存所导致的问题,IE9将BOM、DOM转变为真正的JavaScript对象</p>
 <h1 id="触发时机"><a href="#触发时机" class="headerlink" title="触发时机"></a>触发时机</h1><p>垃圾回收器是周期性运行的,而这个触发机制根据不同的浏览器有不同的实现,而且在垃圾回收期间会阻塞JavaScript运行</p>
 
@@ -441,11 +446,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Angular常见bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -457,15 +466,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">

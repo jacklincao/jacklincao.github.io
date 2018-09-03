@@ -8,25 +8,18 @@
   <link rel="dns-prefetch" href="https://github.com/jacklincao">
   <title>数组常用方法 | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="常用方法
-检测是否是数组：Array.isArray(array);   //array是数组变量，返回true/false
-使用不同分隔符构建字符串：array.join(&amp;quot;||&amp;quot;);   //将输出以||为分隔的字符串
-栈方法： 12array.push(···);  //向array中推如任意项var temp = array.pop();  //取出array中的最后一">
+  <meta name="description" content="常用方法 检测是否是数组：Array.isArray(array);   //array是数组变量，返回true/false 使用不同分隔符构建字符串：array.join(&amp;quot;||&amp;quot;);   //将输出以||为分隔的字符串 栈方法： 12array.push(···);  //向array中推如任意项var temp = array.pop();  //取出array中的最后一">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数组常用方法">
 <meta property="og:url" content="https://github.com/jacklincao/JavaScript_数组常用方法/index.html">
 <meta property="og:site_name" content="林林博客">
-<meta property="og:description" content="常用方法
-检测是否是数组：Array.isArray(array);   //array是数组变量，返回true/false
-使用不同分隔符构建字符串：array.join(&amp;quot;||&amp;quot;);   //将输出以||为分隔的字符串
-栈方法： 12array.push(···);  //向array中推如任意项var temp = array.pop();  //取出array中的最后一">
+<meta property="og:description" content="常用方法 检测是否是数组：Array.isArray(array);   //array是数组变量，返回true/false 使用不同分隔符构建字符串：array.join(&amp;quot;||&amp;quot;);   //将输出以||为分隔的字符串 栈方法： 12array.push(···);  //向array中推如任意项var temp = array.pop();  //取出array中的最后一">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-03-02T12:52:35.957Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组常用方法">
-<meta name="twitter:description" content="常用方法
-检测是否是数组：Array.isArray(array);   //array是数组变量，返回true/false
-使用不同分隔符构建字符串：array.join(&amp;quot;||&amp;quot;);   //将输出以||为分隔的字符串
-栈方法： 12array.push(···);  //向array中推如任意项var temp = array.pop();  //取出array中的最后一">
+<meta name="twitter:description" content="常用方法 检测是否是数组：Array.isArray(array);   //array是数组变量，返回true/false 使用不同分隔符构建字符串：array.join(&amp;quot;||&amp;quot;);   //将输出以||为分隔的字符串 栈方法： 12array.push(···);  //向array中推如任意项var temp = array.pop();  //取出array中的最后一">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
   
@@ -68,6 +61,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
+	        
+				<li><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 	        
 			</ul>
 		</nav>
@@ -127,6 +122,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -146,12 +143,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 		        
 				</ul>
 			</nav>
@@ -189,22 +188,22 @@
         <h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><ol>
 <li>检测是否是数组：<code>Array.isArray(array);   //array是数组变量，返回true/false</code></li>
 <li>使用不同分隔符构建字符串：<code>array.join(&quot;||&quot;);   //将输出以||为分隔的字符串</code></li>
-<li><p>栈方法： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">array.push(···);  //向array中推如任意项</div><div class="line">var temp = array.pop();  //取出array中的最后一项并删除</div></pre></td></tr></table></figure></p>
+<li><p>栈方法： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">array.push(···);  //向array中推如任意项</span><br><span class="line">var temp = array.pop();  //取出array中的最后一项并删除</span><br></pre></td></tr></table></figure></p>
 </li>
-<li><p>队列方法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">array.push(···);  //与shift()构成队列</div><div class="line">array.shift();    //取出array中的第一项并删除</div><div class="line">array.unshift(···);  //向array的前端推进任意项并返回新数组长度</div><div class="line">array.pop();  //与unshift()构成队列</div></pre></td></tr></table></figure></p>
+<li><p>队列方法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">array.push(···);  //与shift()构成队列</span><br><span class="line">array.shift();    //取出array中的第一项并删除</span><br><span class="line">array.unshift(···);  //向array的前端推进任意项并返回新数组长度</span><br><span class="line">array.pop();  //与unshift()构成队列</span><br></pre></td></tr></table></figure></p>
 </li>
 </ol>
 <a id="more"></a>
-<ol>
-<li><p>重排序：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">array.reverse()  //反转array，第一项变成最后一项，以此类推;</div><div class="line">array.sort(function(value1, value2) &#123;//对array进行排序，可选择传入比较函数</div><div class="line">    if(value1 &gt; value2) &#123;</div><div class="line">        reutrn 1;   </div><div class="line">    &#125;</div><div class="line">    else if(value1 &lt; value2) &#123;</div><div class="line">        return 1;</div><div class="line">    &#125;</div><div class="line">    else &#123;</div><div class="line">        return 0;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<ol start="5">
+<li><p>重排序：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">array.reverse()  //反转array，第一项变成最后一项，以此类推;</span><br><span class="line">array.sort(function(value1, value2) &#123;//对array进行排序，可选择传入比较函数</span><br><span class="line">    if(value1 &gt; value2) &#123;</span><br><span class="line">        reutrn 1;   </span><br><span class="line">    &#125;</span><br><span class="line">    else if(value1 &lt; value2) &#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 </li>
-<li><p>操作方法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var newArray = array.concat(···);  //基于array中的元素向newArray中写入任意多元素，可选择是否传参</div><div class="line">var newArray = array.slice(arg0, arg1);  //无参数时复制array到newArray；一个参数时从array复制指定位置到最后一项；两个参数时从array复制指定开始位置到指定结束位置</div><div class="line">var newArray = array.splice(arg0, arg1);  //从array中删除arg0开始的arg1项</div><div class="line">var newArray = array.splice(arg0, arg1, ···);  //从array中arg0开始删除arg1项，并插入任意多项,newArray是空数组</div></pre></td></tr></table></figure></p>
+<li><p>操作方法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var newArray = array.concat(···);  //基于array中的元素向newArray中写入任意多元素，可选择是否传参</span><br><span class="line">var newArray = array.slice(arg0, arg1);  //无参数时复制array到newArray；一个参数时从array复制指定位置到最后一项；两个参数时从array复制指定开始位置到指定结束位置</span><br><span class="line">var newArray = array.splice(arg0, arg1);  //从array中删除arg0开始的arg1项</span><br><span class="line">var newArray = array.splice(arg0, arg1, ···);  //从array中arg0开始删除arg1项，并插入任意多项,newArray是空数组</span><br></pre></td></tr></table></figure></p>
 </li>
-<li><p>位置方法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var index = array.indexOf(arg0, arg1);  //从arg0（可选参数）开始查找arg1，返回索引</div><div class="line">var index = array.lastIndex(arg0, arg1);  //从array最后arg0（可选参数）位置开始查找arg1</div></pre></td></tr></table></figure></p>
+<li><p>位置方法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var index = array.indexOf(arg0, arg1);  //从arg0（可选参数）开始查找arg1，返回索引</span><br><span class="line">var index = array.lastIndex(arg0, arg1);  //从array最后arg0（可选参数）位置开始查找arg1</span><br></pre></td></tr></table></figure></p>
 </li>
-<li><p>迭代方法：共五个，都接受2个参数，第一个参数是每一项都要运行的函数，第二个参数（可选）是运行该函数的作用域对象，运行的函数接收三个参数当前项，当前项下标，数组对象，都不会修改数组中的值<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var bool = array.every(function(item, index, arr) &#123;//对array中每项运行该函数，若都返回true，则最终结果为true</div><div class="line">    return (item &gt; 2);</div><div class="line">&#125;)</div><div class="line">var bool = array.some(function(item, index, arr) &#123;//对array中每项运行该函数，若有一项返回true，则结果为true</div><div class="line">    return (item &gt; 2);</div><div class="line">&#125;)</div><div class="line">var newArray = array.filter(function(item, index, arr)&#123;//对array中每项运行该函数，返回结果为true的项组成的新数组</div><div class="line">        return (item &gt; 2);</div><div class="line">    &#125;)</div><div class="line">var newArray = array.map(function(item, index, arr)&#123;//对array中每项运行该函数，返回每次经过该函数的元素组成的新数组</div><div class="line">        return item * 2;</div><div class="line">    &#125;)</div><div class="line">array.forEach(functrion(item, index, arr)&#123;//对array中每项运行该函数,无返回值</div><div class="line">        newArray[index] = item;//某些操作</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<li><p>迭代方法：共五个，都接受2个参数，第一个参数是每一项都要运行的函数，第二个参数（可选）是运行该函数的作用域对象，运行的函数接收三个参数当前项，当前项下标，数组对象，都不会修改数组中的值<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var bool = array.every(function(item, index, arr) &#123;//对array中每项运行该函数，若都返回true，则最终结果为true</span><br><span class="line">    return (item &gt; 2);</span><br><span class="line">&#125;)</span><br><span class="line">var bool = array.some(function(item, index, arr) &#123;//对array中每项运行该函数，若有一项返回true，则结果为true</span><br><span class="line">    return (item &gt; 2);</span><br><span class="line">&#125;)</span><br><span class="line">var newArray = array.filter(function(item, index, arr)&#123;//对array中每项运行该函数，返回结果为true的项组成的新数组</span><br><span class="line">        return (item &gt; 2);</span><br><span class="line">    &#125;)</span><br><span class="line">var newArray = array.map(function(item, index, arr)&#123;//对array中每项运行该函数，返回每次经过该函数的元素组成的新数组</span><br><span class="line">        return item * 2;</span><br><span class="line">    &#125;)</span><br><span class="line">array.forEach(functrion(item, index, arr)&#123;//对array中每项运行该函数,无返回值</span><br><span class="line">        newArray[index] = item;//某些操作</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 </li>
-<li><p>归并方法：共2个，这两个方法接收两个参数，第一个参数是每一项都要运行的函数，第二个参数（可选）为归并的初始值，函数接收4个参数：前一个值，当前值，数组下标，原数组；第一次迭代发生在数组第二项，故第一个参数是数组第一项，第二个参数是数组第二项<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var sum = array.reduce(function(prev, cur, index, arr) &#123;//执行求和</div><div class="line">                          return prev + cur;</div><div class="line">                    &#125;)</div><div class="line">var sum = array.reduceRight(function(prev, cur, index, arr) &#123;//从最右方开始执行求和</div><div class="line">                      return prev + cur;</div><div class="line">                &#125;)</div></pre></td></tr></table></figure></p>
+<li><p>归并方法：共2个，这两个方法接收两个参数，第一个参数是每一项都要运行的函数，第二个参数（可选）为归并的初始值，函数接收4个参数：前一个值，当前值，数组下标，原数组；第一次迭代发生在数组第二项，故第一个参数是数组第一项，第二个参数是数组第二项<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var sum = array.reduce(function(prev, cur, index, arr) &#123;//执行求和</span><br><span class="line">                          return prev + cur;</span><br><span class="line">                    &#125;)</span><br><span class="line">var sum = array.reduceRight(function(prev, cur, index, arr) &#123;//从最右方开始执行求和</span><br><span class="line">                      return prev + cur;</span><br><span class="line">                &#125;)</span><br></pre></td></tr></table></figure></p>
 </li>
 </ol>
 
@@ -458,11 +457,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Angular常见bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -474,15 +477,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -12,6 +12,7 @@
 <meta property="og:title" content="林林博客">
 <meta property="og:url" content="https://github.com/jacklincao/page/3/index.html">
 <meta property="og:site_name" content="林林博客">
+<meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="林林博客">
   
@@ -55,6 +56,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
+	        
+				<li><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 	        
 			</ul>
 		</nav>
@@ -114,6 +117,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -133,12 +138,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 		        
 				</ul>
 			</nav>
@@ -154,6 +161,82 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-HTTP_协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/HTTP_协议/">http协议</a>
+    </h1>
+  
+
+        
+        <a href="/HTTP_协议/" class="archive-article-date">
+  	<time datetime="2017-05-03T04:02:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/03/02/http.jpg" alt="此处输入图片的描述"><br>
+        
+          <a class="article-more-a" href="/HTTP_协议/#more">更多 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTTP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/HTTP_协议/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-HTTP_状态码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -407,8 +490,8 @@ encodeURI(&quot;http://www.baidu.com?hello world!&quot;);//&quot;http://www.baid
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api"><a href="#（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api" class="headerlink" title="（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api"></a>（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api</h3><h3 id="（2）在link中主要操作DOM"><a href="#（2）在link中主要操作DOM" class="headerlink" title="（2）在link中主要操作DOM"></a>（2）在link中主要操作DOM</h3><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="1-指令的定义："><a href="#1-指令的定义：" class="headerlink" title="1.指令的定义："></a>1.指令的定义：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.directive(&apos;hello&apos;,function()&#123;</div><div class="line">	return &#123;</div><div class="line">		restrict:&apos;AECM&apos;,</div><div class="line">		template:&apos;&lt;label&gt;hello world&lt;/label&gt;&apos;</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>这是一个最简单的指令，在这个指令中，restrice用来规定指令的使用方式，A（attribute）代表指令以属性方式调用，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div hello&gt;&lt;/div&gt;;</div></pre></td></tr></table></figure></p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api"><a href="#（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api" class="headerlink" title="（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api"></a>（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api</h3><h3 id="（2）在link中主要操作DOM"><a href="#（2）在link中主要操作DOM" class="headerlink" title="（2）在link中主要操作DOM"></a>（2）在link中主要操作DOM</h3><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="1-指令的定义："><a href="#1-指令的定义：" class="headerlink" title="1.指令的定义："></a>1.指令的定义：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.directive(&apos;hello&apos;,function()&#123;</span><br><span class="line">	return &#123;</span><br><span class="line">		restrict:&apos;AECM&apos;,</span><br><span class="line">		template:&apos;&lt;label&gt;hello world&lt;/label&gt;&apos;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>这是一个最简单的指令，在这个指令中，restrice用来规定指令的使用方式，A（attribute）代表指令以属性方式调用，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div hello&gt;&lt;/div&gt;;</span><br></pre></td></tr></table></figure></p>
         
           <a class="article-more-a" href="/AngularJs_学习笔记之指令/#more">更多 >></a>
         
@@ -435,83 +518,6 @@ encodeURI(&quot;http://www.baidu.com?hello world!&quot;);//&quot;http://www.baid
       
         <p class="article-more-link">
           <a class="article-more-a" href="/AngularJs_学习笔记之指令/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-AngularJs_学习笔记之ui-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/AngularJs_学习笔记之ui-router/">AngularJs学习之ui-router</a>
-    </h1>
-  
-
-        
-        <a href="/AngularJs_学习笔记之ui-router/" class="archive-article-date">
-  	<time datetime="2017-01-12T11:29:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天学了ui-router，从慕课以及自己手动敲代码，感受到了它的魅力，记得假期做过一个图书管理系统的练习，那个时候用的是iframe来实现刷新，现在看来，觉得当时还是太嫩了，进入主题吧</p>
-<h3 id="首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1-多样化视图-2-嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范"><a href="#首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1-多样化视图-2-嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范" class="headerlink" title="首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范"></a>首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已
-        
-          <a class="article-more-a" href="/AngularJs_学习笔记之ui-router/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">AngularJs学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/AngularJs_学习笔记之ui-router/">展开全文 >></a>
         </p>
       
 
@@ -643,11 +649,15 @@ encodeURI(&quot;http://www.baidu.com?hello world!&quot;);//&quot;http://www.baid
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Angular常见bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -659,15 +669,15 @@ encodeURI(&quot;http://www.baidu.com?hello world!&quot;);//&quot;http://www.baid
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">

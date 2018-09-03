@@ -9,11 +9,13 @@
   <title>Angular生成组件出错 | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="使用Angular CLI工具生成组件出错12Error:More than one module matches. Use skip-important option to skip importing the component into the closest module.More than one module matches. Use skip-important option to">
+<meta name="keywords" content="Angular常见bug">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Angular生成组件出错">
 <meta property="og:url" content="https://github.com/jacklincao/Angular_生成组件出错/index.html">
 <meta property="og:site_name" content="林林博客">
 <meta property="og:description" content="使用Angular CLI工具生成组件出错12Error:More than one module matches. Use skip-important option to skip importing the component into the closest module.More than one module matches. Use skip-important option to">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-03-02T13:00:13.726Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular生成组件出错">
@@ -59,6 +61,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
+	        
+				<li><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 	        
 			</ul>
 		</nav>
@@ -118,6 +122,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -137,12 +143,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 		        
 				</ul>
 			</nav>
@@ -177,9 +185,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="使用Angular-CLI工具生成组件出错"><a href="#使用Angular-CLI工具生成组件出错" class="headerlink" title="使用Angular CLI工具生成组件出错"></a>使用Angular CLI工具生成组件出错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Error:More than one module matches. Use skip-important option to skip importing the component into the closest module.</div><div class="line">More than one module matches. Use skip-important option to skip importing the component into the closest module.</div></pre></td></tr></table></figure>
+        <h2 id="使用Angular-CLI工具生成组件出错"><a href="#使用Angular-CLI工具生成组件出错" class="headerlink" title="使用Angular CLI工具生成组件出错"></a>使用Angular CLI工具生成组件出错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Error:More than one module matches. Use skip-important option to skip importing the component into the closest module.</span><br><span class="line">More than one module matches. Use skip-important option to skip importing the component into the closest module.</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>查看了Angluar CLI的官方文档，没找到原因，在<a href="https://stackoverflow.com/questions/46174863" target="_blank" rel="external">stackouverflow</a>上找到了，原因是在我的应用中有多个模块，不指明是哪一个模块的组件的话，它不知道这个组件属于谁，所以解决方法就是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng g c \shared\test --module app //shared指在shared文件夹下生成test组件，它是app模块的组件</div></pre></td></tr></table></figure></p>
+<p>查看了Angluar CLI的官方文档，没找到原因，在<a href="https://stackoverflow.com/questions/46174863" target="_blank" rel="noopener">stackouverflow</a>上找到了，原因是在我的应用中有多个模块，不指明是哪一个模块的组件的话，它不知道这个组件属于谁，所以解决方法就是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng g c \shared\test --module app //shared指在shared文件夹下生成test组件，它是app模块的组件</span><br></pre></td></tr></table></figure></p>
 <p>亲测成功。</p>
 
       
@@ -432,11 +440,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Angular常见bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -448,15 +460,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">

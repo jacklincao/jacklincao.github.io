@@ -9,17 +9,17 @@
   <title>AJAX | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="AJAX什么是AJAX?AJAX全拼Asynchronous JavaScript and XML,意为异步JavaScript和XML,用于解决用户向后台发起请求后不需重新加载整个页面,只要将获取的数据插入到指定位置即可,提高了应用程序的执行能力">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AJAX">
 <meta property="og:url" content="https://github.com/jacklincao/JavaScript_AJAX/index.html">
 <meta property="og:site_name" content="林林博客">
 <meta property="og:description" content="AJAX什么是AJAX?AJAX全拼Asynchronous JavaScript and XML,意为异步JavaScript和XML,用于解决用户向后台发起请求后不需重新加载整个页面,只要将获取的数据插入到指定位置即可,提高了应用程序的执行能力">
-<meta property="og:image" content="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/03/02/Ajax1.jpg">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-03-05T13:45:42.940Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AJAX">
 <meta name="twitter:description" content="AJAX什么是AJAX?AJAX全拼Asynchronous JavaScript and XML,意为异步JavaScript和XML,用于解决用户向后台发起请求后不需重新加载整个页面,只要将获取的数据插入到指定位置即可,提高了应用程序的执行能力">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/03/02/Ajax1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
   
@@ -61,6 +61,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
+	        
+				<li><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 	        
 			</ul>
 		</nav>
@@ -120,6 +122,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -139,12 +143,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 		        
 				</ul>
 			</nav>
@@ -180,8 +186,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h1><h2 id="什么是AJAX"><a href="#什么是AJAX" class="headerlink" title="什么是AJAX?"></a>什么是AJAX?</h2><p>AJAX全拼Asynchronous JavaScript and XML,意为异步JavaScript和XML,用于解决用户向后台发起请求后不需重新加载整个页面,只要将获取的数据插入到指定位置即可,提高了应用程序的执行能力<br><a id="more"></a></p>
-<h2 id="AJAX核心"><a href="#AJAX核心" class="headerlink" title="AJAX核心"></a>AJAX核心</h2><p>AJAX核心对象是XMLHttpRequest,通过这个对象中的方法可以实现异步通信<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var xhr = new XMLHttpRequest();</div><div class="line">xhr.open(&quot;GET&quot;, &quot;http://www.xxxx.com/api&quot;, false);  //xhr.open接收3个参数(请求方式, 请求URL, 是否异步)</div><div class="line">xhr.send(null);</div><div class="line"></div><div class="line">if((xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) || xhr.status === 304) &#123;</div><div class="line">    console.log(xhr.responseText);</div><div class="line">&#125;</div><div class="line">else &#123;</div><div class="line">    console.log(xhr.status);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>在IE7之前使用ActiveXObject对象实现相同的功能:<code>var xhr = new ActiveXObject(不同版本);  //3个版本:&quot;MSXML2.XMLHttp.6.0&quot;, &quot;MSXML2.XMLHttp.3.0&quot;, &quot;MSXML2.XMLHttp&quot;</code><br>兼容IE7之前版本的AJAX写法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">function createXHR() &#123;</div><div class="line">			if(typeof XMLHttpRequest != &quot;undefined&quot;) &#123;</div><div class="line">				return new XMLHttpRequest();</div><div class="line">			&#125; else if(typeof ActiveXObject != &quot;undefined&quot;) &#123;</div><div class="line">				if(typeof arguments.callee.activeXString != &apos;string&apos;) &#123;</div><div class="line">					var versions = [&quot;MSXML2.XMLHttp.6.0&quot;, &quot;MSXML2.XMLHttp.3.0&quot;, &quot;MSXML2.XMLHttp&quot;],i,len;</div><div class="line"></div><div class="line">					for(i = 0, len = versions.length; i &lt; len; i++) &#123;</div><div class="line">						try &#123;</div><div class="line">							new ActiveXObject(versions[i]);</div><div class="line">							arguments.callee.activeXString = versions[i];</div><div class="line">							break;</div><div class="line">						&#125; catch (ex) &#123;</div><div class="line"></div><div class="line">						&#125;</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">				return new ActiveXObject(arguments.callee.activeXString);</div><div class="line">			&#125; else &#123;</div><div class="line">				throw new Error(&quot;No XHR object available.&quot;);</div><div class="line">			&#125;</div><div class="line">		&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="AJAX核心"><a href="#AJAX核心" class="headerlink" title="AJAX核心"></a>AJAX核心</h2><p>AJAX核心对象是XMLHttpRequest,通过这个对象中的方法可以实现异步通信<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var xhr = new XMLHttpRequest();</span><br><span class="line">xhr.open(&quot;GET&quot;, &quot;http://www.xxxx.com/api&quot;, false);  //xhr.open接收3个参数(请求方式, 请求URL, 是否异步)</span><br><span class="line">xhr.send(null);</span><br><span class="line"></span><br><span class="line">if((xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) || xhr.status === 304) &#123;</span><br><span class="line">    console.log(xhr.responseText);</span><br><span class="line">&#125;</span><br><span class="line">else &#123;</span><br><span class="line">    console.log(xhr.status);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在IE7之前使用ActiveXObject对象实现相同的功能:<code>var xhr = new ActiveXObject(不同版本);  //3个版本:&quot;MSXML2.XMLHttp.6.0&quot;, &quot;MSXML2.XMLHttp.3.0&quot;, &quot;MSXML2.XMLHttp&quot;</code><br>兼容IE7之前版本的AJAX写法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function createXHR() &#123;</span><br><span class="line">			if(typeof XMLHttpRequest != &quot;undefined&quot;) &#123;</span><br><span class="line">				return new XMLHttpRequest();</span><br><span class="line">			&#125; else if(typeof ActiveXObject != &quot;undefined&quot;) &#123;</span><br><span class="line">				if(typeof arguments.callee.activeXString != &apos;string&apos;) &#123;</span><br><span class="line">					var versions = [&quot;MSXML2.XMLHttp.6.0&quot;, &quot;MSXML2.XMLHttp.3.0&quot;, &quot;MSXML2.XMLHttp&quot;],i,len;</span><br><span class="line"></span><br><span class="line">					for(i = 0, len = versions.length; i &lt; len; i++) &#123;</span><br><span class="line">						try &#123;</span><br><span class="line">							new ActiveXObject(versions[i]);</span><br><span class="line">							arguments.callee.activeXString = versions[i];</span><br><span class="line">							break;</span><br><span class="line">						&#125; catch (ex) &#123;</span><br><span class="line"></span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				return new ActiveXObject(arguments.callee.activeXString);</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				throw new Error(&quot;No XHR object available.&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure></p>
 <p>在XHR中属性readyState代表请求/响应的活动阶段,有4个活动阶段:</p>
 <ul>
 <li>0:未初始化(还未调用open方法)</li>
@@ -199,8 +205,8 @@
 <li>load: 接收到完整的响应数据时触发</li>
 <li>loadend: 在通信完成或者error、abort、load事件后触发</li>
 </ul>
-<h2 id="AJAX流程"><a href="#AJAX流程" class="headerlink" title="AJAX流程"></a>AJAX流程</h2><p>通过AJAX获取数据的过程中可能会有一段空白区,而在这段空白区之间JavaScript将继续执行,接收到服务器的响应后第一件事是检测状态,如果状态正确就可以取出数据更新局部页面<br><img src="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/03/02/Ajax1.jpg" alt="此处输入图片的描述"></p>
-<h2 id="AJAX相关API"><a href="#AJAX相关API" class="headerlink" title="AJAX相关API"></a>AJAX相关API</h2><p>启动一个请求:<code>xhr.open(方法, URL, 是否异步)</code><br>发送数据给服务器:<code>xhr.send(数据)</code><br>监听readystate变化,需要在open()方法前指定:<code>xhr.onreadystatechange: function() {}</code><br>中止异步请求:<code>xhr.abort()</code><br>设置请求头部,需要在open()方法后send()方法前:<code>xhr.setRequestHeader(名称, 值)</code><br>获取指定名称的响应头部:<code>xhr.getResponseHeader(名称)</code><br>获取所有响应信息:<code>xhr.getAllResponseHeaders()</code><br>设置超时时间:<code>xhr.timeout = 毫秒</code><br>请求超时后触发该函数:<code>xhr.ontimeout = function() {}</code><br>重写响应的MIME类型:<code>xhr.overrideMimeType(类型)  //xhr.overrideMimeType(&quot;text/xml&quot;)</code></p>
+<h2 id="AJAX流程"><a href="#AJAX流程" class="headerlink" title="AJAX流程"></a>AJAX流程</h2><p>通过AJAX获取数据的过程中可能会有一段空白区,而在这段空白区之间JavaScript将继续执行,接收到服务器的响应后第一件事是检测状态,如果状态正确就可以取出数据更新局部页面<br>![此处输入图片的描述][1]</p>
+<h2 id="AJAX相关API"><a href="#AJAX相关API" class="headerlink" title="AJAX相关API"></a>AJAX相关API</h2><p>启动一个请求:<code>xhr.open(方法, URL, 是否异步)</code><br>发送数据给服务器:<code>xhr.send(数据)</code><br>监听readystate变化,需要在open()方法前指定:<code>xhr.onreadystatechange: function() {}</code><br>中止异步请求:<code>xhr.abort()</code><br>设置请求头部,需要在open()方法后send()方法前:<code>xhr.setRequestHeader(名称, 值)</code><br>获取指定名称的响应头部:<code>xhr.getResponseHeader(名称)</code><br>获取所有响应信息:<code>xhr.getAllResponseHeaders()</code><br>设置超时时间:<code>xhr.timeout = 毫秒</code><br>请求超时后触发该函数:<code>xhr.ontimeout = function() {}</code><br>重写响应的MIME类型:<code>xhr.overrideMimeType(类型)  //xhr.overrideMimeType(&quot;text/xml&quot;)</code><br>  [1]: <a href="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/03/02/Ajax1.jpg" target="_blank" rel="noopener">https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/03/02/Ajax1.jpg</a></p>
 <h1 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h1><h2 id="什么是CORS"><a href="#什么是CORS" class="headerlink" title="什么是CORS?"></a>什么是CORS?</h2><p>CORS: Cross-Origin Resource Sharing(跨源域资源共享),用一些技术实现请求非同源域下的资源<br>基本思想:让浏览器与服务器进行沟通,判断能否成功请求,请求时浏览器会在请求头部加上Origin,服务器收到后对此做验证,若同意请求,服务器发回的响应将包含Access-Control-Allow-Origin(这个头部返回的内容要与发送的源信息一致或”*”),若无此字段浏览器将报错<br>默认行为:跨域请求不发送cookie、HTTP认证等,通过设置withCredentials为true,这样浏览器就会发送cookie等信息,同时服务器的响应头部需要有:Access-Control-Allow-Credentials: true,否则浏览器将报错</p>
 <p>Preflighted Requests:CORS可通过该机制获取服务器是否允许跨域,发送Preflight请求将使用OPTIONS方法,同时带上以下头部:</p>
 <ul>
@@ -210,10 +216,10 @@
 <li>Access-Control-Allow-Origin:与请求源相同或”*”</li>
 <li>Access-Control-Allow-Methods:服务器接受的方法,以逗号分隔</li>
 <li>Access-Control-Allow-Headers:服务器接受的头部,以逗号分隔</li>
-<li>Access-Control-Max-Age:Preflight缓存时间(秒),在缓存期内无需再发Preflight请求<h2 id="跨浏览器的CORS实现"><a href="#跨浏览器的CORS实现" class="headerlink" title="跨浏览器的CORS实现"></a>跨浏览器的CORS实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function createCORSRequest(method, url) &#123;</div><div class="line">    var xhr = new XMLHttpRequest();</div><div class="line">    if (&quot;withCredentials&quot; in xhr) &#123;</div><div class="line">        xhr.open(method, url, true);</div><div class="line">    &#125; </div><div class="line">    //针对IE浏览器</div><div class="line">    else if (typeof XDomainRequest != &quot;undefined&quot;) &#123;</div><div class="line">        xhr = new XDomainRequest();</div><div class="line">        xhr.open(method, url);</div><div class="line">    &#125; else &#123;</div><div class="line">        xhr = null;</div><div class="line">    &#125;</div><div class="line">    return xhr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>Access-Control-Max-Age:Preflight缓存时间(秒),在缓存期内无需再发Preflight请求<h2 id="跨浏览器的CORS实现"><a href="#跨浏览器的CORS实现" class="headerlink" title="跨浏览器的CORS实现"></a>跨浏览器的CORS实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function createCORSRequest(method, url) &#123;</span><br><span class="line">    var xhr = new XMLHttpRequest();</span><br><span class="line">    if (&quot;withCredentials&quot; in xhr) &#123;</span><br><span class="line">        xhr.open(method, url, true);</span><br><span class="line">    &#125; </span><br><span class="line">    //针对IE浏览器</span><br><span class="line">    else if (typeof XDomainRequest != &quot;undefined&quot;) &#123;</span><br><span class="line">        xhr = new XDomainRequest();</span><br><span class="line">        xhr.open(method, url);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        xhr = null;</span><br><span class="line">    &#125;</span><br><span class="line">    return xhr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h1 id="其它跨域技术"><a href="#其它跨域技术" class="headerlink" title="其它跨域技术"></a>其它跨域技术</h1><h2 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h2><p>JSONP全称JSON with padding(填充式JSON),JSONP由两部分组成:回调函数与数据,例如请求:<br><code>http://www.xxx.com/?callback=handleResponse</code>,当浏览器收到响应后将执行handleResponse方法<br>使用方式:通过动态<code>&lt;script&gt;</code>元素使用,使用时为<code>&lt;script&gt;</code>元素的src指定跨域URL,请求完成后将会立即执行回调<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function handleResponse(res) &#123;</div><div class="line">    console.log(&quot;服务器发送:&quot; + res.text);</div><div class="line">&#125;</div><div class="line"></div><div class="line">var script = document.createElement(&quot;script&quot;);</div><div class="line">script.src = &quot;http://www.xxx.com/?callback=handleResponse&quot;;</div><div class="line">document.body.insertBefore(script, document.body.firstChild);</div></pre></td></tr></table></figure></p>
+<h1 id="其它跨域技术"><a href="#其它跨域技术" class="headerlink" title="其它跨域技术"></a>其它跨域技术</h1><h2 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h2><p>JSONP全称JSON with padding(填充式JSON),JSONP由两部分组成:回调函数与数据,例如请求:<br><code>http://www.xxx.com/?callback=handleResponse</code>,当浏览器收到响应后将执行handleResponse方法<br>使用方式:通过动态<code>&lt;script&gt;</code>元素使用,使用时为<code>&lt;script&gt;</code>元素的src指定跨域URL,请求完成后将会立即执行回调<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function handleResponse(res) &#123;</span><br><span class="line">    console.log(&quot;服务器发送:&quot; + res.text);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var script = document.createElement(&quot;script&quot;);</span><br><span class="line">script.src = &quot;http://www.xxx.com/?callback=handleResponse&quot;;</span><br><span class="line">document.body.insertBefore(script, document.body.firstChild);</span><br></pre></td></tr></table></figure></p>
 <p>缺点:<br>1.不安全,因为代码不确定<br>2.不容易确定JSONP请求失败</p>
 
       
@@ -334,8 +340,8 @@
     </a>
   
   
-    <a href="/JavaScript_typeof和instanceof/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">typeof和instanceof</div>
+    <a href="/JavaScript_作用域链/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">作用域链</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -466,11 +472,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Angular常见bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -482,15 +492,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">

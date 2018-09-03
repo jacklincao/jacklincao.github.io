@@ -8,19 +8,18 @@
   <link rel="dns-prefetch" href="https://github.com/jacklincao">
   <title>AngularJs学习之ui-router | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天学了ui-router，从慕课以及自己手动敲代码，感受到了它的魅力，记得假期做过一个图书管理系统的练习，那个时候用的是iframe来实现刷新，现在看来，觉得当时还是太嫩了，进入主题吧
-首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个ht">
+  <meta name="description" content="今天学了ui-router，从慕课以及自己手动敲代码，感受到了它的魅力，记得假期做过一个图书管理系统的练习，那个时候用的是iframe来实现刷新，现在看来，觉得当时还是太嫩了，进入主题吧 首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个ht">
+<meta name="keywords" content="AngularJs学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AngularJs学习之ui-router">
 <meta property="og:url" content="https://github.com/jacklincao/AngularJs_学习笔记之ui-router/index.html">
 <meta property="og:site_name" content="林林博客">
-<meta property="og:description" content="今天学了ui-router，从慕课以及自己手动敲代码，感受到了它的魅力，记得假期做过一个图书管理系统的练习，那个时候用的是iframe来实现刷新，现在看来，觉得当时还是太嫩了，进入主题吧
-首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个ht">
+<meta property="og:description" content="今天学了ui-router，从慕课以及自己手动敲代码，感受到了它的魅力，记得假期做过一个图书管理系统的练习，那个时候用的是iframe来实现刷新，现在看来，觉得当时还是太嫩了，进入主题吧 首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个ht">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-03-02T13:05:49.427Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AngularJs学习之ui-router">
-<meta name="twitter:description" content="今天学了ui-router，从慕课以及自己手动敲代码，感受到了它的魅力，记得假期做过一个图书管理系统的练习，那个时候用的是iframe来实现刷新，现在看来，觉得当时还是太嫩了，进入主题吧
-首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个ht">
+<meta name="twitter:description" content="今天学了ui-router，从慕课以及自己手动敲代码，感受到了它的魅力，记得假期做过一个图书管理系统的练习，那个时候用的是iframe来实现刷新，现在看来，觉得当时还是太嫩了，进入主题吧 首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个ht">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
   
@@ -62,6 +61,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
+	        
+				<li><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 	        
 			</ul>
 		</nav>
@@ -121,6 +122,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -140,12 +143,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 		        
 				</ul>
 			</nav>
@@ -181,8 +186,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>今天学了ui-router，从慕课以及自己手动敲代码，感受到了它的魅力，记得假期做过一个图书管理系统的练习，那个时候用的是iframe来实现刷新，现在看来，觉得当时还是太嫩了，进入主题吧</p>
-<h3 id="首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1-多样化视图-2-嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范"><a href="#首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1-多样化视图-2-嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范" class="headerlink" title="首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范"></a>首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已<a id="more"></a>，写的并不规范</h3><p>app.js的部分代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var routerApp = angular.module(&apos;routerApp&apos;, [ &apos;ui.router&apos;, &apos;ngGrid&apos;,</div><div class="line">                                              &apos;BookListModule&apos;, &apos;BookDetailModule&apos; ]);</div><div class="line"></div><div class="line">routerApp.run(function($rootScope, $state, $stateParams) &#123;</div><div class="line">	$rootScope.$state = $state;</div><div class="line">	$rootScope.$stateParams = $stateParams;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>app.js的配置路由代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">routerApp.config(function($stateProvider, $urlRouterProvider) &#123;</div><div class="line">	//运行时找不到想要的状态就会自动的进入index</div><div class="line">	$urlRouterProvider.otherwise(&apos;/index&apos;);</div><div class="line">	$stateProvider</div><div class="line">	//state后紧跟的那个是一个状态，可以通过ui-sref指令转变状态，例如&lt;a ui-sref=&quot;second&quot;&gt;二&lt;/a&gt;</div><div class="line">	.state(&apos;index&apos;,&#123;</div><div class="line">		//url即地址栏的内容，当用户浏览到/index时会找到他需要的视图</div><div class="line">		url: &apos;/index&apos;,</div><div class="line"></div><div class="line">		//存在多个view时使用这种写法</div><div class="line">		views:&#123;</div><div class="line">			&apos;&apos;:&#123;</div><div class="line">				templateUrl: &apos;tpls/loginForm.html&apos;</div><div class="line">			&#125;,</div><div class="line">		//@符号用在此处代表在index下存在的模块，例如我写的，在index下存在：&lt;a ui-sref=&quot;x1&quot;&gt;1&lt;/a&gt;&lt;a ui-sref=&quot;x2&quot;&gt;2&lt;/a&gt; &lt;a ui-sref=&quot;x3&quot;&gt;3&lt;/a&gt;</div><div class="line">			&apos;x1@index&apos;:&#123;</div><div class="line">				templateUrl: &apos;tpls/first.html&apos;</div><div class="line">			&#125;,</div><div class="line">			&apos;x2@index&apos;:&#123;</div><div class="line">				templateUrl: &apos;tpls/second.html&apos;</div><div class="line">			&#125;,</div><div class="line">			&apos;x3@index&apos;:&#123;</div><div class="line">				templateUrl:&apos;tpls/three.html&apos;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;)</div><div class="line"></div><div class="line">	.state(&apos;second&apos;,&#123;</div><div class="line">		url: &apos;/second&apos;,</div><div class="line">		templateUrl: &apos;tpls/three.html&apos;</div><div class="line">	&#125;)</div><div class="line"></div><div class="line">	.state(&apos;three&apos;,&#123;</div><div class="line">		url: &apos;/three&apos;,</div><div class="line">		templateUrl: &apos;tpls/first.html&apos;</div><div class="line">	&#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1-多样化视图-2-嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范"><a href="#首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1-多样化视图-2-嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范" class="headerlink" title="首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已，写的并不规范"></a>首先说一下为什么不使用ng-router的原因吧，我从网上学习以及找到的资料给出的解释基本上都一样，总结为：因为UI-Router有两个重要的特性：1.多样化视图 2.嵌入式视图，在实际操作中，我们总会给一个html分不同的区域，有菜单栏或者导航栏，主体内容，页脚等等，嵌入式视图就是让不同的视图同时展现或者嵌入到另一个视图中，我写了个小demo，只是为了让自己体验一下ui-router而已<a id="more"></a>，写的并不规范</h3><p>app.js的部分代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var routerApp = angular.module(&apos;routerApp&apos;, [ &apos;ui.router&apos;, &apos;ngGrid&apos;,</span><br><span class="line">                                              &apos;BookListModule&apos;, &apos;BookDetailModule&apos; ]);</span><br><span class="line"></span><br><span class="line">routerApp.run(function($rootScope, $state, $stateParams) &#123;</span><br><span class="line">	$rootScope.$state = $state;</span><br><span class="line">	$rootScope.$stateParams = $stateParams;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>app.js的配置路由代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">routerApp.config(function($stateProvider, $urlRouterProvider) &#123;</span><br><span class="line">	//运行时找不到想要的状态就会自动的进入index</span><br><span class="line">	$urlRouterProvider.otherwise(&apos;/index&apos;);</span><br><span class="line">	$stateProvider</span><br><span class="line">	//state后紧跟的那个是一个状态，可以通过ui-sref指令转变状态，例如&lt;a ui-sref=&quot;second&quot;&gt;二&lt;/a&gt;</span><br><span class="line">	.state(&apos;index&apos;,&#123;</span><br><span class="line">		//url即地址栏的内容，当用户浏览到/index时会找到他需要的视图</span><br><span class="line">		url: &apos;/index&apos;,</span><br><span class="line"></span><br><span class="line">		//存在多个view时使用这种写法</span><br><span class="line">		views:&#123;</span><br><span class="line">			&apos;&apos;:&#123;</span><br><span class="line">				templateUrl: &apos;tpls/loginForm.html&apos;</span><br><span class="line">			&#125;,</span><br><span class="line">		//@符号用在此处代表在index下存在的模块，例如我写的，在index下存在：&lt;a ui-sref=&quot;x1&quot;&gt;1&lt;/a&gt;&lt;a ui-sref=&quot;x2&quot;&gt;2&lt;/a&gt; &lt;a ui-sref=&quot;x3&quot;&gt;3&lt;/a&gt;</span><br><span class="line">			&apos;x1@index&apos;:&#123;</span><br><span class="line">				templateUrl: &apos;tpls/first.html&apos;</span><br><span class="line">			&#125;,</span><br><span class="line">			&apos;x2@index&apos;:&#123;</span><br><span class="line">				templateUrl: &apos;tpls/second.html&apos;</span><br><span class="line">			&#125;,</span><br><span class="line">			&apos;x3@index&apos;:&#123;</span><br><span class="line">				templateUrl:&apos;tpls/three.html&apos;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	.state(&apos;second&apos;,&#123;</span><br><span class="line">		url: &apos;/second&apos;,</span><br><span class="line">		templateUrl: &apos;tpls/three.html&apos;</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	.state(&apos;three&apos;,&#123;</span><br><span class="line">		url: &apos;/three&apos;,</span><br><span class="line">		templateUrl: &apos;tpls/first.html&apos;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>通过ui-router我们可以实现菜单与内容的分离，这样更好操控不同区域</p>
 
       
@@ -435,11 +440,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Angular常见bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -451,15 +460,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">

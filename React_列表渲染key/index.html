@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/jacklincao">
-  <title>林林博客</title>
+  <title>列表需要加上的属性——key | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="林林博客">
-<meta property="og:url" content="https://github.com/jacklincao/page/2/index.html">
+  <meta name="description" content="警告?在React中使用map等方法产生一堆组件时，如果忘记加上一个属性：key，React会提示如下图所示的警告只是一个警告而已，没提示报错，我不加可以吧？可以，当然可以，只是你的应用性能也会因此降低，所以React只是警告">
+<meta name="keywords" content="React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="列表需要加上的属性——key">
+<meta property="og:url" content="https://github.com/jacklincao/React_列表渲染key/index.html">
 <meta property="og:site_name" content="林林博客">
+<meta property="og:description" content="警告?在React中使用map等方法产生一堆组件时，如果忘记加上一个属性：key，React会提示如下图所示的警告只是一个警告而已，没提示报错，我不加可以吧？可以，当然可以，只是你的应用性能也会因此降低，所以React只是警告">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/09/01/warning.png">
+<meta property="og:updated_time" content="2018-09-03T08:38:32.495Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="林林博客">
+<meta name="twitter:title" content="列表需要加上的属性——key">
+<meta name="twitter:description" content="警告?在React中使用map等方法产生一堆组件时，如果忘记加上一个属性：key，React会提示如下图所示的警告只是一个警告而已，没提示报错，我不加可以吧？可以，当然可以，只是你的应用性能也会因此降低，所以React只是警告">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/09/01/warning.png">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
   
@@ -160,45 +167,59 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Git_速查命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-React_列表渲染key" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/Git_速查命令/">git使用日记</a>
+    <h1 class="article-title" itemprop="name">
+      列表需要加上的属性——key
     </h1>
   
 
         
-        <a href="/Git_速查命令/" class="archive-article-date">
-  	<time datetime="2018-01-19T13:03:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-19</time>
+        <a href="/React_列表渲染key/" class="archive-article-date">
+  	<time datetime="2018-09-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h1><p>为了方便自己以后使用git命令，避免网上查阅，所以用这个记录了一些常用的命令：</p>
-<ol>
-<li><code>git status</code> 查看仓库当前状态</li>
-<li><code>git add xx</code> 提交文件xx到暂存区</li>
-<li><code>git diff xx</code> 查看xx文件做了什么修改</li>
-<li><code>git commit -m “描述”</code> 提交修改时带上描述，将暂存区提交到当前分支</li>
-<li><code>git log</code> 查看commit（提交）历史记录 可加上 <code>–pretty=oneline</code> 过滤其它信息，加上<code>--graph</code></li>
-<li><code>git reset --hard HEAD^</code> 回退到上一版本，如果有多个版本，可以使用<code>HEAD^^</code>（回退上上个版本），<code>HEAD~100</code>（回退到100个版本）</li>
-<li><code>git reset --hard xxxxxxx</code> 指定回到某个版本号</li>
-<li><code>git fetch --all</code>, <code>git reset --hard origin/master</code> 第一条fetch下载远程的内容,第二条将当前指针指向刚刚下载的</li>
-<li><code>git reflog</code> 记录每一次命令操作</li>
-<li><code>git checkout -- xx</code> 撤销对xx文件的全部修改操作；一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
-        
-          <a class="article-more-a" href="/Git_速查命令/#more">更多 >></a>
-        
+        <h1 id="警告"><a href="#警告" class="headerlink" title="警告?"></a>警告?</h1><p>在React中使用map等方法产生一堆组件时，如果忘记加上一个属性：key，React会提示如下图所示的警告<br><img src="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/09/01/warning.png" alt="此处输入图片的描述"><br>只是一个警告而已，没提示报错，我不加可以吧？可以，当然可以，只是你的应用性能也会因此降低，所以React只是警告</p>
+<a id="more"></a>
+<h1 id="影响性能？"><a href="#影响性能？" class="headerlink" title="影响性能？"></a>影响性能？</h1><h2 id="diff算法"><a href="#diff算法" class="headerlink" title="diff算法"></a>diff算法</h2><p>为什么不加一个key就会影响性能，这是因为React的diff算法，在每次组件更新后，有key的话可以快速帮助React定位被修改的组件，如果不加key，React会默认使用数组的下标作为key，而React不提倡使用数组的下标作为key</p>
+<h2 id="不能用数组下标作为key？"><a href="#不能用数组下标作为key？" class="headerlink" title="不能用数组下标作为key？"></a>不能用数组下标作为key？</h2><p>我在实习中，刚开始接触React，自己大意了，在code review，我的mentor给我指出了这个问题，下来专门查了资料，能使用数组下标，但会产生一些奇怪的bug，如果数组顺序发生变化，触发diff后将引起浏览器重绘，如果你的组件不会变，那么你可以使用数组的下标作为key，如果会变，那就使用数据的唯一id作为标识，举个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">class Hello extends React.Component &#123;</span><br><span class="line">  constructor() &#123;</span><br><span class="line">        super()</span><br><span class="line">      	this.state = &#123;</span><br><span class="line">        data: [</span><br><span class="line">          &#123;</span><br><span class="line">            name: &apos;a&apos;,</span><br><span class="line">            id: 1</span><br><span class="line">          &#125;, </span><br><span class="line">          &#123;</span><br><span class="line">          	name: &apos;b&apos;,</span><br><span class="line">          	id:2</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">          	name: &apos;c&apos;</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  revertData = () =&gt; &#123;</span><br><span class="line">  	let data = this.state.data</span><br><span class="line">    let newData = [].concat(data)</span><br><span class="line">    newData.push(newData.shift())</span><br><span class="line">	this.setState(&#123;data: newData&#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    let state = this.state</span><br><span class="line">    // 不加key和使用index作为key的效果一样，都会给出警告，如果使用id作为key就不会出现问题</span><br><span class="line">  	return(</span><br><span class="line">    	&lt;ul&gt;</span><br><span class="line">    	  &#123; state.data.map((item, index) =&gt; &#123;</span><br><span class="line">        	return &lt;li key=&#123; index &#125;&gt;&#123; item.name &#125;&lt;input type=&apos;input&apos; /&gt;&lt;/li&gt;</span><br><span class="line">        &#125;) &#125;</span><br><span class="line">        &lt;button onClick=&#123;this.revertData&#125;&gt;revert&lt;/button&gt;</span><br><span class="line">    	&lt;/ul&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;Hello/&gt;,</span><br><span class="line">  document.getElementById(&apos;container&apos;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -209,7 +230,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">git使用</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
         		</li>
       		
 		</ul>
@@ -218,16 +239,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/Git_速查命令/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/jacklincao/React_列表渲染key/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/前端性能优化_ 图片懒加载技术/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">图片懒加载技术</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -247,318 +327,14 @@
 
 
 
-
-  
-    <article id="post-Angular_子路由跳转" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/Angular_子路由跳转/">Angular子路由跳转</a>
-    </h1>
-  
-
-        
-        <a href="/Angular_子路由跳转/" class="archive-article-date">
-  	<time datetime="2017-10-12T11:43:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由"><a href="#配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由" class="headerlink" title="配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由"></a>配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由</h2><p>在Angular的官方文档找到了原因：导入模块的时候需要注意<strong>顺序</strong>，我在根模块导入模块时先把主路由模块导入了，导致路由会率先匹配到通配符路由，所以跳转到404，在定义子路由时
-        
-          <a class="article-more-a" href="/Angular_子路由跳转/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Angular常见bug</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/Angular_子路由跳转/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Angular_生成组件出错" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/Angular_生成组件出错/">Angular生成组件出错</a>
-    </h1>
-  
-
-        
-        <a href="/Angular_生成组件出错/" class="archive-article-date">
-  	<time datetime="2017-10-08T12:02:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="使用Angular-CLI工具生成组件出错"><a href="#使用Angular-CLI工具生成组件出错" class="headerlink" title="使用Angular CLI工具生成组件出错"></a>使用Angular CLI工具生成组件出错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Error:More than one module matches. Use skip-important option to skip importing the component into the closest module.</span><br><span class="line">More than one module matches. Use skip-important option to skip importing the component into the closest module.</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/Angular_生成组件出错/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Angular常见bug</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/Angular_生成组件出错/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript_对象拷贝" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/JavaScript_对象拷贝/">对象拷贝(深、浅)</a>
-    </h1>
-  
-
-        
-        <a href="/JavaScript_对象拷贝/" class="archive-article-date">
-  	<time datetime="2017-06-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="对象拷贝"><a href="#对象拷贝" class="headerlink" title="对象拷贝"></a>对象拷贝</h1><p>在JavaScript中，对象拷贝分为两种：浅拷贝、深拷贝</p>
-<h2 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h2><p>将一个对象中的值复制到另一个对象中（不考虑属性中是否有引用类型）,example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;</span><br><span class="line">            name: &apos;jack&apos;,</span><br><span class="line">            age: 20</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">function copy(obj) &#123;</span><br><span class="line">    var newObj = new Object();</span><br><span class="line">    for(let attr in obj) &#123;</span><br><span class="line">        newObj[attr] = obj[attr];</span><br><span class="line">    &#125;</span><br><span class="line">    return newObj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var newObj = copy(a);</span><br><span class="line">console.log(newObj.name);</span><br><span class="line"></span><br><span class="line">var b = &#123;</span><br><span class="line">            name: &apos;lin&apos;,</span><br><span class="line">            age: 21,</span><br><span class="line">            bestfriends: &#123;</span><br><span class="line">                name: &apos;l&apos;,</span><br><span class="line">                age: 21</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">var c = copy(b);</span><br><span class="line">console.log(&apos;before update b:&apos; + b.name + &apos; &apos; + b.age + &apos; &apos; + b.bestfriends.name);</span><br><span class="line">console.log(&apos;before update c:&apos; + c.name + &apos; &apos; + c.age + &apos; &apos; + c.bestfriends.name);</span><br><span class="line">c.bestfriends.name=&apos;ll&apos;;  //修改c中的bestfriends属性</span><br><span class="line">console.log(&apos;after update b:&apos; + b.name + &apos; &apos; + b.age + &apos; &apos; + b.bestfriends.name);  //结果b中的也会随之更新</span><br><span class="line">console.log(&apos;after update c:&apos; + c.name + &apos; &apos; + c.age + &apos; &apos; + c.bestfriends.name);</span><br></pre></td></tr></table></figure></p>
-<p>为了解决在对象拷贝过程中将对象中的对象属性独立拷贝出来，所以有了深拷贝</p>
-<h1 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h1><p>1.使用递归实现拷贝<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">function depthCopy(obj) &#123;</span><br><span class="line">    if(typeof obj !== &apos;object&apos;) &#123;</span><br><span class="line">        return obj;</span><br><span class="line">    &#125;</span><br><span class="line">    var newObj = &#123;&#125;;</span><br><span class="line">    for(let attr in obj) &#123;</span><br><span class="line">        newObj[attr] = depthCopy(obj[attr]);</span><br><span class="line">    &#125;</span><br><span class="line">    return newObj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var b = &#123;</span><br><span class="line">            name: &apos;lin&apos;,</span><br><span class="line">            age: 21,</span><br><span class="line">            bestfriends: &#123;</span><br><span class="line">                name: &apos;l&apos;,</span><br><span class="line">                age: 21</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">var c = depthCopy(b);</span><br><span class="line">console.log(&apos;before update b.bestfriends.name: &apos; + b.bestfriends.name)</span><br><span class="line">console.log(&apos;before update c.bestfriends.name: &apos; + c.bestfriends.name)</span><br><span class="line">c.bestfriends.name = &apos;jacklincao&apos;  //修改c.bestfrinds对象</span><br><span class="line">console.log(&apos;after update b.bestfriends.name: &apos; + b.bestfriends.name)  //b中的不变</span><br><span class="line">console.log(&apos;after update c.bestfriends.name: &apos; + c.bestfriends.name)  //c中的变了，说明b和c现在没有指向同一个对象，实现了深复制</span><br></pre></td></tr></table></figure></p>
-<p>2.使用JSON序列化<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var b = &#123;</span><br><span class="line">            name: &apos;lin&apos;,</span><br><span class="line">            age: 21,</span><br><span class="line">            bestfriends: &#123;</span><br><span class="line">                name: &apos;l&apos;,</span><br><span class="line">                age: 21</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">var c = JSON.parse(JSON.stringify(b)); </span><br><span class="line">console.log(&apos;before update b.bestfriends.name: &apos; + b.bestfriends.name)</span><br><span class="line">console.log(&apos;before update c.bestfriends.name: &apos; + c.bestfriends.name)</span><br><span class="line">c.bestfriends.name = &apos;jacklincao&apos;  //修改c.bestfrinds对象</span><br><span class="line">console.log(&apos;after update b.bestfriends.name: &apos; + b.bestfriends.name)  //b中的不变</span><br><span class="line">console.log(&apos;after update c.bestfriends.name: &apos; + c.bestfriends.name)  //c中的变了，说明b和c现在没有指向同一个对象，实现了深复制</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/JavaScript_对象拷贝/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-URI、URL、URN" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/URI、URL、URN/">URI、URL、URN区别</a>
-    </h1>
-  
-
-        
-        <a href="/URI、URL、URN/" class="archive-article-date">
-  	<time datetime="2017-05-10T11:20:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="什么是URI、URL、URN"><a href="#什么是URI、URL、URN" class="headerlink" title="什么是URI、URL、URN?"></a>什么是URI、URL、URN?</h1><p>URI：Uniform Resource Identifier 即“统一资源标识符”<br>URL：Uniform Resource Locator 即“统一资源定位符”<br>URN：Uniform Resource Name 即“统一资源名称”<br>三者的关系如图：<img src="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/03/02/URI.jpg" alt="此处输入图片的描述"><br>
-        
-          <a class="article-more-a" href="/URI、URL、URN/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTTP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/URI、URL、URN/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -589,8 +365,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

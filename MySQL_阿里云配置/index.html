@@ -9,11 +9,13 @@
   <title>阿里云Ubuntu16.04下MySQL配置 | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="连接出错:Can’t connect to mysql server on xxx.xxx.xxx.xxx(10038)解决方法：1.修改/etc/mysql/mysql.conf.d 文件，将bind-address从127.0.0.1修改为0.0.0.02.授权12mysql&amp;gt;grant all privileges on *.* to &amp;apos;root&amp;apos;@&amp;apos;%&amp;">
+<meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阿里云Ubuntu16.04下MySQL配置">
 <meta property="og:url" content="https://github.com/jacklincao/MySQL_阿里云配置/index.html">
 <meta property="og:site_name" content="林林博客">
 <meta property="og:description" content="连接出错:Can’t connect to mysql server on xxx.xxx.xxx.xxx(10038)解决方法：1.修改/etc/mysql/mysql.conf.d 文件，将bind-address从127.0.0.1修改为0.0.0.02.授权12mysql&amp;gt;grant all privileges on *.* to &amp;apos;root&amp;apos;@&amp;apos;%&amp;">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-03-26T09:00:50.411Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阿里云Ubuntu16.04下MySQL配置">
@@ -59,6 +61,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
+	        
+				<li><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 	        
 			</ul>
 		</nav>
@@ -118,6 +122,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -137,12 +143,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 		        
 				</ul>
 			</nav>
@@ -177,7 +185,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="连接出错-Can’t-connect-to-mysql-server-on-xxx-xxx-xxx-xxx-10038"><a href="#连接出错-Can’t-connect-to-mysql-server-on-xxx-xxx-xxx-xxx-10038" class="headerlink" title="连接出错:Can’t connect to mysql server on xxx.xxx.xxx.xxx(10038)"></a>连接出错:Can’t connect to mysql server on xxx.xxx.xxx.xxx(10038)</h1><p>解决方法：<br>1.修改/etc/mysql/mysql.conf.d 文件，将bind-address从<code>127.0.0.1</code>修改为<code>0.0.0.0</code><br>2.授权<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt;grant all privileges on *.* to &apos;root&apos;@&apos;%&apos; identified by 密码 with grant option;</div><div class="line">mysql&gt;flush privileges;</div></pre></td></tr></table></figure></p>
+        <h1 id="连接出错-Can’t-connect-to-mysql-server-on-xxx-xxx-xxx-xxx-10038"><a href="#连接出错-Can’t-connect-to-mysql-server-on-xxx-xxx-xxx-xxx-10038" class="headerlink" title="连接出错:Can’t connect to mysql server on xxx.xxx.xxx.xxx(10038)"></a>连接出错:Can’t connect to mysql server on xxx.xxx.xxx.xxx(10038)</h1><p>解决方法：<br>1.修改/etc/mysql/mysql.conf.d 文件，将bind-address从<code>127.0.0.1</code>修改为<code>0.0.0.0</code><br>2.授权<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;grant all privileges on *.* to &apos;root&apos;@&apos;%&apos; identified by 密码 with grant option;</span><br><span class="line">mysql&gt;flush privileges;</span><br></pre></td></tr></table></figure></p>
 <p>3.进入阿里云控制台设置安全组，添加公网入方向配置：<br><code>允许    自定义 TCP    3306/3306    地址段访问    0.0.0.0/0</code></p>
 
       
@@ -430,11 +438,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Angular常见bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -446,15 +458,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">

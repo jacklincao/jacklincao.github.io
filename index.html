@@ -12,6 +12,7 @@
 <meta property="og:title" content="林林博客">
 <meta property="og:url" content="https://github.com/jacklincao/index.html">
 <meta property="og:site_name" content="林林博客">
+<meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="林林博客">
   
@@ -55,6 +56,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
+	        
+				<li><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 	        
 			</ul>
 		</nav>
@@ -114,6 +117,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -133,12 +138,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 		        
 				</ul>
 			</nav>
@@ -154,6 +161,82 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-React_列表渲染key" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/React_列表渲染key/">列表需要加上的属性——key</a>
+    </h1>
+  
+
+        
+        <a href="/React_列表渲染key/" class="archive-article-date">
+  	<time datetime="2018-09-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="警告"><a href="#警告" class="headerlink" title="警告?"></a>警告?</h1><p>在React中使用map等方法产生一堆组件时，如果忘记加上一个属性：key，React会提示如下图所示的警告<br><img src="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/09/01/warning.png" alt="此处输入图片的描述"><br>只是一个警告而已，没提示报错，我不加可以吧？可以，当然可以，只是你的应用性能也会因此降低，所以React只是警告</p>
+        
+          <a class="article-more-a" href="/React_列表渲染key/#more">更多 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/React_列表渲染key/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-前端性能优化_ 图片懒加载技术" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -253,7 +336,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="实现单行文本溢出省略号展示"><a href="#实现单行文本溢出省略号展示" class="headerlink" title="实现单行文本溢出省略号展示"></a>实现单行文本溢出省略号展示</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">p &#123;</div><div class="line">    text-overflow:ellipsis;//text-overflow属性规定文本溢出时的操作</div><div class="line">    white-space: nowrap;//源文档中的空白符,如空格、换行；pre保持原格式,nowrap不换行,normal将空格合并为一个并忽略换行</div><div class="line">    overflow: hidden;//</div><div class="line">    /*width: 3em;*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h1 id="实现单行文本溢出省略号展示"><a href="#实现单行文本溢出省略号展示" class="headerlink" title="实现单行文本溢出省略号展示"></a>实现单行文本溢出省略号展示</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">    text-overflow:ellipsis;//text-overflow属性规定文本溢出时的操作</span><br><span class="line">    white-space: nowrap;//源文档中的空白符,如空格、换行；pre保持原格式,nowrap不换行,normal将空格合并为一个并忽略换行</span><br><span class="line">    overflow: hidden;//</span><br><span class="line">    /*width: 3em;*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/CSS_单行多行文本显示省略号/#more">更多 >></a>
         
@@ -329,7 +412,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="连接出错-Can’t-connect-to-mysql-server-on-xxx-xxx-xxx-xxx-10038"><a href="#连接出错-Can’t-connect-to-mysql-server-on-xxx-xxx-xxx-xxx-10038" class="headerlink" title="连接出错:Can’t connect to mysql server on xxx.xxx.xxx.xxx(10038)"></a>连接出错:Can’t connect to mysql server on xxx.xxx.xxx.xxx(10038)</h1><p>解决方法：<br>1.修改/etc/mysql/mysql.conf.d 文件，将bind-address从<code>127.0.0.1</code>修改为<code>0.0.0.0</code><br>2.授权<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt;grant all privileges on *.* to &apos;root&apos;@&apos;%&apos; identified by 密码 with grant option;</div><div class="line">mysql&gt;flush privileges;</div></pre></td></tr></table></figure></p>
+        <h1 id="连接出错-Can’t-connect-to-mysql-server-on-xxx-xxx-xxx-xxx-10038"><a href="#连接出错-Can’t-connect-to-mysql-server-on-xxx-xxx-xxx-xxx-10038" class="headerlink" title="连接出错:Can’t connect to mysql server on xxx.xxx.xxx.xxx(10038)"></a>连接出错:Can’t connect to mysql server on xxx.xxx.xxx.xxx(10038)</h1><p>解决方法：<br>1.修改/etc/mysql/mysql.conf.d 文件，将bind-address从<code>127.0.0.1</code>修改为<code>0.0.0.0</code><br>2.授权<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;grant all privileges on *.* to &apos;root&apos;@&apos;%&apos; identified by 密码 with grant option;</span><br><span class="line">mysql&gt;flush privileges;</span><br></pre></td></tr></table></figure></p>
 <p>3.进入阿里云控制台设置安全组，添加公网入方向配置：<br><code>允许    自定义 TCP    3306/3306    地址段访问    0.0.0.0/0</code></p>
 
       
@@ -431,93 +514,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/MySQL_备份还原/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git_速查命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/Git_速查命令/">git使用日记</a>
-    </h1>
-  
-
-        
-        <a href="/Git_速查命令/" class="archive-article-date">
-  	<time datetime="2018-01-19T13:03:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h1><p>为了方便自己以后使用git命令，避免网上查阅，所以用这个记录了一些常用的命令：</p>
-<ol>
-<li><code>git status</code> 查看仓库当前状态</li>
-<li><code>git add xx</code> 提交文件xx到暂存区</li>
-<li><code>git diff xx</code> 查看xx文件做了什么修改</li>
-<li><code>git commit -m “描述”</code> 提交修改时带上描述，将暂存区提交到当前分支</li>
-<li><code>git log</code> 查看commit（提交）历史记录 可加上 <code>–pretty=oneline</code> 过滤其它信息，加上<code>--graph</code></li>
-<li><code>git reset --hard HEAD^</code> 回退到上一版本，如果有多个版本，可以使用<code>HEAD^^</code>（回退上上个版本），<code>HEAD~100</code>（回退到100个版本）</li>
-<li><code>git reset --hard xxxxxxx</code> 指定回到某个版本号</li>
-<li><code>git fetch --all</code>, <code>git reset --hard origin/master</code> 第一条fetch下载远程的内容,第二条将当前指针指向刚刚下载的</li>
-<li><code>git reflog</code> 记录每一次命令操作</li>
-<li><code>git checkout -- xx</code> 撤销对xx文件的全部修改操作；一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
-        
-          <a class="article-more-a" href="/Git_速查命令/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">git使用</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/Git_速查命令/">展开全文 >></a>
         </p>
       
 
@@ -649,11 +645,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Angular常见bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -665,15 +665,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">

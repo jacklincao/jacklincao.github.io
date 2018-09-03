@@ -8,20 +8,19 @@
   <link rel="dns-prefetch" href="https://github.com/jacklincao">
   <title>图片懒加载技术 | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="浏览器相关高度、宽度网页可视区高/宽：1.clientHeight/clientWidth:height+padding-滚动轴高度2.offsetHeight/offsetWidth:height+padding+border+滚动轴高度
-网页全文高/宽1.scrollHeight/scrollWidth:1)有滚动条时:包含所有的高度(隐藏的部分也算入)2)无滚动条时:值=clientHeig">
+  <meta name="description" content="浏览器相关高度、宽度网页可视区高/宽：1.clientHeight/clientWidth:height+padding-滚动轴高度2.offsetHeight/offsetWidth:height+padding+border+滚动轴高度 网页全文高/宽1.scrollHeight/scrollWidth:1)有滚动条时:包含所有的高度(隐藏的部分也算入)2)无滚动条时:值=clientHeig">
+<meta name="keywords" content="前端性能优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图片懒加载技术">
 <meta property="og:url" content="https://github.com/jacklincao/前端性能优化_ 图片懒加载技术/index.html">
 <meta property="og:site_name" content="林林博客">
-<meta property="og:description" content="浏览器相关高度、宽度网页可视区高/宽：1.clientHeight/clientWidth:height+padding-滚动轴高度2.offsetHeight/offsetWidth:height+padding+border+滚动轴高度
-网页全文高/宽1.scrollHeight/scrollWidth:1)有滚动条时:包含所有的高度(隐藏的部分也算入)2)无滚动条时:值=clientHeig">
+<meta property="og:description" content="浏览器相关高度、宽度网页可视区高/宽：1.clientHeight/clientWidth:height+padding-滚动轴高度2.offsetHeight/offsetWidth:height+padding+border+滚动轴高度 网页全文高/宽1.scrollHeight/scrollWidth:1)有滚动条时:包含所有的高度(隐藏的部分也算入)2)无滚动条时:值=clientHeig">
+<meta property="og:locale" content="default">
 <meta property="og:image" content="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/05/04/lazy.png">
 <meta property="og:updated_time" content="2018-05-20T07:10:24.778Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图片懒加载技术">
-<meta name="twitter:description" content="浏览器相关高度、宽度网页可视区高/宽：1.clientHeight/clientWidth:height+padding-滚动轴高度2.offsetHeight/offsetWidth:height+padding+border+滚动轴高度
-网页全文高/宽1.scrollHeight/scrollWidth:1)有滚动条时:包含所有的高度(隐藏的部分也算入)2)无滚动条时:值=clientHeig">
+<meta name="twitter:description" content="浏览器相关高度、宽度网页可视区高/宽：1.clientHeight/clientWidth:height+padding-滚动轴高度2.offsetHeight/offsetWidth:height+padding+border+滚动轴高度 网页全文高/宽1.scrollHeight/scrollWidth:1)有滚动条时:包含所有的高度(隐藏的部分也算入)2)无滚动条时:值=clientHeig">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/05/04/lazy.png">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
@@ -64,6 +63,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
+	        
+				<li><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 	        
 			</ul>
 		</nav>
@@ -123,6 +124,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -142,12 +145,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 		        
 				</ul>
 			</nav>
@@ -191,7 +196,7 @@
 <h1 id="图片懒加载"><a href="#图片懒加载" class="headerlink" title="图片懒加载"></a>图片懒加载</h1><h2 id="懒加载机制"><a href="#懒加载机制" class="headerlink" title="懒加载机制"></a>懒加载机制</h2><p>网页需要展示很多图片，而用户可能没有接着浏览余下图片的意图，这样就浪费了很大的资源，一次请求了那么多图片，而且一张图片还有几兆，结果实际上没用到，所以为了减少服务器的压力，使用懒加载技术，不直接给图片标签加上src，给图片加上新的属性，其中保存真正的src，例如data-src，当用户浏览到图片时才进行加载。</p>
 <h2 id="判断用户当前浏览的位置"><a href="#判断用户当前浏览的位置" class="headerlink" title="判断用户当前浏览的位置"></a>判断用户当前浏览的位置</h2><p><img src="https://raw.githubusercontent.com/jacklincao/myImages/master/hexoImages/2018/05/04/lazy.png" alt="判断图片位置"><br>如图所示，当图片：滚动高度+可视区高度&gt;图片距离顶部的距离时就将data-src替换到src即可</p>
 <p><strong>注意</strong>：不要在img标签上加src属性，如果设置src=””，大多数浏览器仍会请求，而且请求的是当前页面数据。</p>
-<h2 id="原生js实现的demo"><a href="#原生js实现的demo" class="headerlink" title="原生js实现的demo"></a>原生js实现的demo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;图片&lt;/title&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">		img &#123;</div><div class="line">			display: block;</div><div class="line">			width: 500px;</div><div class="line">			height: 400px;</div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;img alt=&quot;&quot; data-scr=&quot;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1497274158197&amp;di=8845befd9fbda1e99e565b9c2298be50&amp;imgtype=0&amp;src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1503%2F626-15031G42255b3.jpg&quot;&gt;</div><div class="line">	&lt;img alt=&quot;&quot; data-scr=&quot;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1497274158197&amp;di=8845befd9fbda1e99e565b9c2298be50&amp;imgtype=0&amp;src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1503%2F626-15031G42255b3.jpg&quot;&gt;</div><div class="line">	&lt;img alt=&quot;&quot; data-scr=&quot;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1497274158197&amp;di=8845befd9fbda1e99e565b9c2298be50&amp;imgtype=0&amp;src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1503%2F626-15031G42255b3.jpg&quot;&gt;</div><div class="line">	&lt;img alt=&quot;&quot; data-scr=&quot;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1497274158197&amp;di=8845befd9fbda1e99e565b9c2298be50&amp;imgtype=0&amp;src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1503%2F626-15031G42255b3.jpg&quot;&gt;</div><div class="line">	&lt;img alt=&quot;&quot; data-scr=&quot;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1497274158197&amp;di=8845befd9fbda1e99e565b9c2298be50&amp;imgtype=0&amp;src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1503%2F626-15031G42255b3.jpg&quot;&gt;</div><div class="line">	&lt;img alt=&quot;&quot; data-scr=&quot;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1497274158197&amp;di=8845befd9fbda1e99e565b9c2298be50&amp;imgtype=0&amp;src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1503%2F626-15031G42255b3.jpg&quot;&gt;</div><div class="line">	&lt;img alt=&quot;&quot; data-scr=&quot;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1497274158197&amp;di=8845befd9fbda1e99e565b9c2298be50&amp;imgtype=0&amp;src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1503%2F626-15031G42255b3.jpg&quot;&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">	var imgs = document.querySelectorAll(&apos;img&apos;);//获取所有图片</div><div class="line">	var length = imgs.length;</div><div class="line">	var n = 0;//保存已经加载了的图片数量</div><div class="line"></div><div class="line">	// window.onload = lazyLoadImg;</div><div class="line">	window.onscroll = lazyLoadImg;</div><div class="line"></div><div class="line">	function lazyLoadImg() &#123;</div><div class="line">		var userHeight = document.documentElement.clientHeight;</div><div class="line">		var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;</div><div class="line">		for(var i =n; i &lt; length; i++) &#123;</div><div class="line">			if(imgs[i].offsetTop &lt; userHeight + scrollTop) &#123;</div><div class="line">				if(imgs[i].getAttribute(&apos;src&apos;) === &apos;&apos; || imgs[i].getAttribute(&apos;src&apos;) === null) &#123;</div><div class="line">					imgs[i].src = imgs[i].getAttribute(&apos;data-scr&apos;);</div><div class="line">				&#125;</div><div class="line">				n = i + 1;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h2 id="原生js实现的demo"><a href="#原生js实现的demo" class="headerlink" title="原生js实现的demo"></a>原生js实现的demo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;图片&lt;/title&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">		img &#123;</span><br><span class="line">			display: block;</span><br><span class="line">			width: 500px;</span><br><span class="line">			height: 400px;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;img alt=&quot;&quot; data-scr=&quot;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1497274158197&amp;di=8845befd9fbda1e99e565b9c2298be50&amp;imgtype=0&amp;src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1503%2F626-15031G42255b3.jpg&quot;&gt;</span><br><span class="line">	&lt;img alt=&quot;&quot; data-scr=&quot;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1497274158197&amp;di=8845befd9fbda1e99e565b9c2298be50&amp;imgtype=0&amp;src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1503%2F626-15031G42255b3.jpg&quot;&gt;</span><br><span class="line">	&lt;img alt=&quot;&quot; data-scr=&quot;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1497274158197&amp;di=8845befd9fbda1e99e565b9c2298be50&amp;imgtype=0&amp;src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1503%2F626-15031G42255b3.jpg&quot;&gt;</span><br><span class="line">	&lt;img alt=&quot;&quot; data-scr=&quot;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1497274158197&amp;di=8845befd9fbda1e99e565b9c2298be50&amp;imgtype=0&amp;src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1503%2F626-15031G42255b3.jpg&quot;&gt;</span><br><span class="line">	&lt;img alt=&quot;&quot; data-scr=&quot;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1497274158197&amp;di=8845befd9fbda1e99e565b9c2298be50&amp;imgtype=0&amp;src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1503%2F626-15031G42255b3.jpg&quot;&gt;</span><br><span class="line">	&lt;img alt=&quot;&quot; data-scr=&quot;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1497274158197&amp;di=8845befd9fbda1e99e565b9c2298be50&amp;imgtype=0&amp;src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1503%2F626-15031G42255b3.jpg&quot;&gt;</span><br><span class="line">	&lt;img alt=&quot;&quot; data-scr=&quot;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1497274158197&amp;di=8845befd9fbda1e99e565b9c2298be50&amp;imgtype=0&amp;src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1503%2F626-15031G42255b3.jpg&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">	var imgs = document.querySelectorAll(&apos;img&apos;);//获取所有图片</span><br><span class="line">	var length = imgs.length;</span><br><span class="line">	var n = 0;//保存已经加载了的图片数量</span><br><span class="line"></span><br><span class="line">	// window.onload = lazyLoadImg;</span><br><span class="line">	window.onscroll = lazyLoadImg;</span><br><span class="line"></span><br><span class="line">	function lazyLoadImg() &#123;</span><br><span class="line">		var userHeight = document.documentElement.clientHeight;</span><br><span class="line">		var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;</span><br><span class="line">		for(var i =n; i &lt; length; i++) &#123;</span><br><span class="line">			if(imgs[i].offsetTop &lt; userHeight + scrollTop) &#123;</span><br><span class="line">				if(imgs[i].getAttribute(&apos;src&apos;) === &apos;&apos; || imgs[i].getAttribute(&apos;src&apos;) === null) &#123;</span><br><span class="line">					imgs[i].src = imgs[i].getAttribute(&apos;data-scr&apos;);</span><br><span class="line">				&#125;</span><br><span class="line">				n = i + 1;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -299,6 +304,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/React_列表渲染key/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          列表需要加上的属性——key
+        
+      </div>
+    </a>
   
   
     <a href="/CSS_单行多行文本显示省略号/" id="article-nav-older" class="article-nav-link-wrap">
@@ -433,11 +447,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Angular常见bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -449,15 +467,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">

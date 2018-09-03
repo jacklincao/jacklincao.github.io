@@ -8,19 +8,18 @@
   <link rel="dns-prefetch" href="https://github.com/jacklincao">
   <title>对象拷贝(深、浅) | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="对象拷贝在JavaScript中，对象拷贝分为两种：浅拷贝、深拷贝
-浅拷贝将一个对象中的值复制到另一个对象中（不考虑属性中是否有引用类型）,example:123456789101112131415161718192021222324252627282930var a = &amp;#123;            name: &amp;apos;jack&amp;apos;,            age: 20">
+  <meta name="description" content="对象拷贝在JavaScript中，对象拷贝分为两种：浅拷贝、深拷贝 浅拷贝将一个对象中的值复制到另一个对象中（不考虑属性中是否有引用类型）,example:123456789101112131415161718192021222324252627282930var a = &amp;#123;            name: &amp;apos;jack&amp;apos;,            age: 20">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="对象拷贝(深、浅)">
 <meta property="og:url" content="https://github.com/jacklincao/JavaScript_对象拷贝/index.html">
 <meta property="og:site_name" content="林林博客">
-<meta property="og:description" content="对象拷贝在JavaScript中，对象拷贝分为两种：浅拷贝、深拷贝
-浅拷贝将一个对象中的值复制到另一个对象中（不考虑属性中是否有引用类型）,example:123456789101112131415161718192021222324252627282930var a = &amp;#123;            name: &amp;apos;jack&amp;apos;,            age: 20">
+<meta property="og:description" content="对象拷贝在JavaScript中，对象拷贝分为两种：浅拷贝、深拷贝 浅拷贝将一个对象中的值复制到另一个对象中（不考虑属性中是否有引用类型）,example:123456789101112131415161718192021222324252627282930var a = &amp;#123;            name: &amp;apos;jack&amp;apos;,            age: 20">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-03-26T12:28:40.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对象拷贝(深、浅)">
-<meta name="twitter:description" content="对象拷贝在JavaScript中，对象拷贝分为两种：浅拷贝、深拷贝
-浅拷贝将一个对象中的值复制到另一个对象中（不考虑属性中是否有引用类型）,example:123456789101112131415161718192021222324252627282930var a = &amp;#123;            name: &amp;apos;jack&amp;apos;,            age: 20">
+<meta name="twitter:description" content="对象拷贝在JavaScript中，对象拷贝分为两种：浅拷贝、深拷贝 浅拷贝将一个对象中的值复制到另一个对象中（不考虑属性中是否有引用类型）,example:123456789101112131415161718192021222324252627282930var a = &amp;#123;            name: &amp;apos;jack&amp;apos;,            age: 20">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
   
@@ -62,6 +61,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
+	        
+				<li><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 	        
 			</ul>
 		</nav>
@@ -121,6 +122,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -140,12 +143,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 		        
 				</ul>
 			</nav>
@@ -181,10 +186,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="对象拷贝"><a href="#对象拷贝" class="headerlink" title="对象拷贝"></a>对象拷贝</h1><p>在JavaScript中，对象拷贝分为两种：浅拷贝、深拷贝</p>
-<h2 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h2><p>将一个对象中的值复制到另一个对象中（不考虑属性中是否有引用类型）,example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">var a = &#123;</div><div class="line">            name: &apos;jack&apos;,</div><div class="line">            age: 20</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">function copy(obj) &#123;</div><div class="line">    var newObj = new Object();</div><div class="line">    for(let attr in obj) &#123;</div><div class="line">        newObj[attr] = obj[attr];</div><div class="line">    &#125;</div><div class="line">    return newObj;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var newObj = copy(a);</div><div class="line">console.log(newObj.name);</div><div class="line"></div><div class="line">var b = &#123;</div><div class="line">            name: &apos;lin&apos;,</div><div class="line">            age: 21,</div><div class="line">            bestfriends: &#123;</div><div class="line">                name: &apos;l&apos;,</div><div class="line">                age: 21</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">var c = copy(b);</div><div class="line">console.log(&apos;before update b:&apos; + b.name + &apos; &apos; + b.age + &apos; &apos; + b.bestfriends.name);</div><div class="line">console.log(&apos;before update c:&apos; + c.name + &apos; &apos; + c.age + &apos; &apos; + c.bestfriends.name);</div><div class="line">c.bestfriends.name=&apos;ll&apos;;  //修改c中的bestfriends属性</div><div class="line">console.log(&apos;after update b:&apos; + b.name + &apos; &apos; + b.age + &apos; &apos; + b.bestfriends.name);  //结果b中的也会随之更新</div><div class="line">console.log(&apos;after update c:&apos; + c.name + &apos; &apos; + c.age + &apos; &apos; + c.bestfriends.name);</div></pre></td></tr></table></figure></p>
+<h2 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h2><p>将一个对象中的值复制到另一个对象中（不考虑属性中是否有引用类型）,example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;</span><br><span class="line">            name: &apos;jack&apos;,</span><br><span class="line">            age: 20</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">function copy(obj) &#123;</span><br><span class="line">    var newObj = new Object();</span><br><span class="line">    for(let attr in obj) &#123;</span><br><span class="line">        newObj[attr] = obj[attr];</span><br><span class="line">    &#125;</span><br><span class="line">    return newObj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var newObj = copy(a);</span><br><span class="line">console.log(newObj.name);</span><br><span class="line"></span><br><span class="line">var b = &#123;</span><br><span class="line">            name: &apos;lin&apos;,</span><br><span class="line">            age: 21,</span><br><span class="line">            bestfriends: &#123;</span><br><span class="line">                name: &apos;l&apos;,</span><br><span class="line">                age: 21</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">var c = copy(b);</span><br><span class="line">console.log(&apos;before update b:&apos; + b.name + &apos; &apos; + b.age + &apos; &apos; + b.bestfriends.name);</span><br><span class="line">console.log(&apos;before update c:&apos; + c.name + &apos; &apos; + c.age + &apos; &apos; + c.bestfriends.name);</span><br><span class="line">c.bestfriends.name=&apos;ll&apos;;  //修改c中的bestfriends属性</span><br><span class="line">console.log(&apos;after update b:&apos; + b.name + &apos; &apos; + b.age + &apos; &apos; + b.bestfriends.name);  //结果b中的也会随之更新</span><br><span class="line">console.log(&apos;after update c:&apos; + c.name + &apos; &apos; + c.age + &apos; &apos; + c.bestfriends.name);</span><br></pre></td></tr></table></figure></p>
 <p>为了解决在对象拷贝过程中将对象中的对象属性独立拷贝出来，所以有了深拷贝</p>
-<h1 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h1><p>1.使用递归实现拷贝<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">function depthCopy(obj) &#123;</div><div class="line">    if(typeof obj !== &apos;object&apos;) &#123;</div><div class="line">        return obj;</div><div class="line">    &#125;</div><div class="line">    var newObj = &#123;&#125;;</div><div class="line">    for(let attr in obj) &#123;</div><div class="line">        newObj[attr] = depthCopy(obj[attr]);</div><div class="line">    &#125;</div><div class="line">    return newObj;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var b = &#123;</div><div class="line">            name: &apos;lin&apos;,</div><div class="line">            age: 21,</div><div class="line">            bestfriends: &#123;</div><div class="line">                name: &apos;l&apos;,</div><div class="line">                age: 21</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">var c = depthCopy(b);</div><div class="line">console.log(&apos;before update b.bestfriends.name: &apos; + b.bestfriends.name)</div><div class="line">console.log(&apos;before update c.bestfriends.name: &apos; + c.bestfriends.name)</div><div class="line">c.bestfriends.name = &apos;jacklincao&apos;  //修改c.bestfrinds对象</div><div class="line">console.log(&apos;after update b.bestfriends.name: &apos; + b.bestfriends.name)  //b中的不变</div><div class="line">console.log(&apos;after update c.bestfriends.name: &apos; + c.bestfriends.name)  //c中的变了，说明b和c现在没有指向同一个对象，实现了深复制</div></pre></td></tr></table></figure></p>
-<p>2.使用JSON序列化<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var b = &#123;</div><div class="line">            name: &apos;lin&apos;,</div><div class="line">            age: 21,</div><div class="line">            bestfriends: &#123;</div><div class="line">                name: &apos;l&apos;,</div><div class="line">                age: 21</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">var c = JSON.parse(JSON.stringify(b)); </div><div class="line">console.log(&apos;before update b.bestfriends.name: &apos; + b.bestfriends.name)</div><div class="line">console.log(&apos;before update c.bestfriends.name: &apos; + c.bestfriends.name)</div><div class="line">c.bestfriends.name = &apos;jacklincao&apos;  //修改c.bestfrinds对象</div><div class="line">console.log(&apos;after update b.bestfriends.name: &apos; + b.bestfriends.name)  //b中的不变</div><div class="line">console.log(&apos;after update c.bestfriends.name: &apos; + c.bestfriends.name)  //c中的变了，说明b和c现在没有指向同一个对象，实现了深复制</div></pre></td></tr></table></figure></p>
+<h1 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h1><p>1.使用递归实现拷贝<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">function depthCopy(obj) &#123;</span><br><span class="line">    if(typeof obj !== &apos;object&apos;) &#123;</span><br><span class="line">        return obj;</span><br><span class="line">    &#125;</span><br><span class="line">    var newObj = &#123;&#125;;</span><br><span class="line">    for(let attr in obj) &#123;</span><br><span class="line">        newObj[attr] = depthCopy(obj[attr]);</span><br><span class="line">    &#125;</span><br><span class="line">    return newObj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var b = &#123;</span><br><span class="line">            name: &apos;lin&apos;,</span><br><span class="line">            age: 21,</span><br><span class="line">            bestfriends: &#123;</span><br><span class="line">                name: &apos;l&apos;,</span><br><span class="line">                age: 21</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">var c = depthCopy(b);</span><br><span class="line">console.log(&apos;before update b.bestfriends.name: &apos; + b.bestfriends.name)</span><br><span class="line">console.log(&apos;before update c.bestfriends.name: &apos; + c.bestfriends.name)</span><br><span class="line">c.bestfriends.name = &apos;jacklincao&apos;  //修改c.bestfrinds对象</span><br><span class="line">console.log(&apos;after update b.bestfriends.name: &apos; + b.bestfriends.name)  //b中的不变</span><br><span class="line">console.log(&apos;after update c.bestfriends.name: &apos; + c.bestfriends.name)  //c中的变了，说明b和c现在没有指向同一个对象，实现了深复制</span><br></pre></td></tr></table></figure></p>
+<p>2.使用JSON序列化<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var b = &#123;</span><br><span class="line">            name: &apos;lin&apos;,</span><br><span class="line">            age: 21,</span><br><span class="line">            bestfriends: &#123;</span><br><span class="line">                name: &apos;l&apos;,</span><br><span class="line">                age: 21</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">var c = JSON.parse(JSON.stringify(b)); </span><br><span class="line">console.log(&apos;before update b.bestfriends.name: &apos; + b.bestfriends.name)</span><br><span class="line">console.log(&apos;before update c.bestfriends.name: &apos; + c.bestfriends.name)</span><br><span class="line">c.bestfriends.name = &apos;jacklincao&apos;  //修改c.bestfrinds对象</span><br><span class="line">console.log(&apos;after update b.bestfriends.name: &apos; + b.bestfriends.name)  //b中的不变</span><br><span class="line">console.log(&apos;after update c.bestfriends.name: &apos; + c.bestfriends.name)  //c中的变了，说明b和c现在没有指向同一个对象，实现了深复制</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -436,11 +441,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Angular常见bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -452,15 +461,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">

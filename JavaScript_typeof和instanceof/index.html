@@ -8,34 +8,18 @@
   <link rel="dns-prefetch" href="https://github.com/jacklincao">
   <title>typeof和instanceof | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基本类型基本类型有以下五种：
-
-Undefined
-Null
-Boolean
-Number
-String">
+  <meta name="description" content="基本类型基本类型有以下五种：  Undefined Null Boolean Number String">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="typeof和instanceof">
 <meta property="og:url" content="https://github.com/jacklincao/JavaScript_typeof和instanceof/index.html">
 <meta property="og:site_name" content="林林博客">
-<meta property="og:description" content="基本类型基本类型有以下五种：
-
-Undefined
-Null
-Boolean
-Number
-String">
+<meta property="og:description" content="基本类型基本类型有以下五种：  Undefined Null Boolean Number String">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-03-02T12:54:11.891Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="typeof和instanceof">
-<meta name="twitter:description" content="基本类型基本类型有以下五种：
-
-Undefined
-Null
-Boolean
-Number
-String">
+<meta name="twitter:description" content="基本类型基本类型有以下五种：  Undefined Null Boolean Number String">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
   
@@ -77,6 +61,8 @@ String">
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
+	        
+				<li><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 	        
 			</ul>
 		</nav>
@@ -136,6 +122,8 @@ String">
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -155,12 +143,14 @@ String">
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 		        
 				</ul>
 			</nav>
@@ -208,10 +198,10 @@ String">
 <li>“string”    字符串</li>
 <li>“number”    数字</li>
 <li>“object”    对象或<strong>null</strong></li>
-<li>“function”  函数<br>example:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var tempString = &quot;Hello World!&quot;;</div><div class="line">var tempNumber = 123;</div><div class="line">var tempBool = true;</div><div class="line">var tempUndefined;</div><div class="line">console.log(typeof tempString);   //&quot;string&quot;</div><div class="line">console.log(typeof tempNumber);   //&quot;number&quot;</div><div class="line">console.log(typeof tempBool);     //&quot;boolean&quot;</div><div class="line">console.log(typeof tempUndefined) //&quot;undefined&quot;</div></pre></td></tr></table></figure>
+<li>“function”  函数<br>example:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var tempString = &quot;Hello World!&quot;;</span><br><span class="line">var tempNumber = 123;</span><br><span class="line">var tempBool = true;</span><br><span class="line">var tempUndefined;</span><br><span class="line">console.log(typeof tempString);   //&quot;string&quot;</span><br><span class="line">console.log(typeof tempNumber);   //&quot;number&quot;</span><br><span class="line">console.log(typeof tempBool);     //&quot;boolean&quot;</span><br><span class="line">console.log(typeof tempUndefined) //&quot;undefined&quot;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h1 id="instanceof操作符"><a href="#instanceof操作符" class="headerlink" title="instanceof操作符"></a>instanceof操作符</h1><p>用于检测<strong>引用类型</strong>，判断给定变量是否是指定的引用类型，若使用其来检测<strong>基本数据类型</strong>都将返回false，因为其不是引用类型<br>example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var person = &#123;&#125;;</div><div class="line">var persons = [];</div><div class="line">console.log(person instanceof Object); //true</div><div class="line">console.log(persons instanceof Array); //true</div><div class="line">console.log(persons intanceof Object); //true，因为所有引用类型都是Object的实例</div></pre></td></tr></table></figure></p>
+<h1 id="instanceof操作符"><a href="#instanceof操作符" class="headerlink" title="instanceof操作符"></a>instanceof操作符</h1><p>用于检测<strong>引用类型</strong>，判断给定变量是否是指定的引用类型，若使用其来检测<strong>基本数据类型</strong>都将返回false，因为其不是引用类型<br>example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var person = &#123;&#125;;</span><br><span class="line">var persons = [];</span><br><span class="line">console.log(person instanceof Object); //true</span><br><span class="line">console.log(persons instanceof Array); //true</span><br><span class="line">console.log(persons intanceof Object); //true，因为所有引用类型都是Object的实例</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -321,11 +311,11 @@ String">
   
 <nav id="article-nav">
   
-    <a href="/JavaScript_AJAX/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/JavaScript_作用域链/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          AJAX
+          作用域链
         
       </div>
     </a>
@@ -463,11 +453,15 @@ String">
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Angular常见bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -479,15 +473,15 @@ String">
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">

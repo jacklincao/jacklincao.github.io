@@ -9,11 +9,13 @@
   <title>作用域链 | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="作用域链调用一个方法时，方法首先在自己的作用域中查找变量和方法，若没有找到，将查找上一级作用域链，直至找到最顶层的作用域即window，example:12345678910111213141516var person = &amp;#123;&amp;#125;;person.name = &amp;quot;我&amp;quot;;    function editName() &amp;#123;    var newName =">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="作用域链">
 <meta property="og:url" content="https://github.com/jacklincao/JavaScript_作用域链/index.html">
 <meta property="og:site_name" content="林林博客">
 <meta property="og:description" content="作用域链调用一个方法时，方法首先在自己的作用域中查找变量和方法，若没有找到，将查找上一级作用域链，直至找到最顶层的作用域即window，example:12345678910111213141516var person = &amp;#123;&amp;#125;;person.name = &amp;quot;我&amp;quot;;    function editName() &amp;#123;    var newName =">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-03-02T12:34:42.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="作用域链">
@@ -59,6 +61,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
+	        
+				<li><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 	        
 			</ul>
 		</nav>
@@ -118,6 +122,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -137,12 +143,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 		        
 				</ul>
 			</nav>
@@ -177,12 +185,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h1><p>调用一个方法时，方法首先在自己的作用域中查找变量和方法，若没有找到，将查找上一级作用域链，直至找到最顶层的作用域即window，example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var person = &#123;&#125;;</div><div class="line">person.name = &quot;我&quot;;</div><div class="line">    </div><div class="line">function editName() &#123;</div><div class="line">    var newName = &quot;新的名字&quot;;</div><div class="line">        </div><div class="line">    functino changeNewName() &#123;</div><div class="line">        var oldName = person.name;</div><div class="line">        person.name = newName;//方法内部可以访问到person、newName、oldName</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    changeNewName();</div><div class="line">    //此处可访问到的变量有：person、newName</div><div class="line">&#125;</div><div class="line">//此处访问到的变量有：person</div><div class="line">editName();//该作用域链图如下。。。在02/05/jsScope.png</div></pre></td></tr></table></figure></p>
+        <h1 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h1><p>调用一个方法时，方法首先在自己的作用域中查找变量和方法，若没有找到，将查找上一级作用域链，直至找到最顶层的作用域即window，example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var person = &#123;&#125;;</span><br><span class="line">person.name = &quot;我&quot;;</span><br><span class="line">    </span><br><span class="line">function editName() &#123;</span><br><span class="line">    var newName = &quot;新的名字&quot;;</span><br><span class="line">        </span><br><span class="line">    functino changeNewName() &#123;</span><br><span class="line">        var oldName = person.name;</span><br><span class="line">        person.name = newName;//方法内部可以访问到person、newName、oldName</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    changeNewName();</span><br><span class="line">    //此处可访问到的变量有：person、newName</span><br><span class="line">&#125;</span><br><span class="line">//此处访问到的变量有：person</span><br><span class="line">editName();//该作用域链图如下。。。在02/05/jsScope.png</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <h1 id="延长作用域"><a href="#延长作用域" class="headerlink" title="延长作用域"></a>延长作用域</h1><p>执行环境有两种，全局和局部，可以使用以下两种方式：</p>
 <ol>
 <li>try-catch语句的catch块</li>
-<li>with语句；<br>with会将指定对象添加到作用域链中，example:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function buildUrl() &#123;</div><div class="line">    var qs = &quot;?debug=true&quot;;</div><div class="line">    with(location) &#123;//接收location对象</div><div class="line">        var url = href + qs;//url变量成为函数执行环境的一部分</div><div class="line">    &#125;</div><div class="line">    return url;//此处能访问url变量</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>with语句；<br>with会将指定对象添加到作用域链中，example:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function buildUrl() &#123;</span><br><span class="line">    var qs = &quot;?debug=true&quot;;</span><br><span class="line">    with(location) &#123;//接收location对象</span><br><span class="line">        var url = href + qs;//url变量成为函数执行环境的一部分</span><br><span class="line">    &#125;</span><br><span class="line">    return url;//此处能访问url变量</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -294,18 +302,18 @@
   
 <nav id="article-nav">
   
-    <a href="/JavaScript_闭包/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/JavaScript_AJAX/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          闭包
+          AJAX
         
       </div>
     </a>
   
   
-    <a href="/JavaScript_原型及原型链/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">原型及原型链</div>
+    <a href="/JavaScript_typeof和instanceof/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">typeof和instanceof</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -436,11 +444,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Angular常见bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -452,15 +464,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -9,11 +9,13 @@
   <title>闭包 | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="概念闭包是指有权访问另一个函数作用域中中的变量的函数,最常见的方式就是在一个函数中创建另一个函数，例如:12345678910111213141516function getFunctions() &amp;#123;    var functions = new Array();        for(var i = 0; i &amp;lt; 10; i++) &amp;#123;        functions[">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="闭包">
 <meta property="og:url" content="https://github.com/jacklincao/JavaScript_闭包/index.html">
 <meta property="og:site_name" content="林林博客">
 <meta property="og:description" content="概念闭包是指有权访问另一个函数作用域中中的变量的函数,最常见的方式就是在一个函数中创建另一个函数，例如:12345678910111213141516function getFunctions() &amp;#123;    var functions = new Array();        for(var i = 0; i &amp;lt; 10; i++) &amp;#123;        functions[">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-03-02T12:34:19.359Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="闭包">
@@ -59,6 +61,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
+	        
+				<li><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 	        
 			</ul>
 		</nav>
@@ -118,6 +122,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -137,12 +143,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 		        
 				</ul>
 			</nav>
@@ -177,10 +185,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>闭包是指有权访问另一个函数作用域中中的变量的函数,最常见的方式就是在一个函数中创建另一个函数，例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function getFunctions() &#123;</div><div class="line">    var functions = new Array();</div><div class="line">    </div><div class="line">    for(var i = 0; i &lt; 10; i++) &#123;</div><div class="line">        functions[i] = function() &#123;</div><div class="line">            return i;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return functions;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var array = getFunctions();  //每个函数都保存了getFunctions的活动对象,所以每个函数访问的变量都是同一个</div><div class="line"></div><div class="line">console.log(array[0]());  //10</div><div class="line">console.log(array[0]());  //10</div></pre></td></tr></table></figure></p>
+        <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>闭包是指有权访问另一个函数作用域中中的变量的函数,最常见的方式就是在一个函数中创建另一个函数，例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function getFunctions() &#123;</span><br><span class="line">    var functions = new Array();</span><br><span class="line">    </span><br><span class="line">    for(var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">        functions[i] = function() &#123;</span><br><span class="line">            return i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    return functions;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var array = getFunctions();  //每个函数都保存了getFunctions的活动对象,所以每个函数访问的变量都是同一个</span><br><span class="line"></span><br><span class="line">console.log(array[0]());  //10</span><br><span class="line">console.log(array[0]());  //10</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<h1 id="this对象"><a href="#this对象" class="headerlink" title="this对象"></a>this对象</h1><p>在闭包中,this对象的实际效果可能会与想法不一致,例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var name = &quot;ddd&quot;;</div><div class="line"></div><div class="line">var object = &#123;</div><div class="line">    name: &quot;object&quot;,</div><div class="line">    </div><div class="line">    getName: function() &#123;</div><div class="line">        return function() &#123;</div><div class="line">            return this.name;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">console.log(object.getName()());  //ddd</div></pre></td></tr></table></figure></p>
-<p>导致这样的结果是由于返回的一个匿名函数,而匿名函数的执行环境具有<strong>全局性</strong>,即this指向window,解决此问题的办法是在返回匿名函数前将this赋值给变量,因为此时的this在作用域中引用的是object,如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var name = &quot;ddd&quot;;</div><div class="line"></div><div class="line">var object = &#123;</div><div class="line">    name: &quot;object&quot;,</div><div class="line">    </div><div class="line">    getName: function() &#123;</div><div class="line">        var that = this;</div><div class="line">        return function() &#123;</div><div class="line">            return that.name;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">console.log(object.getName()());  //object</div></pre></td></tr></table></figure></p>
+<h1 id="this对象"><a href="#this对象" class="headerlink" title="this对象"></a>this对象</h1><p>在闭包中,this对象的实际效果可能会与想法不一致,例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var name = &quot;ddd&quot;;</span><br><span class="line"></span><br><span class="line">var object = &#123;</span><br><span class="line">    name: &quot;object&quot;,</span><br><span class="line">    </span><br><span class="line">    getName: function() &#123;</span><br><span class="line">        return function() &#123;</span><br><span class="line">            return this.name;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(object.getName()());  //ddd</span><br></pre></td></tr></table></figure></p>
+<p>导致这样的结果是由于返回的一个匿名函数,而匿名函数的执行环境具有<strong>全局性</strong>,即this指向window,解决此问题的办法是在返回匿名函数前将this赋值给变量,因为此时的this在作用域中引用的是object,如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var name = &quot;ddd&quot;;</span><br><span class="line"></span><br><span class="line">var object = &#123;</span><br><span class="line">    name: &quot;object&quot;,</span><br><span class="line">    </span><br><span class="line">    getName: function() &#123;</span><br><span class="line">        var that = this;</span><br><span class="line">        return function() &#123;</span><br><span class="line">            return that.name;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(object.getName()());  //object</span><br></pre></td></tr></table></figure></p>
 <h1 id="内存泄漏风险"><a href="#内存泄漏风险" class="headerlink" title="内存泄漏风险"></a>内存泄漏风险</h1><p>由于闭包会一直引用包含闭包的函数的活动对象,因此处理不当将会导致一些已使用完的垃圾不能被收回,解决方法是显式的将一些变量置为null</p>
 
       
@@ -301,8 +309,8 @@
     </a>
   
   
-    <a href="/JavaScript_作用域链/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">作用域链</div>
+    <a href="/JavaScript_对象属性/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">对象属性</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -433,11 +441,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Angular常见bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -449,15 +461,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">

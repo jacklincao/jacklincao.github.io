@@ -9,11 +9,13 @@
   <title>原型及原型链 | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="原型概念每个函数都有一个prototype属性，这个属性指向原型对象,每个原型对象都会有一个属性:constructor,这个属性指向函数,例如:12345678function Person() &amp;#123;&amp;#125;Person.prototype.name = &amp;quot;me&amp;quot;;Person.prototype.age = 21;console.log(Person.proto">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="原型及原型链">
 <meta property="og:url" content="https://github.com/jacklincao/JavaScript_原型及原型链/index.html">
 <meta property="og:site_name" content="林林博客">
 <meta property="og:description" content="原型概念每个函数都有一个prototype属性，这个属性指向原型对象,每个原型对象都会有一个属性:constructor,这个属性指向函数,例如:12345678function Person() &amp;#123;&amp;#125;Person.prototype.name = &amp;quot;me&amp;quot;;Person.prototype.age = 21;console.log(Person.proto">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-03-02T12:33:49.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型及原型链">
@@ -59,6 +61,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
+	        
+				<li><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 	        
 			</ul>
 		</nav>
@@ -118,6 +122,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -137,12 +143,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 		        
 				</ul>
 			</nav>
@@ -177,12 +185,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>每个函数都有一个prototype属性，这个属性指向<strong>原型对象</strong>,每个原型对象都会有一个属性:constructor,这个属性指向函数,例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function Person() &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Person.prototype.name = &quot;me&quot;;</div><div class="line">Person.prototype.age = 21;</div><div class="line"></div><div class="line">console.log(Person.prototype);  //&#123;name: &quot;me&quot;, age: 123, constructor: ƒ&#125;,指向Person的原型对象</div><div class="line">console.log(Person.prototype.constructor);  //ƒ Person() &#123;&#125;,指向Person函数</div></pre></td></tr></table></figure></p>
-<p>每个实例都有一个[[Prototype]]属性指向其原型对象,在Firefox、Safari、Chrome中为__proto<strong>,通过\</strong>proto__可以访问实例的原型对象<br><a id="more"></a></p>
+        <h1 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>每个函数都有一个prototype属性，这个属性指向<strong>原型对象</strong>,每个原型对象都会有一个属性:constructor,这个属性指向函数,例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Person() &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.name = &quot;me&quot;;</span><br><span class="line">Person.prototype.age = 21;</span><br><span class="line"></span><br><span class="line">console.log(Person.prototype);  //&#123;name: &quot;me&quot;, age: 123, constructor: ƒ&#125;,指向Person的原型对象</span><br><span class="line">console.log(Person.prototype.constructor);  //ƒ Person() &#123;&#125;,指向Person函数</span><br></pre></td></tr></table></figure></p>
+<p>每个实例都有一个[[Prototype]]属性指向其原型对象,在Firefox、Safari、Chrome中为__proto__,通过__proto__可以访问实例的原型对象<br><a id="more"></a></p>
 <h2 id="isPrototypeOf-、Object-getPrototypeOf"><a href="#isPrototypeOf-、Object-getPrototypeOf" class="headerlink" title="isPrototypeOf()、Object.getPrototypeOf()"></a>isPrototypeOf()、Object.getPrototypeOf()</h2><p>isPrototypeOf()用于检测实例的原型对象是否是指定的原型对象,返回值为Boolean类型,例如:<code>console.log(Person.protorype.isPrototype(person1);</code><br>Object.getPrototypeOf()用于<strong>获取对象的原型</strong>,例如:<code>console.log(Object.getPrototypeOf(person1);  //返回person1的原型</code></p>
 <h2 id="搜索属性"><a href="#搜索属性" class="headerlink" title="搜索属性"></a>搜索属性</h2><p>在JavaScript中,搜索一个属性首先搜索实例中存在的属性,如果未搜索到就查找实例的原型对象,为实例添加属性时将屏蔽原型对象中的同名属性,使用<strong>delete</strong>操作符删除实例中的属性后,就能重新访问原型中的同名属性</p>
-<h2 id="hasOwnProperty-、in操作符、Object-getOwnPropertyDescriptor-s"><a href="#hasOwnProperty-、in操作符、Object-getOwnPropertyDescriptor-s" class="headerlink" title="hasOwnProperty()、in操作符、Object.getOwnPropertyDescriptor(s)"></a>hasOwnProperty()、in操作符、Object.getOwnPropertyDescriptor(s)</h2><p>hasOwnProperty(),正如方法名称:”自己的属性”,所以该方法用于检测属性是否存在于实例中,若存在于实例中则返回true,存在于原型中或属性不存在返回false<br>in操作符可以访问到实例中或原型中的属性,与hasOwnProperty()方法结合使用可以知道属性是实例中的属性还是原型中的属性,例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var person1 = new Person();</div><div class="line">person1.name = &quot;hello&quot;; //赋值后屏蔽了原型中的name属性</div><div class="line"></div><div class="line">console.log(&quot;name&quot; in person1);  //true</div><div class="line"></div><div class="line">for(var i in person1) &#123;//可枚举的属性</div><div class="line">    console.log(i);  //name、age  访问到了所有的实例、原型中属性</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>Object.getOwnPropertyDescriptor(s)方法用于获取实例属性的描述符,若要获取原型对象的属性描述符就需要在原型对象上调用该方法,例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var person1Str = Object.getOwnPropertyDescriptors(person1);</div><div class="line"></div><div class="line">var personStr = Object.getOwnPropertyDescriptors(Person.prototype);</div></pre></td></tr></table></figure></p>
+<h2 id="hasOwnProperty-、in操作符、Object-getOwnPropertyDescriptor-s"><a href="#hasOwnProperty-、in操作符、Object-getOwnPropertyDescriptor-s" class="headerlink" title="hasOwnProperty()、in操作符、Object.getOwnPropertyDescriptor(s)"></a>hasOwnProperty()、in操作符、Object.getOwnPropertyDescriptor(s)</h2><p>hasOwnProperty(),正如方法名称:”自己的属性”,所以该方法用于检测属性是否存在于实例中,若存在于实例中则返回true,存在于原型中或属性不存在返回false<br>in操作符可以访问到实例中或原型中的属性,与hasOwnProperty()方法结合使用可以知道属性是实例中的属性还是原型中的属性,例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var person1 = new Person();</span><br><span class="line">person1.name = &quot;hello&quot;; //赋值后屏蔽了原型中的name属性</span><br><span class="line"></span><br><span class="line">console.log(&quot;name&quot; in person1);  //true</span><br><span class="line"></span><br><span class="line">for(var i in person1) &#123;//可枚举的属性</span><br><span class="line">    console.log(i);  //name、age  访问到了所有的实例、原型中属性</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Object.getOwnPropertyDescriptor(s)方法用于获取实例属性的描述符,若要获取原型对象的属性描述符就需要在原型对象上调用该方法,例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var person1Str = Object.getOwnPropertyDescriptors(person1);</span><br><span class="line"></span><br><span class="line">var personStr = Object.getOwnPropertyDescriptors(Person.prototype);</span><br></pre></td></tr></table></figure></p>
 <h1 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h1><h2 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h2><p>原型对象包含另一个原型,另一个原型又包含另一个原型,依次递推,实例和原型构成的结构就是原型链,原型链主要用于实现继承</p>
 
       
@@ -293,11 +301,11 @@
   
 <nav id="article-nav">
   
-    <a href="/JavaScript_作用域链/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/JavaScript_对象属性/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          作用域链
+          对象属性
         
       </div>
     </a>
@@ -435,11 +443,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Angular常见bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -451,15 +463,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">

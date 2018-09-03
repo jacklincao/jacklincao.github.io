@@ -9,11 +9,13 @@
   <title>Angular子路由跳转 | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由在Angular的官方文档找到了原因：导入模块的时候需要注意顺序，我在根模块导入模块时先把主路由模块导入了，导致路由会率先匹配到通配符路由，所以跳转到404，在定义子路由时">
+<meta name="keywords" content="Angular常见bug">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Angular子路由跳转">
 <meta property="og:url" content="https://github.com/jacklincao/Angular_子路由跳转/index.html">
 <meta property="og:site_name" content="林林博客">
 <meta property="og:description" content="配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由在Angular的官方文档找到了原因：导入模块的时候需要注意顺序，我在根模块导入模块时先把主路由模块导入了，导致路由会率先匹配到通配符路由，所以跳转到404，在定义子路由时">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-03-02T13:01:12.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular子路由跳转">
@@ -59,6 +61,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
+	        
+				<li><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 	        
 			</ul>
 		</nav>
@@ -118,6 +122,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -137,12 +143,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="https://jacklincao.github.io/beautiful-css/">beautiful-css</a></li>
 		        
 				</ul>
 			</nav>
@@ -177,7 +185,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由"><a href="#配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由" class="headerlink" title="配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由"></a>配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由</h2><p>在Angular的官方文档找到了原因：导入模块的时候需要注意<strong>顺序</strong>，我在根模块导入模块时先把主路由模块导入了，导致路由会率先匹配到通配符路由，所以跳转到404，在定义子路由时<a id="more"></a>，要将子路由所在模块提前于通配符路由所在的模块！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">//根模块路由定义在AppRoutingModule，子路由定义在FrontModule中</div><div class="line">imports: [</div><div class="line">    BrowserModule,</div><div class="line">    FormsModule,</div><div class="line">    HttpModule,</div><div class="line">    JsonpModule,</div><div class="line">    FrontModule，</div><div class="line">    AppRoutingModule/*导入路由模块,顺序很重要*/</div><div class="line">  ],</div><div class="line">  ......</div><div class="line"></div><div class="line">//AppRoutingModule中的路由表如下</div><div class="line">appRoutes: Routes = [</div><div class="line">  &#123;path: &apos;&apos;, redirectTo: &apos;/login&apos;, pathMatch: &apos;full&apos;&#125;,</div><div class="line">  &#123;path: &apos;login&apos;, component: LoginComponent&#125;,</div><div class="line">  &#123;path: &apos;**&apos;, component: PageNotFoundComponent&#125;</div><div class="line">];</div><div class="line"></div><div class="line">//FrontModule中定义的路由表如下</div><div class="line">frontRoutes: Routes = [</div><div class="line">    &#123;</div><div class="line">      path: &apos;begin&apos;,</div><div class="line">      component: FrontComponent,</div><div class="line">      children: [</div><div class="line">        /*子路由*/</div><div class="line">        &#123;path: &apos;&apos;, component: DebateInfoComponent&#125;,</div><div class="line">        &#123;path: &apos;end&apos;, component: EndComponent&#125;,</div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  ];</div><div class="line">  </div><div class="line">//如果AppRoutingModule先于FrontModule导入就会导致所有子路由匹配到&apos;**&apos;</div></pre></td></tr></table></figure></p>
+        <h2 id="配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由"><a href="#配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由" class="headerlink" title="配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由"></a>配置了路由表，并定义了子路由，但是每次跳转到子路由总是跳到404路由</h2><p>在Angular的官方文档找到了原因：导入模块的时候需要注意<strong>顺序</strong>，我在根模块导入模块时先把主路由模块导入了，导致路由会率先匹配到通配符路由，所以跳转到404，在定义子路由时<a id="more"></a>，要将子路由所在模块提前于通配符路由所在的模块！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">//根模块路由定义在AppRoutingModule，子路由定义在FrontModule中</span><br><span class="line">imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    FormsModule,</span><br><span class="line">    HttpModule,</span><br><span class="line">    JsonpModule,</span><br><span class="line">    FrontModule，</span><br><span class="line">    AppRoutingModule/*导入路由模块,顺序很重要*/</span><br><span class="line">  ],</span><br><span class="line">  ......</span><br><span class="line"></span><br><span class="line">//AppRoutingModule中的路由表如下</span><br><span class="line">appRoutes: Routes = [</span><br><span class="line">  &#123;path: &apos;&apos;, redirectTo: &apos;/login&apos;, pathMatch: &apos;full&apos;&#125;,</span><br><span class="line">  &#123;path: &apos;login&apos;, component: LoginComponent&#125;,</span><br><span class="line">  &#123;path: &apos;**&apos;, component: PageNotFoundComponent&#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">//FrontModule中定义的路由表如下</span><br><span class="line">frontRoutes: Routes = [</span><br><span class="line">    &#123;</span><br><span class="line">      path: &apos;begin&apos;,</span><br><span class="line">      component: FrontComponent,</span><br><span class="line">      children: [</span><br><span class="line">        /*子路由*/</span><br><span class="line">        &#123;path: &apos;&apos;, component: DebateInfoComponent&#125;,</span><br><span class="line">        &#123;path: &apos;end&apos;, component: EndComponent&#125;,</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  ];</span><br><span class="line">  </span><br><span class="line">//如果AppRoutingModule先于FrontModule导入就会导致所有子路由匹配到&apos;**&apos;</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -429,11 +437,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Angular常见bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AngularJs学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -445,15 +457,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
