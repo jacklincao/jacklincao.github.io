@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/jacklincao">
-  <title>AngularJs学习之指令编写 | 林林博客</title>
+  <title>请求数据最佳时机 | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api（2）在link中主要操作DOM开始1.指令的定义：123456.directive(&amp;apos;hello&amp;apos;,function()&amp;#123;	return &amp;#123;		restrict:&amp;apos;AECM&amp;">
-<meta name="keywords" content="AngularJs学习笔记">
+  <meta name="description" content="React生命周期初始化constructor: 在构造函数中可以初始化state 渲染render：渲染组件 挂载前后componentWillMount：在渲染前调用componentDidMount：第一次渲染后调用">
+<meta name="keywords" content="React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AngularJs学习之指令编写">
-<meta property="og:url" content="https://github.com/jacklincao/AngularJs_学习笔记之指令/index.html">
+<meta property="og:title" content="请求数据最佳时机">
+<meta property="og:url" content="https://github.com/jacklincao/React_请求数据最佳时机/index.html">
 <meta property="og:site_name" content="林林博客">
-<meta property="og:description" content="前言（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api（2）在link中主要操作DOM开始1.指令的定义：123456.directive(&amp;apos;hello&amp;apos;,function()&amp;#123;	return &amp;#123;		restrict:&amp;apos;AECM&amp;">
+<meta property="og:description" content="React生命周期初始化constructor: 在构造函数中可以初始化state 渲染render：渲染组件 挂载前后componentWillMount：在渲染前调用componentDidMount：第一次渲染后调用">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-03-02T13:07:00.462Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/jacklincao/myImages/5211748d6819b3477ab17478d1304e4a4e34873a/hexoImages/2018/09/02/react-life.jpg">
+<meta property="og:updated_time" content="2018-09-04T02:02:46.461Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AngularJs学习之指令编写">
-<meta name="twitter:description" content="前言（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api（2）在link中主要操作DOM开始1.指令的定义：123456.directive(&amp;apos;hello&amp;apos;,function()&amp;#123;	return &amp;#123;		restrict:&amp;apos;AECM&amp;">
+<meta name="twitter:title" content="请求数据最佳时机">
+<meta name="twitter:description" content="React生命周期初始化constructor: 在构造函数中可以初始化state 渲染render：渲染组件 挂载前后componentWillMount：在渲染前调用componentDidMount：第一次渲染后调用">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/jacklincao/myImages/5211748d6819b3477ab17478d1304e4a4e34873a/hexoImages/2018/09/02/react-life.jpg">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
   
@@ -165,33 +167,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-AngularJs_学习笔记之指令" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-React_请求数据最佳时机" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      AngularJs学习之指令编写
+      请求数据最佳时机
     </h1>
   
 
         
-        <a href="/AngularJs_学习笔记之指令/" class="archive-article-date">
-  	<time datetime="2017-01-20T11:38:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-20</time>
+        <a href="/React_请求数据最佳时机/" class="archive-article-date">
+  	<time datetime="2018-09-03T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api"><a href="#（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api" class="headerlink" title="（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api"></a>（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api</h3><h3 id="（2）在link中主要操作DOM"><a href="#（2）在link中主要操作DOM" class="headerlink" title="（2）在link中主要操作DOM"></a>（2）在link中主要操作DOM</h3><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="1-指令的定义："><a href="#1-指令的定义：" class="headerlink" title="1.指令的定义："></a>1.指令的定义：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.directive(&apos;hello&apos;,function()&#123;</span><br><span class="line">	return &#123;</span><br><span class="line">		restrict:&apos;AECM&apos;,</span><br><span class="line">		template:&apos;&lt;label&gt;hello world&lt;/label&gt;&apos;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>这是一个最简单的指令，在这个指令中，restrice用来规定指令的使用方式，A（attribute）代表指令以属性方式调用，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div hello&gt;&lt;/div&gt;;</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>E(element)代表指令以元素名的方式调用，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;hello&gt;&lt;/hello&gt;;</span><br></pre></td></tr></table></figure></p>
-<p>C(class)代表指令以类名方式调用，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;hello&quot;&gt;&lt;/div&gt;;</span><br></pre></td></tr></table></figure></p>
-<p>M代表指令以注释的方式调用，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- hello --&gt;;</span><br></pre></td></tr></table></figure></p>
-<p>template后跟的为html片段，同理的作用还有templateUrl,templateUrl后跟一个html链接，其内也是一段html片段；<br>replace后跟true或false，意思为是否替换掉调用指令处的html元素；<br>scope属性代表指令的作用域；有三种取值：false，true，{}；默认为false，代表与父作用域共享；true代表创建一个继承于父scope的scope；{}创建一个独立的作用域，如果需要使用父作用域的属性或方法可以使用“@”，“=”，“&amp;”，“@”实现的是单向绑定，“=”实现的是双向绑定，而使用“&amp;”，代表的是调用父作用域的方法；<br>transclude属性代表是否允许指令中插入任意内容，例如transclude为true时可以这样<hello>cdio</hello>；<br>compile有两个参数，一个element，一个attrs；element指指令所在的元素，compile返回一个方法或者对象，也可以在这里操作dom元素<br>link包含三个参数：scope，attrs，element；正如开篇提到的，link函数用于操作dom元素；<br>controller同时也可以与其它指令交互，当别的指令与本指令交互时，对应的指令需要声明本指令的实例（require:’^本指令名称’)</p>
+        <h1 id="React生命周期"><a href="#React生命周期" class="headerlink" title="React生命周期"></a>React生命周期</h1><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>constructor: 在构造函数中可以初始化state</p>
+<h2 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h2><p>render：渲染组件</p>
+<h2 id="挂载前后"><a href="#挂载前后" class="headerlink" title="挂载前后"></a>挂载前后</h2><p>componentWillMount：在渲染前调用<br>componentDidMount：第一次渲染后调用<br><a id="more"></a></p>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>componentWillReceiveProps：在接收到新的props时调用，render阶段不会被调用<br>shouldComponentUpdate：接受到新的props、state时调用，返回布尔值确定是否更新组件<br>componentWillUpdate：在接收到新的props或state但未render时被调用<br>componentDidUpdate：组件更新完成后调用</p>
+<h2 id="移除"><a href="#移除" class="headerlink" title="移除"></a>移除</h2><p>componentWillUnmount：组件被移除时调用</p>
+<h2 id="生命周期执行顺序"><a href="#生命周期执行顺序" class="headerlink" title="生命周期执行顺序"></a>生命周期执行顺序</h2><p>生命周期执行顺序如下图所示：<br><img src="https://raw.githubusercontent.com/jacklincao/myImages/5211748d6819b3477ab17478d1304e4a4e34873a/hexoImages/2018/09/02/react-life.jpg" alt="react生命周期"></p>
+<h1 id="请求数据最佳时机"><a href="#请求数据最佳时机" class="headerlink" title="请求数据最佳时机"></a>请求数据最佳时机</h1><h2 id="componentWillMount和componentDidMount"><a href="#componentWillMount和componentDidMount" class="headerlink" title="componentWillMount和componentDidMount"></a>componentWillMount和componentDidMount</h2><p>在实习过程中我刚开始写组件时，把请求数据放在了componentWillMount中，在观察了前辈们写的组件时，发现他们请求数据的代码没有放在componentWillMount中，而是写在componentDidMount中，下来查了资料后，发现在下个版本中：</p>
+<ol>
+<li>React<strong>将移除componentWillMount</strong>这个生命周期</li>
+<li>componentWillMount在16.3版本前是同步的，在这里执行请求<strong>可能不会触发UI渲染</strong>，16.3版本后，这个生命周期是异步的，在这里请求<strong>可能会导致多次调用这个生命周期并且造成内存泄漏</strong></li>
+<li><strong>componentDidMount不论异步还是同步都只会调用一次</strong></li>
+</ol>
+<p><strong>所以综合考虑后，请求数据的最佳时机在componentDidMount</strong></p>
 
       
 
@@ -231,7 +239,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">AngularJs学习笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
         		</li>
       		
 		</ul>
@@ -287,7 +295,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/jacklincao/AngularJs_学习笔记之指令/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/jacklincao/React_请求数据最佳时机/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -301,18 +309,9 @@
   
 <nav id="article-nav">
   
-    <a href="/JavaScript_apply-call-bind/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          apply()、call()、bind()
-        
-      </div>
-    </a>
   
-  
-    <a href="/AngularJs_学习笔记之ui-router/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">AngularJs学习之ui-router</div>
+    <a href="/React_列表渲染key/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">列表需要加上的属性——key</div>
       <i class="icon-circle-right"></i>
     </a>
   
