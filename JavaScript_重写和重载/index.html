@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/jacklincao">
-  <title>Archives | 林林博客</title>
+  <title>函数重载 | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="林林博客">
-<meta property="og:url" content="https://github.com/jacklincao/archives/page/5/index.html">
+  <meta name="description" content="重写和重载重载就是函数名一致，但是参数个数不同或类型不同重写就是子类覆盖父类中的同一个方法，将其覆盖已达到重写的目的载JavaScript中实现重写的几个思路：1.重写原型对象2.在实例中添加和原型中一样的函数，根据调用函数的规则:实例优先与原型调用 在JavaScript中实现重载的几个思路：1.根据参数个数进行判断，然后调用不同的处理逻辑2.使用闭包">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数重载">
+<meta property="og:url" content="https://github.com/jacklincao/JavaScript_重写和重载/index.html">
 <meta property="og:site_name" content="林林博客">
+<meta property="og:description" content="重写和重载重载就是函数名一致，但是参数个数不同或类型不同重写就是子类覆盖父类中的同一个方法，将其覆盖已达到重写的目的载JavaScript中实现重写的几个思路：1.重写原型对象2.在实例中添加和原型中一样的函数，根据调用函数的规则:实例优先与原型调用 在JavaScript中实现重载的几个思路：1.根据参数个数进行判断，然后调用不同的处理逻辑2.使用闭包">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-13T02:19:27.474Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="林林博客">
+<meta name="twitter:title" content="函数重载">
+<meta name="twitter:description" content="重写和重载重载就是函数名一致，但是参数个数不同或类型不同重写就是子类覆盖父类中的同一个方法，将其覆盖已达到重写的目的载JavaScript中实现重写的几个思路：1.重写原型对象2.在实例中添加和原型中一样的函数，根据调用函数的规则:实例优先与原型调用 在JavaScript中实现重载的几个思路：1.根据参数个数进行判断，然后调用不同的处理逻辑2.使用闭包">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
   
@@ -160,36 +165,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-JavaScript_重写和重载" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      函数重载
+    </h1>
+  
+
+        
+        <a href="/JavaScript_重写和重载/" class="archive-article-date">
+  	<time datetime="2018-08-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-09</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="重写和重载"><a href="#重写和重载" class="headerlink" title="重写和重载"></a>重写和重载</h2><p>重载就是函数名一致，但是参数个数不同或类型不同<br>重写就是子类覆盖父类中的同一个方法，将其覆盖已达到重写的目的<br>载JavaScript中实现重写的几个思路：<br>1.重写原型对象<br>2.在实例中添加和原型中一样的函数，根据调用函数的规则:实例优先与原型调用</p>
+<p>在JavaScript中实现重载的几个思路：<br>1.根据参数个数进行判断，然后调用不同的处理逻辑<br>2.使用闭包<br><a id="more"></a></p>
+<h2 id="实现重载"><a href="#实现重载" class="headerlink" title="实现重载"></a>实现重载</h2><p>思路1：通过参数个数判断应该进行什么样的处理，<br>优点：代码清晰明了<br>缺点：可扩展性差<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function add() &#123;</span><br><span class="line">  let argLength = arguments.length;</span><br><span class="line">  if(argLength === 0) &#123;</span><br><span class="line">    // 进行相应处理</span><br><span class="line">  &#125;</span><br><span class="line">  else if(argLength === 1) &#123;</span><br><span class="line">    // 进行相应处理</span><br><span class="line">  &#125;</span><br><span class="line">  ... // 可以接着进行判断、处理</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>思路2：通过闭包保存旧方法实现重写<br>优点：可扩展性好，可以动态的添加<br>缺点：仅实现参数个数不同的重写，未进行参数类型不同时的重写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">function overloading(obj, methodName, fn) &#123;</span><br><span class="line">    let oldMethod = obj[methodName]</span><br><span class="line">    </span><br><span class="line">    obj[methodName] = function() &#123;</span><br><span class="line">        if(fn.length === arguments.length) &#123;</span><br><span class="line">            return fn.apply(this, arguments)</span><br><span class="line">        &#125;</span><br><span class="line">        else if(typeof oldMethod === &apos;function&apos;) &#123;</span><br><span class="line">            return oldMethod.apply(this, arguments)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var calculate = &#123; a: 1, b: 2, c: 3&#125;</span><br><span class="line"></span><br><span class="line">overloading(calculate, &apos;add&apos;, function() &#123; // 无参数的add方法</span><br><span class="line">  return 0</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">overloading(calculate, &apos;add&apos;, function(a) &#123; // 有一个参数的add方法</span><br><span class="line">  return this[a]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">overloading(calculate, &apos;add&apos;, function(a, b) &#123; // 有两个参数的add方法</span><br><span class="line">  return this[a] + this[b]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">overloading(calculate, &apos;add&apos;, function(a, b, c) &#123; // 有三个参数的add方法</span><br><span class="line">  return this[a] + this[b] + this[c]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">calculate.add() // 0</span><br><span class="line">calculate.add(&apos;a&apos;) // 1</span><br><span class="line">calculate.add(&apos;a&apos;, &apos;b&apos;) // 3</span><br><span class="line">calculate.add(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;) // 6</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/JavaScript_作用域/" class="archive-article-date">
-  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/JavaScript_作用域/">作用域链</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -201,174 +234,114 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/jacklincao/JavaScript_重写和重载/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/JavaScript_原型及原型链/" class="archive-article-date">
-  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/React_列表渲染key/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          列表需要加上的属性——key
+        
+      </div>
+    </a>
+  
+  
+    <a href="/前端性能优化_ 图片懒加载技术/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">图片懒加载技术</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/JavaScript_原型及原型链/">原型及原型链</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/JavaScript_作用域链/" class="archive-article-date">
-  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/JavaScript_作用域链/">作用域链</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/JavaScript_闭包/" class="archive-article-date">
-  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/JavaScript_闭包/">闭包</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/JavaScript_对象属性/" class="archive-article-date">
-  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/JavaScript_对象属性/">对象属性</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/4/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="extend next" rel="next" href="/archives/page/6/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -400,8 +373,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -162,82 +162,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-JavaScript_闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/JavaScript_闭包/">闭包</a>
-    </h1>
-  
-
-        
-        <a href="/JavaScript_闭包/" class="archive-article-date">
-  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>闭包是指有权访问另一个函数作用域中中的变量的函数,最常见的方式就是在一个函数中创建另一个函数，例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function getFunctions() &#123;</span><br><span class="line">    var functions = new Array();</span><br><span class="line">    </span><br><span class="line">    for(var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">        functions[i] = function() &#123;</span><br><span class="line">            return i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    return functions;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var array = getFunctions();  //每个函数都保存了getFunctions的活动对象,所以每个函数访问的变量都是同一个</span><br><span class="line"></span><br><span class="line">console.log(array[0]());  //10</span><br><span class="line">console.log(array[0]());  //10</span><br></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/JavaScript_闭包/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/JavaScript_闭包/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-JavaScript_作用域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -289,82 +213,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/JavaScript_作用域/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript_AJAX" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/JavaScript_AJAX/">AJAX</a>
-    </h1>
-  
-
-        
-        <a href="/JavaScript_AJAX/" class="archive-article-date">
-  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h1><h2 id="什么是AJAX"><a href="#什么是AJAX" class="headerlink" title="什么是AJAX?"></a>什么是AJAX?</h2><p>AJAX全拼Asynchronous JavaScript and XML,意为异步JavaScript和XML,用于解决用户向后台发起请求后不需重新加载整个页面,只要将获取的数据插入到指定位置即可,提高了应用程序的执行能力<br>
-        
-          <a class="article-more-a" href="/JavaScript_AJAX/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/JavaScript_AJAX/">展开全文 >></a>
         </p>
       
 
@@ -547,6 +395,160 @@
 
 
   
+    <article id="post-JavaScript_闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/JavaScript_闭包/">闭包</a>
+    </h1>
+  
+
+        
+        <a href="/JavaScript_闭包/" class="archive-article-date">
+  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>闭包是指有权访问另一个函数作用域中中的变量的函数,最常见的方式就是在一个函数中创建另一个函数，例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function getFunctions() &#123;</span><br><span class="line">    var functions = new Array();</span><br><span class="line">    </span><br><span class="line">    for(var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">        functions[i] = function() &#123;</span><br><span class="line">            return i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    return functions;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var array = getFunctions();  //每个函数都保存了getFunctions的活动对象,所以每个函数访问的变量都是同一个</span><br><span class="line"></span><br><span class="line">console.log(array[0]());  //10</span><br><span class="line">console.log(array[0]());  //10</span><br></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/JavaScript_闭包/#more">更多 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/JavaScript_闭包/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JavaScript_对象属性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/JavaScript_对象属性/">对象属性</a>
+    </h1>
+  
+
+        
+        <a href="/JavaScript_对象属性/" class="archive-article-date">
+  	<time datetime="2017-01-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h1><p>ECMAScript中有两种属性：数据属性和访问器属性</p>
+<h2 id="数据属性"><a href="#数据属性" class="headerlink" title="数据属性"></a>数据属性</h2><p>概念:数据属性包含属性的值的位置,在这个位置可进行读取、写入<br>特性:1.[[Configurable]]:能否删除属性、修改属性的特性,默认值为true<br>     2.[[Writable]]:能否修改属性的值,默认值为true<br>     3.[[Enumberable]]:能否枚举出该属性,默认值为true<br>     4.[[Value]]:属性的值,默认值为undefined</p>
+<h2 id="访问器属性"><a href="#访问器属性" class="headerlink" title="访问器属性"></a>访问器属性</h2><p>概念:访问器属性不包含数据值,有一队getter()和setter()(这两个函数<strong>不是必须</strong>的),读取访问器属性会调用getter(),同理写入时会调用setter()<br>特性:1.[[Configurable]]:能否删除、修改属性的特性<br>     2.[[Enmuberable]]:能否枚举出该属性<br>     3.[[Get]]:读取属性时调用<br>     4.[[Set]]:写入属性时调用<br>
+        
+          <a class="article-more-a" href="/JavaScript_对象属性/#more">更多 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/JavaScript_对象属性/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
@@ -657,7 +659,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">git使用</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -665,11 +667,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">git使用</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -677,7 +679,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
