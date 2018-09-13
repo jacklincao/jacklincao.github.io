@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/jacklincao">
-  <title>林之博客 | 林林博客</title>
+  <title>CSS可继承属性 | 林林博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="CSS继承在CSS世界中,有一部分属性会继承其父元素所设置的值,所以在写样式时经常出现这样的问题:我没在这个元素上写颜色呀、写字体样式呀~~~。正是因为属性继承才导致了这样的问题,知道有哪些属性才能在解决一些样式问题上得心应手。 能解决的问题1.避免重复声明某个样式,只要在父元素上写一次就可以2.样式叠加,能清晰知道被哪个可继承元素影响 可继承属性分类1.字体系列:font、font-*2.文本系">
+<meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="林之博客">
-<meta property="og:url" content="https://github.com/jacklincao/hello-world/index.html">
+<meta property="og:title" content="CSS可继承属性">
+<meta property="og:url" content="https://github.com/jacklincao/CSS_可继承属性/index.html">
 <meta property="og:site_name" content="林林博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="CSS继承在CSS世界中,有一部分属性会继承其父元素所设置的值,所以在写样式时经常出现这样的问题:我没在这个元素上写颜色呀、写字体样式呀~~~。正是因为属性继承才导致了这样的问题,知道有哪些属性才能在解决一些样式问题上得心应手。 能解决的问题1.避免重复声明某个样式,只要在父元素上写一次就可以2.样式叠加,能清晰知道被哪个可继承元素影响 可继承属性分类1.字体系列:font、font-*2.文本系">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-01-21T13:59:12.039Z">
+<meta property="og:updated_time" content="2018-09-13T02:26:11.729Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="林之博客">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="CSS可继承属性">
+<meta name="twitter:description" content="CSS继承在CSS世界中,有一部分属性会继承其父元素所设置的值,所以在写样式时经常出现这样的问题:我没在这个元素上写颜色呀、写字体样式呀~~~。正是因为属性继承才导致了这样的问题,知道有哪些属性才能在解决一些样式问题上得心应手。 能解决的问题1.避免重复声明某个样式,只要在父元素上写一次就可以2.样式叠加,能清晰知道被哪个可继承元素影响 可继承属性分类1.字体系列:font、font-*2.文本系">
   
     <link rel="alternative" href="/atom.xml" title="林林博客" type="application/atom+xml">
   
@@ -164,35 +165,50 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-CSS_可继承属性" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      林之博客
+      CSS可继承属性
     </h1>
   
 
         
-        <a href="/hello-world/" class="archive-article-date">
-  	<time datetime="2016-12-19T12:47:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-19</time>
+        <a href="/CSS_可继承属性/" class="archive-article-date">
+  	<time datetime="2018-04-09T12:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="CSS继承"><a href="#CSS继承" class="headerlink" title="CSS继承"></a>CSS继承</h1><p>在CSS世界中,有一部分属性会继承其父元素所设置的值,所以在写样式时经常出现这样的问题:我没在这个元素上写颜色呀、写字体样式呀~~~。正是因为属性继承才导致了这样的问题,知道有哪些属性才能在解决一些样式问题上得心应手。</p>
+<h2 id="能解决的问题"><a href="#能解决的问题" class="headerlink" title="能解决的问题"></a>能解决的问题</h2><p>1.避免重复声明某个样式,只要在父元素上写一次就可以<br>2.样式叠加,能清晰知道被哪个可继承元素影响</p>
+<h2 id="可继承属性分类"><a href="#可继承属性分类" class="headerlink" title="可继承属性分类"></a>可继承属性分类</h2><h3 id="1-字体系列-font、font"><a href="#1-字体系列-font、font" class="headerlink" title="1.字体系列:font、font-*"></a>1.字体系列:font、font-*</h3><h3 id="2-文本系列"><a href="#2-文本系列" class="headerlink" title="2.文本系列"></a>2.文本系列</h3><ul>
+<li><strong>line-height</strong>：line-height可以继承！！！</li>
+<li><strong>color</strong></li>
+<li>text-align</li>
+<li>text-indent</li>
+<li>text-justify</li>
+<li>text-orientation</li>
+<li>text-rendering</li>
+<li>text-shadow</li>
+<li>text-transform</li>
+<li>text-underline-position</li>
+<li>text-combine-upright</li>
+<li>word-spacing</li>
+<li>word-break</li>
+<li>word-wrap</li>
+<li>letter-spacing</li>
+<li>direction</li>
+</ul>
+<h3 id="3-元素可见-visibility"><a href="#3-元素可见-visibility" class="headerlink" title="3.元素可见:visibility"></a>3.元素可见:visibility</h3><h3 id="4-列表属性-list-style、list"><a href="#4-列表属性-list-style、list" class="headerlink" title="4.列表属性:list-style、list-*"></a>4.列表属性:list-style、list-*</h3><h3 id="5-其它"><a href="#5-其它" class="headerlink" title="5.其它"></a>5.其它</h3><ul>
+<li>quotes</li>
+<li>cursor</li>
+</ul>
 
       
 
@@ -227,6 +243,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -277,7 +304,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/jacklincao/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/jacklincao/CSS_可继承属性/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -291,15 +318,20 @@
   
 <nav id="article-nav">
   
-    <a href="/博客开张啦/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/CSS_单行多行文本显示省略号/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          博客开张啦
+          单行、多行文本显示省略号
         
       </div>
     </a>
   
+  
+    <a href="/MySQL_阿里云配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">阿里云Ubuntu16.04下MySQL配置</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
